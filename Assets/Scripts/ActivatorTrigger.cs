@@ -62,7 +62,7 @@ public class ActivatorTrigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         MainGameObject.Instance.interactText.SetActive(false);
-        if (other.CompareTag("Player") && changeStateOnExit)
+        if (other.CompareTag("Player"))
         {
             isInRange = false;
             if (gameObject != null) { gameObject.SetActive(activeOnExit); }
@@ -70,7 +70,10 @@ public class ActivatorTrigger : MonoBehaviour
             {
                 HideUI();
             }
-            MainGameObject.Instance.interactText.SetActive(false);
+            if (changeStateOnExit) { 
+                MainGameObject.Instance.interactText.SetActive(false);
+            }
+
         }
     }
 
@@ -122,38 +125,40 @@ public class ActivatorTrigger : MonoBehaviour
 
     private void ActivateObject()
     {
-        delayInProgress = false;
-            if (cost <= MainGameObject.Instance.money || cost == 0) { 
-                if (requireGameIntKey == true)
-                {
-                    print("AVAA SAATANA OVI " + gameIntKey.ToString() + " value: " + gameIntValue.ToString());
-                    print("TAHDOTTU ARVO " + MainGameObject.Instance.getGameIntKey(gameIntKey).ToString());
-                    if (MainGameObject.Instance.getGameIntKeyEquals(gameIntKey, gameIntValue) == true) {
+        if (isInRange == true) {
+            delayInProgress = false;
+                if (cost <= MainGameObject.Instance.money || cost == 0) { 
+                    if (requireGameIntKey == true)
+                    {
+                        print("AVAA SAATANA OVI " + gameIntKey.ToString() + " value: " + gameIntValue.ToString());
+                        print("TAHDOTTU ARVO " + MainGameObject.Instance.getGameIntKey(gameIntKey).ToString());
+                        if (MainGameObject.Instance.getGameIntKeyEquals(gameIntKey, gameIntValue) == true) {
+                            if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+                            if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                            if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
+                            if (targetIsGUI == true)
+                            {
+                                ShowUI();
+                            }
+                            if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                        }
+                    }
+
+                    else { 
                         if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                         if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                        if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
                         if (targetIsGUI == true)
                         {
                             ShowUI();
                         }
+                        if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
                         if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                     }
                 }
-
-                else { 
-                    if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
-                    if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                    if (targetIsGUI == true)
-                    {
-                        ShowUI();
-                    }
-                    if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                    if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                else
+                {
+                    dialogueRunner.StartDialogue("NoMoney");
                 }
             }
-            else
-            {
-                dialogueRunner.StartDialogue("NoMoney");
-            }
-        }
     }
+}

@@ -1324,6 +1324,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02945ed01d73bf24ea88085eed7b1541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters:
+  - name: paku
+    tex: {fileID: 2800000, guid: 75a25abd363151b4f948e0092e5178ef, type: 3}
+  - name: karkassieni
+    tex: {fileID: 2800000, guid: 710d6ddc0daaf9e499ee782246147a3f, type: 3}
+  - name: porvari
+    tex: {fileID: 2800000, guid: 70215b6168a2bbf4c95231959c5fa571, type: 3}
+  - name: sylvester
+    tex: {fileID: 2800000, guid: 5bbec851df34c694e95168cddc3eacee, type: 3}
+  - name: pasi
+    tex: {fileID: 2800000, guid: e48bef0848495f74689076a376eda2ad, type: 3}
+  - name: hucci
+    tex: {fileID: 2800000, guid: 5edc532a662412f4db616259477421e9, type: 3}
+  - name: jumppa
+    tex: {fileID: 2800000, guid: 95b0ed372dddbef42b698fdbb8ccfe82, type: 3}
+  - name: sisu
+    tex: {fileID: 2800000, guid: 2be7d87f0222a664f94682946ebcef8a, type: 3}
 --- !u!1 &7771629274217014577
 GameObject:
   m_ObjectHideFlags: 0

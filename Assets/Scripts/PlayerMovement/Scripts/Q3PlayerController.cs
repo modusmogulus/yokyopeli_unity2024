@@ -249,6 +249,7 @@ namespace Q3Movement
             }
 
             m_MouseLook.UpdateCursorLock();    
+
             QueueJump();
             if (isCurrentlyGrounded)
             {
@@ -458,23 +459,26 @@ namespace Q3Movement
         // Queues the next jump.
         private void QueueJump()
         {
-            if (m_AutoBunnyHop && !intentsRoll)
-            {
-                //print(intentsRoll);
-                m_JumpQueued = Input.GetButton("Jump");
-                return;
-            }
+            if (m_MouseLook.GetCursorLock() == true) { //otherways playuer is able to jump in yarn interactions for example
+                if (m_AutoBunnyHop && !intentsRoll)
+                {
+                    //print(intentsRoll);
+                    m_JumpQueued = Input.GetButton("Jump");
+                    return;
+                }
 
-            if (Input.GetButtonDown("Jump") && !m_JumpQueued && !intentsRoll)
-            {
-                //headAnimator.ResetTrigger("Jump");
-                //headAnimator.SetTrigger("Jump");
-                m_JumpQueued = true;
-            }
+                if (Input.GetButtonDown("Jump") && !m_JumpQueued && !intentsRoll)
+                {
+                    //headAnimator.ResetTrigger("Jump");
+                    //headAnimator.SetTrigger("Jump");
+                    m_JumpQueued = true;
+                }
 
-            if (Input.GetButtonUp("Jump") || intentsRoll)
-            {
-                m_JumpQueued = false;
+                if (Input.GetButtonUp("Jump") || intentsRoll)
+                {
+                    m_JumpQueued = false;
+                }
+
             }
         }
 
