@@ -398,3 +398,18 @@ position: 265,-207
 
 <<RawImgHide>>
 ===
+
+title: Haukka1
+
+position: 265,-207
+---
+
+<<RawImgShow>> //Tuuletinrakas aka pitau2
+<<RawImgAct haukka>>
+Haukka: Aktiivimalli ahdistaa? Vaikket välttämättä tiedäkkään, olet aina siipieni suojassa. On sama miten korkealle rakennatkaan pesäsi,
+Haukka: tiedät itsekin että pesä kestää kyllä kun sen rakentaa varmalla mielellä. Mutta älä sinä huoli, olet juuri vasta lentänyt lapsuuden pesästäsi, kenties vielä joku päivä..
+<<wait 1>>
+Haukka: Kenties vielä joku päivä PASKOT aktiivimallin päälle. You go girl!!
+<<RawImgHide>>
+===
+
