@@ -308,6 +308,7 @@ Aliisa: Onko sinulla johonkin kenties kiire? Voin opettaa sinulle vikkelää lii
 
 title: BussiTarkistus
 
+position: -686,44
 ---
 
 
@@ -318,6 +319,7 @@ Tarkastaja: Hei sinä! Sinun täytyisi ostaa se bussilippu saatana vittu perkele
 
 title: Pullot
 
+position: -672,-376
 ---
 
 <<RawImgShow>>
@@ -331,11 +333,62 @@ Sisu: Jos minulla olisi vetreämmät nivelet, kävisin ehkä poimimassa niitä k
 
 ===
 
-title: TuuletinRakas
+title: Itko1
 
+position: -168,-128
 ---
 
+Itko (vanha naapuri): Hmph, tänään on ollut kyllä aika huono päivä. Varastin naapurini pyörän jotta voisin korjata sen ja antaa
+takaisin yllätyksenä.
+
+Itko: Vaarini kysyi pyörästä autotallissa, kerroin totuuden.
+
+Itko: Hän ilmoitti poliisille ja on minuun nyt pettynyt.
+
+Itko: Häntä sattuu ajatus siitä että saatoinkaan viedä autotalliin varastetun pyörän.
+
+
+===
+
+
+title: Naapuri2
+position: 84,306
+---
+<<RawImgAct justiina>>
 <<RawImgShow>>
+(tuntematon naapuri): Kuka saatana varastaa pyörän talvella!?! Naapurini Itko myöntää varastaneensa pyöräni, mutta hän väittää että varasti sen vain jotta voisi kunnostaa sen???
+(tuntematon naapuri): Pyh sanon minä, klassinen Verhannan tush case*... (*slangitermi ryöstölle)
+
+(tuntematon naapuri): Hei sinua ei kovin usein näekkään! 
+(tuntematon naapuri): Taidat asua siinä asunnossa jonka verhot ovat aina kiinni. Oletko <color=pink>asunut</color> Verhannassa pitkäänkin?
+-> En. nimeni on kataja
+-> En ole
+-> (Hiljaisuuspommi)
+    Aijotko vastata saatana?
+    -> (Hiljaisuuspommi)
+    -> En
+
+<<RawImgHide>>
+===
+title: Pitau
+position: -50,-304
+---
+Pitau (naapuri): Omg :3!! Katso katso, tuuletin!!!
+    -> Nyt en ehdi, kiire töihin
+    -> ok.
+        Pitau: :MOYAI:
+    -> Vau :D
+        Pitau: Siisti vai mitä?!? Tunnetko sen ilmavirrat?? ^. ^
+        Nämä Itkupiski tuulettimet asennettiin 2002, muutama vuosi sitten. Niiden ääni muistuttaa hieman susien ujellusta
+        täys-kuun alla!
+===
+
+title: TuuletinRakas
+
+position: 265,-207
+---
+
+<<RawImgShow>> //Tuuletinrakas aka pitau2
 <<RawImgAct MinaF1>>
 
 (Tämä nuorukaista ilmeisesti kiehtoo... tuulettimet??)
