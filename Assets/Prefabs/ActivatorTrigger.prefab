@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1478469222313356864}
   - component: {fileID: 8283606172714198787}
   - component: {fileID: 5185633183262621879}
+  - component: {fileID: 7755692580323476981}
   m_Layer: 2
   m_Name: ActivatorTrigger
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 28b0cec382b8bcd4491480214de627c3, type: 2}
+  - {fileID: 2100000, guid: 10fed2b250eb8864f81977012bb7600d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,3 +139,15 @@ MonoBehaviour:
   cost: 0
   yarnDialogueNode: 
   dialogueRunner: {fileID: 0}
+--- !u!114 &7755692580323476981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243975863380420699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400d73e847099b4692fc44ceb724bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

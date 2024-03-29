@@ -471,3 +471,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 733351d79c3687844abad28370473494, type: 3}
     minPitch: 0.9
     maxPitch: 1.1
+  - AudioChan: 0
+    audioName: SFX_Ulosotto2
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 77cb485ee52d3b449a295d6db9ddba0d, type: 3}
+    minPitch: 1
+    maxPitch: 1

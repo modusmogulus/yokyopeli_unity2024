@@ -17,7 +17,7 @@ namespace Q3Movement
         [SerializeField] private bool m_Smooth = false;
         [SerializeField] private float m_SmoothTime = 5f;
         [SerializeField] private bool m_LockCursor = true;
-
+        private bool m_rotastrafe = false;
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
         private bool m_cursorIsLocked = true;
@@ -28,12 +28,18 @@ namespace Q3Movement
             m_CameraTargetRot = camera.localRotation;
         }
 
-        public void LookRotation(Transform character, Transform camera)
+        public void SetSmooth(bool value, float smoothtime)
+        {
+            m_Smooth = value;
+            m_SmoothTime = smoothtime;
+        }
+
+    public void LookRotation(Transform character, Transform camera)
         {
             if (m_LockCursor == true) {
                 float yRot = Input.GetAxis("Mouse X") * m_XSensitivity;
                 float xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;
-
+                if (m_rotastrafe) { yRot += Input.GetAxisRaw("Horizontal"); }
                 m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
                 m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
@@ -80,6 +86,15 @@ namespace Q3Movement
             }
         }
 
+        public void SetRotastrafe(bool value)
+        {
+            m_rotastrafe = value;
+        }
+        public bool GetRotastrafe()
+        {
+            return m_rotastrafe;
+        }
+
         private void InternalLockUpdate()
         {
             if (Input.GetKeyUp(KeyCode.Escape))
@@ -107,7 +122,7 @@ namespace Q3Movement
         public void SetTilt(float tilt) {
             if (!MainGameObject.Instance.s_disableHeadTilt) { 
                 m_CameraTargetRot = ClampRotationAroundXAxis(Quaternion.Euler(m_CameraTargetRot.eulerAngles.x,
-                    m_CameraTargetRot.eulerAngles.y,
+                    m_CameraTargetRot.eulerAngles.y*0.0f, //DANGER DANGER DANGER
                     tilt));
             }
         }

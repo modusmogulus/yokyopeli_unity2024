@@ -97,6 +97,7 @@
     <Compile Include="Assets\Samples\Yarn Spinner\2.4.0\Visual Novel\Scripts\VNManager.cs" />
     <Compile Include="Assets\EasyTransitions\Demo\DemoLoadScene.cs" />
     <Compile Include="Assets\Scripts\NewMGO.cs" />
+    <Compile Include="Assets\Scripts\HideOnPlay.cs" />
     <Compile Include="Assets\Scripts\Bottle.cs" />
     <Compile Include="Assets\Scripts\VHS.cs" />
     <Compile Include="Assets\Scripts\BaseGUI.cs" />

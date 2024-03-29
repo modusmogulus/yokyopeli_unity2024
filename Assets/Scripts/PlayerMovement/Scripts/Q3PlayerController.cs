@@ -92,6 +92,8 @@ namespace Q3Movement
         public PostProcessVolume fallFx;
         public bool m_parkourEnabled = true;
         private bool isWallRunning = false;
+        private bool hasKickJumped = false;
+
         private void Start()
         {
             health = maxhp;
@@ -146,14 +148,12 @@ namespace Q3Movement
                 Debug.LogError("Animator component not found on m_Head object!");
             }
 
-            yield return new WaitForSeconds(0.1f); // Adjust this duration based on your animation length
+            yield return new WaitForSeconds(0.1f);
 
-            // Reset the animation state or any other necessary actions
             if (headAnimator != null)
             {
-                headAnimator.ResetTrigger("Roll"); // Assuming a trigger parameter named "Roll"
-                                                   // Or
-                                                   // headAnimator.SetBool("IsRolling", false); // Example with a bool parameter named "IsRolling"
+                headAnimator.ResetTrigger("Roll");
+                                                   
             }
 
             m_IsRolling = false;
@@ -204,6 +204,16 @@ namespace Q3Movement
         {
             health = Mathf.Clamp(health + 0.05f, 0f, maxhp); //Hp regen
         }
+        bool smoothBoolean(bool rawValue, int age)
+        {
+            float lastValue;
+            float value;
+            value = System.Convert.ToSingle(rawValue);
+
+            lastValue = value;
+            value = Mathf.Lerp(lastValue, value, 1/Mathf.Pow(2, age));
+            return (value > 0.5);
+        }
 
         private void Update()
         {
@@ -221,7 +231,7 @@ namespace Q3Movement
             float targetSpeedSound;
             Vector3 playerHVelo = new Vector3(m_PlayerVelocity.x, 0.0f, m_PlayerVelocity.z);
             targetFOV = defaultFOV + defaultFOV * Mathf.Clamp((playerHVelo.magnitude - 3) / 20, 0f, 0.7f);
-            m_Camera.fieldOfView = Mathf.Lerp(m_Camera.fieldOfView, targetFOV, Time.deltaTime * 2f);
+            m_Camera.fieldOfView = Mathf.Clamp(Mathf.Lerp(m_Camera.fieldOfView, targetFOV, Time.deltaTime * 2f), 30f, 120f);
             
             if (!indoorWalking) { 
                 targetSpeedSound = Mathf.Clamp((playerHVelo.magnitude - 0.1f) / 20, 0.2f, 1f); //hehee clever lerp juggling :3
@@ -238,14 +248,20 @@ namespace Q3Movement
                     cameraSharpenScript.sharpness = 2 + targetSpeedSound*2;
                 }
             }
+
             isCurrentlyGrounded = m_Character.isGrounded;
             m_MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-            
+
             if (MainGameObject.Instance.s_alwaysHardStrafeInAir) {
+                m_MouseLook.SetRotastrafe(true);
                 if (m_MoveInput.x != 0 && m_MoveInput.z != 0)
                 {
                     m_MoveInput.z = 0;
                 }
+            }
+            else
+            {
+                m_MouseLook.SetRotastrafe(false);
             }
 
             m_MouseLook.UpdateCursorLock();    
@@ -258,6 +274,8 @@ namespace Q3Movement
             if (isCurrentlyGrounded && !m_WasGrounded)
             {
                 wallrunningStamina = m_maxWallrunningStamina;
+                hasKickJumped = false;
+                wasWallrunning = false;
                 //headAnimator.ResetTrigger("Jump");
                 m_LandingTimer = 0.0f;
             }
@@ -266,6 +284,7 @@ namespace Q3Movement
                 headAnimator.SetBool("Running", false); //may do weird shit because this is update
                 headAnimator.ResetTrigger("Running");
             }
+
             m_WasGrounded = isCurrentlyGrounded;
 
             Regen();
@@ -376,6 +395,7 @@ namespace Q3Movement
             var d = transform.forward;
             var hit1 = Physics.Raycast(p, d, out var h1, 1f * (m_PlayerVelocity.magnitude / 7), 3);
             var hit2 = Physics.Raycast(p + Vector3.up * 1/*meters*/, d, out var h2, 1f, 3);
+            
 
             if (hit1 && !hit2 && m_JumpQueued && m_parkourEnabled) {
                 Debug.Log(Mathf.Abs(Vector3.Dot(h1.normal, m_Head.transform.forward)));
@@ -423,18 +443,20 @@ namespace Q3Movement
 
                     m_PlayerVelocity += (hit.normal * m_StrafeSettings.MaxSpeed * 0.6f);
                     isWallRunning = true;
-                    headAnimator.SetBool("Running", true);
+                    
 
                     m_wallrunningSoundLoop.volume = 0.3f;
                     wasWallrunning = true;
                     
                 }
             }
+
+
+
             else
             {
 
-                headAnimator.SetBool("WallrunRight", false);
-                headAnimator.SetBool("WallrunLeft", false);
+
                 isWallRunning = false;
                 if (wasWallrunning)
                 {
@@ -447,9 +469,37 @@ namespace Q3Movement
             }
             
         }
+
+        private void Kickjump(ControllerColliderHit hit)
+        {
+            
+            if (Vector3.Dot(hit.normal, transform.forward) > 0.9f &&
+                Vector3.Dot(hit.normal, transform.forward) < 1.0f &&
+                m_JumpQueued == true && m_PlayerVelocity.y < 0 &&
+                hasKickJumped == false &&
+                Mathf.Abs(Vector3.Dot(hit.normal, Vector3.up)) < 0.1f)
+
+            {
+                AudioManager.Instance.PlayAudio("SFX_Epic");
+                wallrunningStamina += 10;
+                float angleOfAttack;
+                angleOfAttack = Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.right));
+                
+                hasKickJumped = true;
+
+                m_PlayerVelocity += m_Head.transform.forward * 10f;
+
+                m_PlayerVelocity.y *= 0.1f;
+                m_PlayerVelocity.y += 10.5f;
+
+                m_PlayerVelocity += (hit.normal * m_StrafeSettings.MaxSpeed * 0.6f);
+            }
+
+        }
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
             Wallrun(hit);
+            Kickjump(hit);
             /*
             if (wallrunningStamina > 0) { Wallrun(hit); }
             else { isWallRunning = false;  }
@@ -467,11 +517,14 @@ namespace Q3Movement
                     return;
                 }
 
+
+
                 if (Input.GetButtonDown("Jump") && !m_JumpQueued && !intentsRoll)
                 {
                     //headAnimator.ResetTrigger("Jump");
                     //headAnimator.SetTrigger("Jump");
                     m_JumpQueued = true;
+
                 }
 
                 if (Input.GetButtonUp("Jump") || intentsRoll)
@@ -486,7 +539,7 @@ namespace Q3Movement
         {
             if (isCurrentlyGrounded)
             {
-                
+                //m_MouseLook.SetSmooth(false, 5f);
                 var sphereCastVerticalOffset = m_Character.height / 2 - m_Character.radius;
                 var castOrigin = transform.position - new Vector3(0, sphereCastVerticalOffset, 0);
                 
@@ -512,6 +565,17 @@ namespace Q3Movement
             }
         }
 
+        void TryBackflip()
+        {
+            if (Vector3.Dot(m_PlayerVelocity, transform.forward) < -0.5f && m_MoveInput.z >= 0 && Input.GetKey(KeyCode.Q)) //flip
+            {
+                //print("Dot product:  " + Vector3.Dot(m_PlayerVelocity, transform.forward));
+                headAnimator.ResetTrigger("Backflip");
+                headAnimator.SetTrigger("Backflip");
+                m_PlayerVelocity.y += 3f;
+                //m_MouseLook.SetSmooth(true, 3f);
+            }
+        }
         // Handle air movement.
         private void AirMove()
         {
@@ -622,6 +686,7 @@ namespace Q3Movement
             tilt = Mathf.Lerp(tiltLerped, tilt, 0.1f);
             if (indoorWalking) { tiltLerped *= 0.25f; }
             m_MouseLook.SetTilt(tiltLerped);
+            m_MouseLook.SetRotastrafe(false);
 
             if (m_MouseLook.GetCursorLock() == false) {  ApplyFriction(0.5f); headAnimator.SetBool("Running", false); return;  }
             // Do not apply friction if the player is queueing up the next jump
@@ -635,6 +700,7 @@ namespace Q3Movement
             }
             else
             {
+                TryBackflip();
                 ApplyFriction(0);
             }
 
@@ -652,7 +718,7 @@ namespace Q3Movement
             {
                 wishspeed *= m_GroundSettings.MaxSpeed * 0.8f;
             }
-            if (Mathf.Ceil(m_PlayerVelocity.x) != 0 && Mathf.Ceil(m_PlayerVelocity.z) != 0 && m_Character.isGrounded)
+            if (Mathf.Abs(m_PlayerVelocity.x) + Mathf.Abs(m_PlayerVelocity.z) != 0 && m_Character.isGrounded)
             {
                 if (intentsRoll == false)
                 {

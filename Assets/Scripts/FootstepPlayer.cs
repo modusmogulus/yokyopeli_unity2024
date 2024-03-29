@@ -23,7 +23,7 @@ public class FootstepPlayer : MonoBehaviour
         ROLL = 2,
         SLIP = 3
     }
-    void PlayFootstepSound()
+    public void PlayFootstepSound()
     {
         print("Castatty");
 

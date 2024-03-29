@@ -239,9 +239,11 @@ tags:
 colorID: 1
 position: 405,-450
 ---
-
-???: Ulosotosta päivää, oletko hereillä? 
-???: Tulimme viemään kahvinkeittimesi. Haeppa niitä töitä koska seuraavan kerran me myydään sinun OLED televisio.
+<<RawImgShow>>
+<<RawImgAct rage>> //in the character display object under Canvas
+Ulosotto: Ulosotosta päivää, oletko hereillä? 
+Ulosotto: Tulimme viemään kahvinkeittimesi. Haeppa niitä töitä koska seuraavan kerran me myydään sinun OLED televisio.
+<<RawImgHide>>
 ===
 
 title: NoMoney
