@@ -88,9 +88,9 @@ MonoBehaviour:
     m_MinimumX: -70
     m_MaximumX: 70
     m_Smooth: 1
-    m_SmoothTime: 5
+    m_SmoothTime: 7
     m_LockCursor: 1
-    m_tiltSmoothness: 5
+    m_tiltSmoothness: 7
   m_Friction: 6
   m_Gravity: 20
   m_JumpForce: 7.8

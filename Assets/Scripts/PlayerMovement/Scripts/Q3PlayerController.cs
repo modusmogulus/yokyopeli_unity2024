@@ -574,7 +574,8 @@ namespace Q3Movement
 
         void TryBackflip()
         {
-            if (Vector3.Dot(m_PlayerVelocity, transform.forward) < -0.5f && m_MoveInput.z >= 0) //flip  && Input.GetKey(KeyCode.Q)
+            //if (Vector3.Dot(m_PlayerVelocity, transform.forward) < -0.5f && m_MoveInput.z >= 0) //flip  && Input.GetKey(KeyCode.Q)
+            if (Input.GetAxis("Mouse Y") > 3f)
             {
                 //print("Dot product:  " + Vector3.Dot(m_PlayerVelocity, transform.forward));
                 headAnimator.ResetTrigger("Backflip");

@@ -48,7 +48,7 @@ public class FootstepPlayer : MonoBehaviour
                     print(physSound);
                     physSound = soundToPlay[index];
 
-                    AudioManager.Instance.PlayAudio(physSound);
+                    AudioManager.Instance.PlayAudio(physSound, transform.position);
                 }
             }
         }

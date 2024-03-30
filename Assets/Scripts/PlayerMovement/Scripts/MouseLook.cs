@@ -15,9 +15,9 @@ namespace Q3Movement
         [SerializeField] private float m_MinimumX = -90F;
         [SerializeField] private float m_MaximumX = 90F;
         [SerializeField] private bool m_Smooth = false;
-        [SerializeField] private float m_SmoothTime = 5f;
+        [SerializeField] private float m_SmoothTime = 7f;
         [SerializeField] private bool m_LockCursor = true;
-        [SerializeField] private float m_tiltSmoothness = 3f;
+        [SerializeField] private float m_tiltSmoothness = 7f;
         private bool m_rotastrafe = false;
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
@@ -40,6 +40,12 @@ namespace Q3Movement
             if (m_LockCursor == true) {
                 float yRot = Input.GetAxis("Mouse X") * m_XSensitivity;
                 float xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;
+                
+                if (m_Smooth) { 
+                    yRot = Mathf.Clamp(Input.GetAxis("Mouse X") * m_XSensitivity, -m_tiltSmoothness, m_tiltSmoothness); //hell yeah no more jitter :D
+                    xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness, m_tiltSmoothness);
+                }
+
                 if (m_rotastrafe) { yRot += Input.GetAxisRaw("Horizontal"); }
                 m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
                 m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
@@ -51,6 +57,8 @@ namespace Q3Movement
 
                 if (m_Smooth)
                 {
+
+
                     character.localRotation = Quaternion.Slerp(character.localRotation, m_CharacterTargetRot,
                         m_SmoothTime * Time.deltaTime);
                     camera.localRotation = Quaternion.Slerp(camera.localRotation, m_CameraTargetRot,

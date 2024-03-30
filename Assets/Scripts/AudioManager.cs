@@ -189,4 +189,46 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+    public void PlayAudio(string audioName, Vector3 pos) //method overload for spatialized audio audio
+    {
+        SpAudioClass AudioChan = FindAudioClass(audioName);
+
+        if (AudioChan != null)
+        {
+            List<AudioSource> audioSources = audioSourcesDictionary[AudioChan.AudioChan];
+            AudioSource availableSource = null;
+
+            foreach (AudioSource audioSource in audioSources)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    availableSource = audioSource;
+                    break;
+                }
+            }
+
+            if (availableSource == null)
+            {
+                availableSource = audioSources[audioSources.Count - 1];
+            }
+
+            //------------------ Hilavitkutin  features --------------
+            float randomVolume = UnityEngine.Random.Range(AudioChan.minVolume, AudioChan.maxVolume);
+            availableSource.volume = randomVolume;
+
+            // Random pitch
+            float randomPitch = UnityEngine.Random.Range(AudioChan.minPitch, AudioChan.maxPitch);
+            availableSource.pitch = randomPitch;
+            if (AudioChan.audioClips.Length > 0)
+            {
+                int randomIndex = UnityEngine.Random.Range(0, AudioChan.audioClips.Length);
+                availableSource.clip = AudioChan.audioClips[randomIndex];
+                AudioSource.PlayClipAtPoint(availableSource.clip, pos, randomVolume);
+            }
+            else
+            {
+                Debug.LogWarning("AudioClassista " + audioName + " puuttuu audioclipit??");
+            }
+        }
+    }
 }

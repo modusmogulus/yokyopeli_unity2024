@@ -67,6 +67,7 @@ MonoBehaviour:
     maxVolume: 1
     audioClips:
     - {fileID: 8300000, guid: 570e0b12e1e561f4cac57e8fe168056d, type: 3}
+    - {fileID: 8300000, guid: e5c04d6320ee6fa4bbd4549822b3b80e, type: 3}
     minPitch: 1
     maxPitch: 1
   - AudioChan: 1
