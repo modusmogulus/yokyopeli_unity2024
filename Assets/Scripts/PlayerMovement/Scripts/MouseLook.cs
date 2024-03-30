@@ -37,6 +37,7 @@ namespace Q3Movement
 
     public void LookRotation(Transform character, Transform camera)
         {
+            m_Smooth = MainGameObject.Instance.s_alwaysHardStrafeInAir;
             if (m_LockCursor == true) {
                 float yRot = Input.GetAxis("Mouse X") * m_XSensitivity;
                 float xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;

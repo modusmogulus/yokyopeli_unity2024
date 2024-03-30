@@ -86,30 +86,44 @@ position: -52,69
 <<HideAll>>
 ===
 
-title: Minea
+title: TutorialHaukka
 position: -52,69
 ---
 <<RawImgAct haukka>>
 <<RawImgShow>>
-
+<<RawImgAct haukka>>
 Päivää nimeni on minea!: Olen sinun ikioma suojelushaukkasi, mutta vitutukselta en voi siunata.
 Minea: Tarkemmin, voin opettaa leijaa liikkumista joka tulee vituttamaan vielä enemmän.
+<<RawImgAct tut1>>
 Minea: Ensimmäisenä, termi strafe tarkoittaa sivuttain liikkumista. Eli sitä kun painat nappeja A tai D.
+<<RawImgAct tut2>>
 Minea: Kuten muissakin vittumaisissa peleissä, ilmassa strafeaminen pistää puhtia pöksyihin.
-Minea: Eli toisinsanoen kiihdyttää sinua. Patalassa, haukkojen valtakunnassa luotiin teille kuolevaisille <color:pink>kaksi liikuntatapaa</color>.
-
-Minea: <color:pink>Kalan tie</color> ja <color:yellow>Kyyrynörtin tie</color> 
-Minea: <color:pink>Kalan tie on ihan vitun perseestä aluksi </color> ja <color:yellow>Kyyrynörtin tie on vitun perseestä paitsi jos osaat jo laukata. Kuolevaisten kielellä siis Bhopata/color> Kumpikaan ei taida kuulostaa erityisemmin kutkuttavalta. Damned if you do, damned if you don't xddd
-    -> <color:pink>Kalan tie</color>
-        <<RawImgAct tut1>> Oukkidoukki, kun liikut sivulle ilmassa, katsot myös sivulle. 
-        <<RawImgAct tut2>> Tälläinen ilmakäännös kiihdyttää.
-    -> <color:yellow>Kyyrynörtin tie (suositellaan jos Quake, CS:GO yms. on tuttuja) </color> 
-        <<RawImgAct tut2>> 
-        Minea: Ok ok, rouva kaikkitietäväinen. Jos kerta olet niin taitava niin anna sitten palaa, mutta älä tule inisemään minulle.
-        Minea: Vielä varmuuden varalta, muista että jarrutat saatanasti jos painat samaan aikaan W:tä ja strafeat ilmassa.
-        <<RawImgAct tut3>>
-
-
+Minea: Eli toisinsanoen kiihdyttää sinua. Patalassa, haukkojen valtakunnassa luotiin teille kuolevaisille <color=green>kaksi liikuntatapaa</color>.
+<<RawImgAct haukka>>
+Minea: <color=blue> Kalan tie</color> ja <color=yellow>Mateknörtin tie </color> 
+Minea: <color=blue> Kalan tie on ihan vitun perseestä aluksi </color> ja <color=yellow> Mateknörtin tie on vitun perseestä paitsi jos osaat jo laukata aka "B-hopata". </color> Kumpikaan ei taida kuulostaa erityisemmin kutkuttavalta. Damned if you do, damned if you don't xddd
+-> <color=blue> Kalan tie </color>
+    <<SetGameInt 294 1>>
+    <<RawImgAct tut1>> 
+    Oukkidoukki, kun liikut sivulle ilmassa, <color=yellow>käännyt AUTOMAATTISESTI</color> myös sivulle. 
+    <<RawImgAct tut2>> 
+    Tälläinen ilmakäännös kiihdyttää vauhtiasi.
+    <<RawImgAct tut3>> 
+    Minea: Ja <color=blue> smoothit </color> liikkeet pitävät sinut paremmin vauhdissa kuin se että äkkikäännyt kuin päätön kana.
+    <<RawImgAct tut4>> 
+    Minea: Ja hei, varoitan että tahdot vielä tehdä mannertenvälisiä sotarikoksia raivosta, poista vaan tämä peli mieluummin!
+    <<RawImgHide>>
+    Minea: Onnea lol
+-> <color=yellow> Mateknörtin tie </color> 
+    <<SetGameInt 294 0>>
+    <<RawImgAct tut2>> 
+    Minea: Ok ok, rouva kaikkitietäväinen. Jos kerta olet niin taitava niin anna sitten palaa, mutta älä tule inisemään minulle.
+    Minea: Vielä varmuuden varalta, muista että jarrutat saatanasti jos painat samaan aikaan 'W' ja strafeat ilmassa.
+    <<RawImgAct tut3>>
+    Minea: Ja smoothit liikkeet pitävät sinut paremmin vauhdissa kuin se että sinkoilet kuin päätön kana.
+    <<RawImgHide>>
+    Minea: Onnea lol
+voit nyt jatkaa.
 ===
 
 title: Teijo1

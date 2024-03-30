@@ -71,6 +71,10 @@ public class MainGameObject : MonoBehaviour
     public void setGameIntKey(int keyInQuestion, byte valueInQuestion)
     {
         gameIntKeys[keyInQuestion] = valueInQuestion;
+        if (keyInQuestion == 294)
+        {
+            s_alwaysHardStrafeInAir = valueInQuestion > 0;
+        }
     }
 
     public int getGameIntKey(int keyInQuestion)
