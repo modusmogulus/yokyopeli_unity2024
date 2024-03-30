@@ -125,6 +125,7 @@ MonoBehaviour:
   damageFx: {fileID: 1887771150516029572}
   fallFx: {fileID: 2439551604984151890}
   m_parkourEnabled: 1
+  m_wallrunningAllowed: 1
 --- !u!114 &5330037063635123958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5506,7 +5507,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5a7a73ba6c9a70c49b77959b0663c8e3, type: 3}
   m_Resource: {fileID: 8300000, guid: 5a7a73ba6c9a70c49b77959b0663c8e3, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.946
   m_Pitch: 1
   Loop: 1

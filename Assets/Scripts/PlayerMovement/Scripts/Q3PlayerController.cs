@@ -51,6 +51,7 @@ namespace Q3Movement
         [SerializeField] public float m_TiltAmount = 1.0f;
         [SerializeField] public AudioSource m_SpeedWindSound;
         [SerializeField] public PostProcessVolume speedEffect;
+        
         private int wallrunningStamina = 0;
         
         public TransitionSettings deathTransition;
@@ -90,7 +91,8 @@ namespace Q3Movement
         public float  health = 100.0f;
         public PostProcessVolume damageFx;
         public PostProcessVolume fallFx;
-        public bool m_parkourEnabled = true;
+        [SerializeField] public bool m_parkourEnabled = true;
+        [SerializeField] public bool m_wallrunningAllowed = true;
         private bool isWallRunning = false;
         private bool hasKickJumped = false;
 
@@ -505,7 +507,9 @@ namespace Q3Movement
         }
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            Wallrun(hit);
+            if (m_wallrunningAllowed) {
+                Wallrun(hit);
+            }
             Kickjump(hit);
             /*
             if (wallrunningStamina > 0) { Wallrun(hit); }
@@ -805,10 +809,6 @@ namespace Q3Movement
             }
 
             //m_HeadAnchor.transform.Rotate(0, 0, Vector3.Dot(transform.right, targetDir) * accel);
-            
-
-
-
             m_PlayerVelocity.x += accelspeed * targetDir.x;
             m_PlayerVelocity.z += accelspeed * targetDir.z;
             

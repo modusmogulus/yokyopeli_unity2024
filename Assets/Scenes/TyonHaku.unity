@@ -10151,24 +10151,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_MouseLook.m_Smooth
+      propertyPath: m_wallrunningAllowed
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_MouseLook.m_LockCursor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_MouseLook.m_SmoothTime
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_MouseLook.m_XSensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_MouseLook.m_YSensitivity
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6308484816837701661, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_Enabled
