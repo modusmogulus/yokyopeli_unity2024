@@ -171,27 +171,28 @@ namespace Q3Movement
             //AudioManager.Instance.PlayAudio("FT_Landing");
             ft_player.PlayOtherMaterialSound(FootstepPlayer.MATERIAL_SOUND_TYPE.LANDING);
             }
-            if (m_currentfallSpeed > 1 && m_PlayerVelocity.magnitude > 10)
+            if (m_currentfallSpeed > 1.5f && m_PlayerVelocity.magnitude > 10)
             {
 
                 ft_player.PlayOtherMaterialSound(FootstepPlayer.MATERIAL_SOUND_TYPE.LANDING);
             }
-            if (m_currentfallSpeed > threshold) {
+            if (m_PlayerVelocity.magnitude < m_currentfallSpeed && m_currentfallSpeed > threshold) {
                 if (Physics.SphereCast(castOrigin, m_Character.radius - .01f, Vector3.down,
                 out var hit, .11f, LayerMask.GetMask("NoFalldamage"), QueryTriggerInteraction.Ignore))
                 {
                     AudioManager.Instance.PlayAudio("SFX_SoftImpact");
                     return;
                 }
-                AudioManager.Instance.PlayAudio("SFX_Damage"); 
-                health = Mathf.Clamp(health - (m_currentfallSpeed * multiplier), 0.0f, maxhp); 
+                AudioManager.Instance.PlayAudio("SFX_Damage");
+                
+                health = Mathf.Clamp(health - (2+m_currentfallSpeed * multiplier), -10.0f, maxhp); 
             
             }
             
         }
         public void DealDamage(float dmg, int type)
         {
-            health = Mathf.Clamp(health - dmg, 0.0f, maxhp);
+            health = Mathf.Clamp(health - dmg, -10.0f, maxhp);
             m_MouseLook.SetTilt(0.4f);
         }
 
@@ -218,7 +219,7 @@ namespace Q3Movement
         private void Update()
         {
             Climb();
-
+            wallrunningStamina += 1;
             // Control Tip Text for parkour roll
             if (MainGameObject.Instance.controlTips != null && m_currentfallSpeed / (40 - 30) > 0.9) { MainGameObject.Instance.controlTips.text = "shift"; }
             else { 
@@ -235,10 +236,9 @@ namespace Q3Movement
             
             if (!indoorWalking) { 
                 targetSpeedSound = Mathf.Clamp((playerHVelo.magnitude - 0.1f) / 20, 0.2f, 1f); //hehee clever lerp juggling :3
-                m_SpeedWindSound.pitch = Mathf.Lerp(m_SpeedWindSound.pitch, 0.4f+(targetSpeedSound*0.6f), Time.deltaTime * 4f);
+                m_SpeedWindSound.pitch = Mathf.Lerp(m_SpeedWindSound.pitch, 0.4f+(targetSpeedSound*0.6f), Time.deltaTime * 8f);
                 targetSpeedSound = Mathf.Clamp((playerHVelo.magnitude - 0.1f) / 20, 0.0f, 1f);
-                m_SpeedWindSound.volume = Mathf.Lerp(m_SpeedWindSound.volume, targetSpeedSound*0.5f, Time.deltaTime * 10f);
-                m_SpeedWindSound.volume = Mathf.Clamp(m_SpeedWindSound.volume, 0.0f, 0.5f);
+                m_SpeedWindSound.volume = Mathf.Clamp(Mathf.Lerp(m_SpeedWindSound.volume, targetSpeedSound*0.5f, 0.1f),0f,1f);
                 Sharpen cameraSharpenScript = m_Camera.GetComponent<Sharpen>();
             
                 speedEffect.weight = Mathf.Lerp(speedEffect.weight, targetSpeedSound, Time.deltaTime * 2f);
@@ -252,7 +252,7 @@ namespace Q3Movement
             isCurrentlyGrounded = m_Character.isGrounded;
             m_MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-            if (MainGameObject.Instance.s_alwaysHardStrafeInAir) {
+            if (!m_WasGrounded && MainGameObject.Instance.s_alwaysHardStrafeInAir && !isWallRunning) {
                 m_MouseLook.SetRotastrafe(true);
                 if (m_MoveInput.x != 0 && m_MoveInput.z != 0)
                 {
@@ -425,23 +425,25 @@ namespace Q3Movement
         private void Wallrun(ControllerColliderHit hit)
         {
             
-            if (Mathf.Abs(Vector3.Dot(hit.normal, Vector3.up)) < 0.1f && m_JumpQueued == true  && wallrunningStamina > 0)
+            if (Mathf.Abs(Vector3.Dot(hit.normal, Vector3.up)) < 0.1f 
+                && Input.GetButton("Jump") && wallrunningStamina > 0) //getbutton jump is better than m_jumpqueued in this context!
             {
-                wallrunningStamina -= 1;
+                wallrunningStamina -= 2;
                 float angleOfAttack;
                 angleOfAttack = Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.forward));
-                if (Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.forward)) < 0.5f)
+                if (Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.forward)) < 0.8f)
                 {
+                    
                     isWallRunning = true;
                     //Wallrun Start
                     Vector3 wallrunVector = new Vector3(0, 10, 0);
 
-                    m_PlayerVelocity += (-hit.normal * 0.1f + m_Head.transform.forward * 10f * wallrunningStamina/m_maxWallrunningStamina * Time.deltaTime * angleOfAttack);
-                    
-                    m_PlayerVelocity.y *= 0.8f;
-                    m_PlayerVelocity.y += 1.5f;
+                    m_PlayerVelocity.y *= 0.05f;
+                    m_PlayerVelocity += (-hit.normal * 0.1f + m_Camera.transform.forward * 10f * wallrunningStamina/m_maxWallrunningStamina * Time.deltaTime * angleOfAttack);
 
-                    m_PlayerVelocity += (hit.normal * m_StrafeSettings.MaxSpeed * 0.6f);
+                    m_PlayerVelocity.y = Vector3.Dot(m_Camera.transform.forward, Vector3.up) * 10f;
+
+                    
                     isWallRunning = true;
                     
 
@@ -460,10 +462,15 @@ namespace Q3Movement
                 isWallRunning = false;
                 if (wasWallrunning)
                 {
+                    m_PlayerVelocity *= 0.1f;
+                    m_PlayerVelocity += (hit.normal * m_StrafeSettings.MaxSpeed * 7f);
+                    m_PlayerVelocity += m_Camera.transform.forward * 10f;
+
                     wallrunningStamina = 0;
                     m_PlayerVelocity.y += 5f; //little jump after wallrunning
-                    AudioManager.Instance.PlayAudio("SFX_Climb");
+                    AudioManager.Instance.PlayAudio("SFX_WallrunEnd");
                     wasWallrunning = false;
+                    
                 }
                 m_wallrunningSoundLoop.volume = 0.0f;
             }
@@ -567,12 +574,13 @@ namespace Q3Movement
 
         void TryBackflip()
         {
-            if (Vector3.Dot(m_PlayerVelocity, transform.forward) < -0.5f && m_MoveInput.z >= 0 && Input.GetKey(KeyCode.Q)) //flip
+            if (Vector3.Dot(m_PlayerVelocity, transform.forward) < -0.5f && m_MoveInput.z >= 0) //flip  && Input.GetKey(KeyCode.Q)
             {
                 //print("Dot product:  " + Vector3.Dot(m_PlayerVelocity, transform.forward));
                 headAnimator.ResetTrigger("Backflip");
                 headAnimator.SetTrigger("Backflip");
                 m_PlayerVelocity.y += 3f;
+                
                 //m_MouseLook.SetSmooth(true, 3f);
             }
         }

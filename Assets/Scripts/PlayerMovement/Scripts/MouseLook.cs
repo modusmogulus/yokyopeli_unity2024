@@ -17,6 +17,7 @@ namespace Q3Movement
         [SerializeField] private bool m_Smooth = false;
         [SerializeField] private float m_SmoothTime = 5f;
         [SerializeField] private bool m_LockCursor = true;
+        [SerializeField] private float m_tiltSmoothness = 3f;
         private bool m_rotastrafe = false;
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
@@ -118,12 +119,15 @@ namespace Q3Movement
             }
         }
 
-
+        float temptilt = 0.0f;
         public void SetTilt(float tilt) {
+            tilt = Mathf.Clamp(tilt, -15f, 15f);
+            temptilt = Mathf.Lerp(temptilt, tilt, 1f/m_tiltSmoothness);
+            
             if (!MainGameObject.Instance.s_disableHeadTilt) { 
                 m_CameraTargetRot = ClampRotationAroundXAxis(Quaternion.Euler(m_CameraTargetRot.eulerAngles.x,
                     m_CameraTargetRot.eulerAngles.y*0.0f, //DANGER DANGER DANGER
-                    tilt));
+                    temptilt * 3.0f));
             }
         }
         public void AddFallTilt(float tilt)

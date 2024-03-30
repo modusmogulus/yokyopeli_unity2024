@@ -54,10 +54,16 @@ MonoBehaviour:
   moneyText: {fileID: 0}
   worthText: {fileID: 0}
   player: {fileID: 0}
+  playerController: {fileID: 0}
   score: 0
   bottles: 0
   money: 0
   worth: 0
   s_reduceNausea: 0
+  s_disableHeadTilt: 0
+  s_alwaysHardStrafeInAir: 1
+  s_disableLoudNoises: 1
   transition: {fileID: 11400000, guid: c9f7b34f761c5c342ada8a4b2ab7a716, type: 2}
   loadDelay: 0
+  displayedCharacterTexture: {fileID: 0}
+  characterDisplayerObject: {fileID: 0}

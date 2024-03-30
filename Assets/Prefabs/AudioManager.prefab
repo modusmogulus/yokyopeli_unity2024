@@ -479,3 +479,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 77cb485ee52d3b449a295d6db9ddba0d, type: 3}
     minPitch: 1
     maxPitch: 1
+  - AudioChan: 0
+    audioName: SFX_WallrunEnd
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: cf0369cb3571bf94bb1442312d41648c, type: 3}
+    - {fileID: 8300000, guid: 28e8266a3ddbb78499bb8c735ca4815c, type: 3}
+    minPitch: 0.6
+    maxPitch: 1
