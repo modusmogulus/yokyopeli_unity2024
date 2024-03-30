@@ -43,11 +43,11 @@ namespace Q3Movement
                 float xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;
                 
                 if (m_Smooth) { 
-                    yRot = Mathf.Clamp(Input.GetAxis("Mouse X") * m_XSensitivity, -m_tiltSmoothness, m_tiltSmoothness); //hell yeah no more jitter :D
-                    xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness, m_tiltSmoothness);
+                    yRot = Mathf.Clamp(Input.GetAxis("Mouse X") * m_XSensitivity, -m_tiltSmoothness*Time.deltaTime*200f, m_tiltSmoothness * Time.deltaTime * 200f); //hell yeah no more jitter :D
+                    xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness * Time.deltaTime * 200f, m_tiltSmoothness * Time.deltaTime * 200f);
                 }
 
-                if (m_rotastrafe) { yRot += Input.GetAxisRaw("Horizontal"); }
+                if (m_rotastrafe && Input.GetAxisRaw("Vertical") <= 0f) { yRot += Input.GetAxisRaw("Horizontal"); }
                 m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
                 m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
