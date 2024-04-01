@@ -112,6 +112,7 @@ namespace Q3Movement
             defaultFOV = m_Camera.fieldOfView;
         }
 
+        
         public IEnumerator CrouchCoroutine()
         {
             m_OriginalHeight = m_Character.height;
@@ -220,6 +221,11 @@ namespace Q3Movement
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                Die();
+            }
+
             Climb();
             wallrunningStamina += 1;
             // Control Tip Text for parkour roll
