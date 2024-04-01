@@ -760,7 +760,7 @@ namespace Q3Movement
                 headAnimator.SetBool("Running", false);
             }
 
-            if (!TowardsWallCheck(1.1f)) { 
+            if (!TowardsWallCheck(0.1f)) { 
                 Accelerate(wishdir, wishspeed, m_GroundSettings.Acceleration);
             }
             else

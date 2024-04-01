@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\MainGameObjectAPI.cs" />
     <Compile Include="Assets\Scripts\MainGameObject.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Unity.VisualScripting.Generated\VisualScripting.Core\AotStubs.cs" />
     <Compile Include="Assets\Scripts\Enemy1.cs" />
     <Compile Include="Assets\Scripts\FootstepPlayer.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\PathObjectEditorData.cs" />
@@ -161,6 +162,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\EasyTransitions\Shaders\MultiplyColor.shader" />
+    <None Include="Assets\Unity.VisualScripting.Generated\VisualScripting.Core\link.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Unlit Transparent.shader" />
     <None Include="Assets\Zololgo\Post Effects\Sharpen\Resources\Shaders\Sharpen.shader" />
