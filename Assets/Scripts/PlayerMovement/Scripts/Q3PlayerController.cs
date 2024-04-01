@@ -53,7 +53,7 @@ namespace Q3Movement
         [SerializeField] public PostProcessVolume speedEffect;
         
         private int wallrunningStamina = 0;
-        
+        private bool isGoingTowardsWall = false;
         public TransitionSettings deathTransition;
         /// <summary>
         /// Returns player's current speed.
@@ -422,7 +422,24 @@ namespace Q3Movement
                 //Debug.Log("Conditions for second raycast hit not met.");
             }
         }
-        
+        private bool TowardsWallCheck(float distance)
+        {
+            var p = transform.position;
+            var d = transform.forward;
+            RaycastHit hit;
+            Physics.Raycast(p, d, out hit, distance);
+            var wallAngle = Vector3.Angle(Vector3.up, hit.normal);
+
+            print("WALL DOT:    " + Vector3.Dot(hit.normal, m_PlayerVelocity));
+            if (Vector3.Dot(hit.normal, m_PlayerVelocity) > -10f &&
+                Vector3.Dot(hit.normal, m_PlayerVelocity) < -1f &&
+                wallAngle > m_Character.slopeLimit)
+            {
+                return true;
+            }
+
+            else {  return false; }
+        }
 
         private void Wallrun(ControllerColliderHit hit)
         {
@@ -433,9 +450,9 @@ namespace Q3Movement
                 wallrunningStamina -= 2;
                 float angleOfAttack;
                 angleOfAttack = Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.forward));
-                if (Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.forward)) < 0.8f)
+                if (Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.forward)) < 0.8f && !isCurrentlyGrounded)
                 {
-                    
+                
                     isWallRunning = true;
                     //Wallrun Start
                     Vector3 wallrunVector = new Vector3(0, 10, 0);
@@ -743,10 +760,13 @@ namespace Q3Movement
                 headAnimator.SetBool("Running", false);
             }
 
-            
-            Accelerate(wishdir, wishspeed, m_GroundSettings.Acceleration);
-            
-
+            if (!TowardsWallCheck(1.1f)) { 
+                Accelerate(wishdir, wishspeed, m_GroundSettings.Acceleration);
+            }
+            else
+            {
+                print("WALL");
+            }
             // Reset the gravity velocity
             m_PlayerVelocity.y = -m_Gravity * Time.deltaTime;
             headAnimator.SetFloat("GroundMoveSpeed", m_PlayerVelocity.magnitude * 0.25f);
