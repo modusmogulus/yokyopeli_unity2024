@@ -590,9 +590,10 @@ namespace Q3Movement
                         
                         var normal = hit.normal;
                         var yInverse = 1f - normal.y;
-                        m_PlayerVelocity.x += yInverse * normal.x;
-                        m_PlayerVelocity.z += yInverse * normal.z;
-                        //m_PlayerVelocity.y -= yInverse * normal.y * m_Gravity * 0.25f;
+                        m_PlayerVelocity.y -= Vector3.Dot(m_PlayerVelocity, normal) * 1.0f;
+                        m_PlayerVelocity.x += (yInverse * normal.x) * m_PlayerVelocity.y;
+                        m_PlayerVelocity.z += (yInverse * normal.z) * m_PlayerVelocity.y;
+                        
                     }
                 }
 
