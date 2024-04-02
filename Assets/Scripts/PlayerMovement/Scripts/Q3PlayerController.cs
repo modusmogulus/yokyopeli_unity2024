@@ -95,6 +95,7 @@ namespace Q3Movement
         [SerializeField] public bool m_wallrunningAllowed = true;
         private bool isWallRunning = false;
         private bool hasKickJumped = false;
+        private bool isOnSlope = false;
 
         private void Start()
         {
@@ -256,8 +257,10 @@ namespace Q3Movement
                     cameraSharpenScript.sharpness = 2 + targetSpeedSound*2;
                 }
             }
-
-            isCurrentlyGrounded = m_Character.isGrounded;
+            if (isOnSlope == false) { 
+                isCurrentlyGrounded = m_Character.isGrounded;
+            }
+            
             m_MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
             if (!m_WasGrounded && MainGameObject.Instance.s_alwaysHardStrafeInAir && !isWallRunning) {
@@ -340,7 +343,7 @@ namespace Q3Movement
                         {
                         if(intentsRoll) { 
                             if (m_currentfallSpeed >= 10.0) {
-                                if (!m_IsRolling && m_Character.isGrounded)
+                                if (!m_IsRolling && isCurrentlyGrounded)
                                     {
                                         hasRolled = true;
                                         StartCoroutine(RollCoroutine());
@@ -375,6 +378,7 @@ namespace Q3Movement
             // Rotate the character and camera.
             m_MouseLook.LookRotation(m_Tran, m_CamTran);
 
+            Debug.DrawLine(transform.position, m_PlayerVelocity * 100f, new Color(1.0f, 0.0f, 1.0f));
             // Move the character.
             m_Character.Move(m_PlayerVelocity * Time.deltaTime);
 
@@ -580,20 +584,25 @@ namespace Q3Movement
                 {
                     var collider = hit.collider;
                     var angle = Vector3.Angle(Vector3.up, hit.normal);
-                    print(angle);
 
-                    print(m_Character.slopeLimit);
                     if (angle > m_Character.slopeLimit)
                     {
+                        print("SLOPE ANGLE:   " + angle);
                         isCurrentlyGrounded = false;
                         var normal = hit.normal;
                         var yInverse = 1f - normal.y;
-                        m_PlayerVelocity.y -= Vector3.Dot(m_PlayerVelocity, normal) * 1.0f;
-                        m_PlayerVelocity.x += (yInverse * normal.x) * m_PlayerVelocity.y;
-                        m_PlayerVelocity.z += (yInverse * normal.z) * m_PlayerVelocity.y;
-                        
+                        m_PlayerVelocity.y -= Vector3.Dot(m_PlayerVelocity, normal);
+                        float xChange = (yInverse * normal.x) * m_PlayerVelocity.y - Vector3.Dot(m_PlayerVelocity, normal);
+                        xChange = Mathf.Clamp(xChange, -Mathf.Abs(m_PlayerVelocity.y), Mathf.Abs(m_PlayerVelocity.y));
+                        m_PlayerVelocity.x += xChange;
+                        float zChange = (yInverse * normal.z) * m_PlayerVelocity.y - Vector3.Dot(m_PlayerVelocity, normal);
+                        zChange = Mathf.Clamp(zChange, -Mathf.Abs(m_PlayerVelocity.y), Mathf.Abs(m_PlayerVelocity.y));
+                        m_PlayerVelocity.z += zChange;
+                        isOnSlope = true;
                     }
+                    else { isOnSlope = false; }
                 }
+                else { isOnSlope = false; }
         }
 
         void TryBackflip()
@@ -751,7 +760,7 @@ namespace Q3Movement
             {
                 wishspeed *= m_GroundSettings.MaxSpeed * 0.8f;
             }
-            if (Mathf.Abs(m_PlayerVelocity.x) + Mathf.Abs(m_PlayerVelocity.z) != 0 && m_Character.isGrounded)
+            if (Mathf.Abs(m_PlayerVelocity.x) + Mathf.Abs(m_PlayerVelocity.z) != 0 && isCurrentlyGrounded)
             {
                 if (intentsRoll == false)
                 {
@@ -791,7 +800,7 @@ namespace Q3Movement
             float drop = 0;
 
             // Only apply friction when grounded.
-            if (m_Character.isGrounded)
+            if (isCurrentlyGrounded)
             {
                 float control = speed < m_GroundSettings.Deceleration ? m_GroundSettings.Deceleration : speed;
                 drop = control * m_Friction * Time.deltaTime * t;
@@ -814,7 +823,6 @@ namespace Q3Movement
             
             m_PlayerVelocity.z *= newSpeed;
 
-            UpdateSlopeSliding();
         }
 
         
