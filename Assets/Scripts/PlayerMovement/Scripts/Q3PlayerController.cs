@@ -322,10 +322,10 @@ namespace Q3Movement
             
             if (isCurrentlyGrounded)
                 {
-                    
-                    GroundMove();
-                    UpdateSlopeSliding();
-                    if (MainGameObject.Instance.controlTips != null && MainGameObject.Instance.controlTips.text == "shift") { MainGameObject.Instance.controlTips.text = ""; }
+                
+                GroundMove();
+                UpdateSlopeSliding();
+                if (MainGameObject.Instance.controlTips != null && MainGameObject.Instance.controlTips.text == "shift") { MainGameObject.Instance.controlTips.text = ""; }
                     m_LandingTimer += Time.deltaTime; // Increment the landing timer when the player is grounded
 
                     if (intentsRoll && m_inRollZone == true && hasRolled == false)
@@ -571,8 +571,6 @@ namespace Q3Movement
 
         void UpdateSlopeSliding()
         {
-            if (isCurrentlyGrounded)
-            {
                 //m_MouseLook.SetSmooth(false, 5f);
                 var sphereCastVerticalOffset = m_Character.height / 2 - m_Character.radius;
                 var castOrigin = transform.position - new Vector3(0, sphereCastVerticalOffset, 0);
@@ -587,7 +585,7 @@ namespace Q3Movement
                     print(m_Character.slopeLimit);
                     if (angle > m_Character.slopeLimit)
                     {
-                        
+                        isCurrentlyGrounded = false;
                         var normal = hit.normal;
                         var yInverse = 1f - normal.y;
                         m_PlayerVelocity.y -= Vector3.Dot(m_PlayerVelocity, normal) * 1.0f;
@@ -596,8 +594,6 @@ namespace Q3Movement
                         
                     }
                 }
-
-            }
         }
 
         void TryBackflip()
@@ -817,6 +813,8 @@ namespace Q3Movement
             m_PlayerVelocity.x *= newSpeed;
             
             m_PlayerVelocity.z *= newSpeed;
+
+            UpdateSlopeSliding();
         }
 
         
