@@ -1,5 +1,6 @@
 using UnityEngine;
 using Q3Movement;
+using static DamageTypes;
 public class BillboardAndDamage : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -35,6 +36,6 @@ public class BillboardAndDamage : MonoBehaviour
     void DealDamage(GameObject player)
     {
         Q3PlayerController playerController = player.GetComponent<Q3PlayerController>();
-        playerController.DealDamage(damageAmount, 1);
+        playerController.DealDamage(damageAmount, DamageTypes.DEFAULT);
     }
 }

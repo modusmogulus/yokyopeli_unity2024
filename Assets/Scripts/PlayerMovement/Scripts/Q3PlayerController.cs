@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using EasyTransition;
+using static DamageTypes;
 
 namespace Q3Movement
 {
@@ -51,7 +52,7 @@ namespace Q3Movement
         [SerializeField] public float m_TiltAmount = 1.0f;
         [SerializeField] public AudioSource m_SpeedWindSound;
         [SerializeField] public PostProcessVolume speedEffect;
-        
+        private DamageTypes lastDamageType;
         private int wallrunningStamina = 0;
         private bool isGoingTowardsWall = false;
         public TransitionSettings deathTransition;
@@ -97,12 +98,23 @@ namespace Q3Movement
         private bool hasKickJumped = false;
         private bool isOnSlope = false;
 
+
+        //IMPORTANT ABOUT snowInBoots:
+        //----------- * snowInBoots is mostly handled in FootstepPlayer script * -----------
+        //FootstepPlayer can be found in the object called Head (or whatever Body idk)
+        //Snow in boots is also handled in: GameObject, MainUIScript (on canvas), FootstepPlayer, Q3PlayerController
+        //It is handled in footstep player to SYNC walking and snow in boots
+        //Also capslock is to help future you with ADHD, not for agressive tone :3
+
+        private int snowInBoots = 0;
+        private bool snowBootMechanics = false;
+
         private void Start()
         {
             health = maxhp;
             m_Tran = transform;
             m_Character = GetComponent<CharacterController>();
-
+            
             if (!m_Camera)
                 m_Camera = Camera.main;
 
@@ -164,6 +176,22 @@ namespace Q3Movement
             hasRolled = true;
         }
         
+        public int GetSnowInBoots()
+        {
+            return snowInBoots;
+        }
+
+        public int SetSnowInBoots(int value)
+        {
+            snowInBoots = value;
+            return value;
+        }
+
+        public bool GetSnowBootMechanics(bool value) { return snowBootMechanics; }
+        public bool SetSnowBootMechanics(bool value) { return snowBootMechanics = value; }
+
+        
+
         private void ApplyFallDamage(float multiplier, float threshold)
         {
             var sphereCastVerticalOffset = m_Character.height / 2 - m_Character.radius;
@@ -194,10 +222,15 @@ namespace Q3Movement
             }
             
         }
-        public void DealDamage(float dmg, int type)
+        public DamageTypes GetLastDmgType() { return lastDamageType; }
+        public DamageTypes SetLastDmgType(DamageTypes value) { return lastDamageType = value; }
+
+        public void DealDamage(float dmg, DamageTypes damageType)
         {
+            SetLastDmgType(damageType);
             health = Mathf.Clamp(health - dmg, -10.0f, maxhp);
             m_MouseLook.SetTilt(0.4f);
+            if(health <= 0) { Die(); }
         }
 
         private void Die()
@@ -562,6 +595,7 @@ namespace Q3Movement
                     //headAnimator.ResetTrigger("Jump");
                     //headAnimator.SetTrigger("Jump");
                     m_JumpQueued = true;
+                    
 
                 }
 
@@ -592,10 +626,10 @@ namespace Q3Movement
                         var normal = hit.normal;
                         var yInverse = 1f - normal.y;
                         m_PlayerVelocity.y -= Vector3.Dot(m_PlayerVelocity, normal);
-                        float xChange = (yInverse * normal.x) * m_PlayerVelocity.y - Vector3.Dot(m_PlayerVelocity, normal);
+                        float xChange = (yInverse * normal.x) * Vector3.Dot(m_PlayerVelocity, normal);
                         xChange = Mathf.Clamp(xChange, -Mathf.Abs(m_PlayerVelocity.y), Mathf.Abs(m_PlayerVelocity.y));
                         m_PlayerVelocity.x += xChange;
-                        float zChange = (yInverse * normal.z) * m_PlayerVelocity.y - Vector3.Dot(m_PlayerVelocity, normal);
+                        float zChange = (yInverse * normal.z) * Vector3.Dot(m_PlayerVelocity, normal);
                         zChange = Mathf.Clamp(zChange, -Mathf.Abs(m_PlayerVelocity.y), Mathf.Abs(m_PlayerVelocity.y));
                         m_PlayerVelocity.z += zChange;
                         isOnSlope = true;

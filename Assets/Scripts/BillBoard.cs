@@ -14,7 +14,7 @@ public class BillBoard : MonoBehaviour
     void Update()
     {
         if(Camera.current != null) {
-            transform.LookAt(Camera.current.transform);
+            transform.LookAt(Camera.main.transform);
         }
     }
 }

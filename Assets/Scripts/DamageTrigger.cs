@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Q3Movement;
-
+using static DamageTypes;
 public class DamageTrigger : MonoBehaviour
 {
     public float damageAmount;
@@ -30,6 +30,6 @@ public class DamageTrigger : MonoBehaviour
     void DealDamage(GameObject player)
     {
         Q3PlayerController playerController = player.GetComponent<Q3PlayerController>();
-        playerController.DealDamage(damageAmount, 1);
+        playerController.DealDamage(damageAmount, DamageTypes.DEFAULT);
     }
 }

@@ -27,6 +27,7 @@ namespace Q3Movement
         {
             m_CharacterTargetRot = character.localRotation;
             m_CameraTargetRot = camera.localRotation;
+            
         }
 
         public void SetSmooth(bool value, float smoothtime)

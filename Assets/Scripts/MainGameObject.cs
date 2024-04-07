@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using EasyTransition;
 using Q3Movement;
 using UnityEngine.UI;
+
 public class MainGameObject : MonoBehaviour
 {
 
@@ -23,6 +24,7 @@ public class MainGameObject : MonoBehaviour
     public int bottles = 0;
     public float money = 0;
     public float worth = 0;
+
     //Accessibility settings (s_ prefix stands for settings)
     public bool s_reduceNausea = false;
     public bool s_disableHeadTilt = false;
@@ -34,7 +36,8 @@ public class MainGameObject : MonoBehaviour
     byte[] gameIntKeys = new byte[2048];
     public Texture displayedCharacterTexture;
     public RawImage characterDisplayerObject;
-
+    public GameObject mainCanvas;
+    
 
     public static MainGameObject Instance { get; private set; }
 
@@ -49,7 +52,6 @@ public class MainGameObject : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-
     }
 
     public void setJob(bool value)

@@ -5360,6 +5360,7 @@ MonoBehaviour:
   - FT_Snow1
   - FT_Roof
   defaultSound: FT_Default
+  snowMaterial: {fileID: 13400000, guid: 6d231c0a2b5ea634ba1ce51e35cdee19, type: 2}
   soundToPlayOnLanding:
   - FT_Landing
   - FT_Plate
