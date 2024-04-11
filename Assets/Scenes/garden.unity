@@ -8942,6 +8942,26 @@ PrefabInstance:
       propertyPath: _RetroLightingNormalFactor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3714525838694339294, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: zeta
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714525838694339294, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: passes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714525838694339294, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: useZeta
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714525838694339294, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: hardness
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3714525838694339294, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: kernelSize
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4823476144554600807, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_Enabled
       value: 1

@@ -43,9 +43,10 @@ namespace Q3Movement
 
         private void OnGUI()
         {
-            GUI.Box(new Rect(0, 0, 130, 60),
+            GUI.Box(new Rect(0, 0, 230, 60),
                 "FPS: " + m_FPS + "\n" +
                 "Speed: " + Mathf.Round(m_Player.Speed * 100) / 100 + " (ups)\n" +
+                "Speed IRL: " + Mathf.Round(m_Player.Speed * 320) / 100 + " (km/h)\n" +
                 "Top: " + Mathf.Round(m_TopSpeed * 100) / 100 + " (ups)");
 
 

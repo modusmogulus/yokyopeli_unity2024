@@ -5,7 +5,7 @@ Can you write me a Unity script called Footstep_Player which:
 2: Has a function called PlayFootstepSound which will cast a ray 1 meter downwards and call Audiomanager.Instance.Play(PhysSound)
 3.Has a string called PhysSound which will be set to the string in soundToPlay of same index as the PhysMat which is returned by the raycast
 */
-
+using static DamageTypes;
 public class FootstepPlayer : MonoBehaviour
 {
     public PhysicMaterial[] physMaterials;
@@ -43,11 +43,27 @@ public class FootstepPlayer : MonoBehaviour
                     AudioManager.Instance.PlayAudio(defaultSound);
                 }
 
+
+                int index = System.Array.IndexOf(physMaterials, hitPhysMaterial);
+
+                if (index != -1 && index < soundToPlay.Length)
+                {
+
+                    print(physSound);
+                    physSound = soundToPlay[index];
+
+                    AudioManager.Instance.PlayAudio(physSound, transform.position);
+                }
+
                 // ----------------------------------------------------- Snow in boots mechanics stuff -----------------------------------------------------
-                if (hitPhysMaterial == snowMaterial) { 
+                if (hitPhysMaterial == snowMaterial)
+                {
                     MainGameObject.Instance.playerController.SetSnowInBoots(
-                        MainGameObject.Instance.playerController.GetSnowInBoots() + 1
+                        Mathf.Clamp(MainGameObject.Instance.playerController.GetSnowInBoots() + 1, 0, 9)
                     );
+                    if (MainGameObject.Instance.playerController.GetSnowInBoots() >= 8 && MainGameObject.Instance.playerController.health > 41) {
+                        MainGameObject.Instance.playerController.DealDamage(3, DamageTypes.FROZEN);
+                    }
                     MainGameObject.Instance.mainCanvas.GetComponent<MainUIScript>().snowBootIndicator.sprite =
                     MainGameObject.Instance.mainCanvas.GetComponent<MainUIScript>().snowBootIndicatorSprites[MainGameObject.Instance.playerController.GetSnowInBoots()];
                 }
@@ -61,16 +77,7 @@ public class FootstepPlayer : MonoBehaviour
                 }
                 // ----------------------------------------------------- Snow in boots mechanics stuff -----------------------------------------------------
 
-                int index = System.Array.IndexOf(physMaterials, hitPhysMaterial);
 
-                if (index != -1 && index < soundToPlay.Length)
-                {
-
-                    print(physSound);
-                    physSound = soundToPlay[index];
-
-                    AudioManager.Instance.PlayAudio(physSound, transform.position);
-                }
             }
         }
     }

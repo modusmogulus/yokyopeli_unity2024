@@ -5131,6 +5131,7 @@ GameObject:
   - component: {fileID: 70849309228882685}
   - component: {fileID: 3082383134894919933}
   - component: {fileID: 4425178524066918402}
+  - component: {fileID: 3714525838694339294}
   m_Layer: 3
   m_Name: Camera
   m_TagString: MainCamera
@@ -5292,6 +5293,27 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3714525838694339294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2307967245490033649}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48690ec58fb591c44b5968d209bb519d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kuwaharaShader: {fileID: 4800000, guid: 1c7634a2e02bda64a9225bba8e93f537, type: 3}
+  kernelSize: 3
+  sharpness: 5.94
+  hardness: 100
+  alpha: 2
+  zeroCrossing: 0.464
+  useZeta: 1
+  zeta: 3
+  passes: 1
 --- !u!1 &2326005426936761253
 GameObject:
   m_ObjectHideFlags: 0
@@ -5403,7 +5425,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8171726364756705759}
   - component: {fileID: 9142662333023336869}
-  - component: {fileID: 8824033483583008603}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -5477,14 +5498,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &8824033483583008603
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3256909131784017383}
-  m_Enabled: 1
 --- !u!1 &3410813039701872384
 GameObject:
   m_ObjectHideFlags: 0

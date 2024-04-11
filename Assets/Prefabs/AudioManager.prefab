@@ -498,3 +498,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 28e8266a3ddbb78499bb8c735ca4815c, type: 3}
     minPitch: 0
     maxPitch: 1
+  - AudioChan: 0
+    audioName: UI_DamageTing
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: a839ab607a33af9499767b2186d4f8fb, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: UI_RegenTing
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 1941601e86b88fd40afe3a823859dec2, type: 3}
+    minPitch: 1
+    maxPitch: 1

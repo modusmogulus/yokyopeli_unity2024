@@ -626,6 +626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
   damageAmount: 200
+  destroyOnDamage: 0
 --- !u!1 &146784377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3977,7 +3978,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1264708904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5002,7 +5003,9 @@ MonoBehaviour:
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
-  m_AfterStackBundles: []
+  m_AfterStackBundles:
+  - assemblyQualifiedName: VHS, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &1542610410
 GameObject:
   m_ObjectHideFlags: 0
