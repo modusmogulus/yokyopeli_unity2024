@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{01ad7d74-94f2-418d-a85c-e85898f2b2de}">
+		<property name="assetPath">
+			<value>yk_wallrunloop.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8399999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9d82a51b-74d6-4c62-91f5-41a26ac7795b}</destination>
+		</relationship>
+	</object>
+</objects>

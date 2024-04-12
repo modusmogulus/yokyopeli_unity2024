@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>UNITY_2023_2_2;UNITY_2023_2;UNITY_2023;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_2023_1_OR_NEWER;UNITY_2023_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CLOTH;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;ENABLE_NULLDEPTHBUFFER;RENDER_SOFTWARE_CURSOR;ENABLE_MARSHALLING_TESTS;ENABLE_VIDEO;ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;TEXTCORE_1_0_OR_NEWER;PLATFORM_WEBGL;UNITY_WEBGL;UNITY_WEBGL_API;UNITY_DISABLE_WEB_VERIFICATION;UNITY_GFX_USE_PLATFORM_VSYNC;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_SPATIALTRACKING;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2023_2_2;UNITY_2023_2;UNITY_2023;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;UNITY_2023_1_OR_NEWER;UNITY_2023_2_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CLOTH;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_ENGINE_CODE_STRIPPING;ENABLE_ONSCREEN_KEYBOARD;ENABLE_MANAGED_UNITYTLS;ENABLE_NULLDEPTHBUFFER;RENDER_SOFTWARE_CURSOR;ENABLE_MARSHALLING_TESTS;ENABLE_VIDEO;ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;TEXTCORE_1_0_OR_NEWER;PLATFORM_WEBGL;UNITY_WEBGL;UNITY_WEBGL_API;UNITY_DISABLE_WEB_VERIFICATION;UNITY_GFX_USE_PLATFORM_VSYNC;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_SPATIALTRACKING;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;STEAMAUDIO_ENABLED;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
@@ -131,13 +131,17 @@
     <Compile Include="Assets\Scripts\MainUIScript.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\FMODBanks\abc\Metadata\Event\{1de063b2-cdd2-499a-81e8-30df4ba2bf5e}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Mixer.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\ProfilerFolder\{a7541a37-f304-4d66-b204-5824f9ac15fb}.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-VertexLitTransparentCutout.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-UnlitTransparentCutout.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Lite-UnlitTransparentCutout.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Master.xml" />
     <None Include="Assets\EasyTransitions\Shaders\AdditiveColor.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\ImageEffects\PSX-Pixelation.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\ImageEffects\PSX-Interlacing.shader" />
@@ -150,14 +154,21 @@
     <None Include="Assets\Kuwahara Filter\Kuwahara.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Utils.cginc" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Asset\{9d82a51b-74d6-4c62-91f5-41a26ac7795b}.xml" />
+    <None Include="Assets\FMODBanks\abc\Metadata\SnapshotGroup\{4541a122-1fd3-4c39-9b3c-f8ae02549b54}.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-VertexLit.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\ImageEffects\PSX-Dithering.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\EventFolder\{68e15d30-3feb-4d1f-8857-8ff722a83c1b}.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\ImageEffects\PSX-PostProcess.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\SandboxFolder\{ae6403ac-930d-4e9d-a431-f7e337251788}.xml" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Tags.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Lite-VertexLitTransparentCutout.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Bank\{51b57edc-98a3-44bf-9af6-849c802efdde}.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Lite-UnlitTransparent.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-VertexLitTransparent.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Return\{149cb42a-2e08-482e-ad96-58bfdc5f14f0}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -168,20 +179,29 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\EasyTransitions\Shaders\MultiplyColor.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\AudioFile\{01ad7d74-94f2-418d-a85c-e85898f2b2de}.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Unlit Transparent.shader" />
     <None Include="Assets\Zololgo\Post Effects\Sharpen\Resources\Shaders\Sharpen.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Platform\{11e171b7-2fc6-4034-b8c0-7160034bd70d}.xml" />
     <None Include="Assets\Kuwahara Filter\AnisotropicKuwahara.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Unlit.shader" />
     <None Include="Assets\Zololgo\Post Effects\Sharpen\Docs\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\BankFolder\{4f8d1fce-8e13-4419-b3c9-c1984c56a374}.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-UnlitTransparent.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Lite-VertexLit.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Event\{57b95d03-5edc-4a6e-8989-f8a916f4d4e2}.xml" />
+    <None Include="Assets\FMODBanks\abc\Metadata\EncodingSetting\{e39bf45e-c32f-46ee-8794-a108b340b30a}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\ImageEffects\PSX-PostProcess-Accurate.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Bank\{dff73ebe-203f-43ba-a313-56f949d029e1}.xml" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\FMODBanks\abc\Metadata\ParameterPresetFolder\{de792751-247d-4249-a243-2ec2ddb98f4c}.xml" />
+    <None Include="Assets\FMODBanks\abc\Metadata\EffectPresetFolder\{a32da751-bd39-473c-a2dc-ccc675a9a9aa}.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\FMODBanks\abc\Metadata\Workspace.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Lite-Unlit.shader" />
     <None Include="Assets\Materials\NewSurfaceShader.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Lite-VertexLitTransparent.shader" />
@@ -1386,9 +1406,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="FMODUnityResonance.csproj">
+      <Project>{23AD24BC-7F1C-470F-19CE-66869CEDC168}</Project>
+      <Name>FMODUnityResonance</Name>
+    </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Test.csproj">
       <Project>{3019932B-3C66-162B-AA34-D50499C306F4}</Project>
       <Name>NaughtyAttributes.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityEditor.csproj">
+      <Project>{D0E77A0E-F3D2-1AC3-A275-04F9D79E401C}</Project>
+      <Name>FMODUnityEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnityResonanceEditor.csproj">
+      <Project>{5E7B1E91-8A35-6FE0-9E84-F5C5DA9221C5}</Project>
+      <Name>FMODUnityResonanceEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="FMODUnity.csproj">
+      <Project>{530DB25A-6F19-56C6-CC5B-C63B8982AEA5}</Project>
+      <Name>FMODUnity</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamAudioUnityEditor.csproj">
+      <Project>{1F37B045-2E6E-11C1-C452-B71B1E7452E8}</Project>
+      <Name>SteamAudioUnityEditor</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
       <Project>{47F4B1D3-9602-C638-E6F2-26385B0A237F}</Project>
@@ -1397,6 +1437,10 @@
     <ProjectReference Include="NaughtyAttributes.Editor.csproj">
       <Project>{6861A3B7-A327-0087-7640-256122737D6F}</Project>
       <Name>NaughtyAttributes.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamAudioUnity.csproj">
+      <Project>{8A55E707-C9D7-FE55-F75C-4ACA3EA353FA}</Project>
+      <Name>SteamAudioUnity</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
