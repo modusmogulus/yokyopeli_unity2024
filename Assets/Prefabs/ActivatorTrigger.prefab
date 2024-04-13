@@ -132,16 +132,17 @@ MonoBehaviour:
   soundToPlay: 
   delay: 0
   requireGameIntKey: 0
-  gameIntKey: 0
+  setGameIntKey: 0
   gameIntKeyName: 
   gameIntValue: 0
-  EventDescription: 
+  eventDescription: 
   targetIsGUI: 0
   startDialogue: 0
   cost: 0
   yarnDialogueNode: 
   dialogueRunner: {fileID: 0}
   GIKManagerPrefab: {fileID: 307039120875319682, guid: 77a65c4a0a23a1e478cd6cf1aab9380e, type: 3}
+  editorYarnFile: {fileID: -8253061345870894857, guid: 9f0920a0b9f42b14598dcc415e2a0161, type: 3}
 --- !u!114 &7755692580323476981
 MonoBehaviour:
   m_ObjectHideFlags: 0

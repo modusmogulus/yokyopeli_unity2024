@@ -44,4 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0acde19001199184ea04ef1b75ec0a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GIKClasses: []
+  GIKClasses:
+  - name: ActivatorTrigger (1)
+    description: '-'
+    value: 0
+    whoCalled: {fileID: 0}

@@ -91,7 +91,7 @@ public class ActivatorTrigger : MonoBehaviour
     [Button("Add Game Int Key Event")]
     public void AddGIK() {
         GIKS GIKSComp = GIKManagerPrefab.GetComponent<GIKS>();
-        GIKSComp.AddGIKOfName(name, gameIntValue, eventDescription);
+        GIKSComp.AddGIKOfName(name, 0, eventDescription);
         GIKSComp.GetGIKByName(name).whoCalled = this.gameObject;
         PrefabUtility.SaveAsPrefabAsset(GIKManagerPrefab, AssetDatabase.GetAssetPath(GIKManagerPrefab));
     }
@@ -101,6 +101,15 @@ public class ActivatorTrigger : MonoBehaviour
         GIKS GIKSComp = GIKManagerPrefab.GetComponent<GIKS>();
         AssetDatabase.OpenAsset(GIKManagerPrefab);
     }
+
+    public TextAsset editorYarnFile;
+    [Button("Open Yarn Project (selector only for editor - doesnt change anything ingame)")]
+    public void EditorOpenYarnThing()
+    {
+        AssetDatabase.OpenAsset(editorYarnFile);
+    }
+
+
     [Button("MakeSelfInvisible")]
     public void MakeSelfInvisible() 
     {
