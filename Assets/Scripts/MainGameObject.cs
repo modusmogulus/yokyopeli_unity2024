@@ -37,6 +37,7 @@ public class MainGameObject : MonoBehaviour
     public Texture displayedCharacterTexture;
     public RawImage characterDisplayerObject;
     public GameObject mainCanvas;
+    public GameObject GIKSManager;
     public string GameIntKeyDebugText;
         public static MainGameObject Instance { get; private set; }
 
@@ -50,7 +51,7 @@ public class MainGameObject : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            gameObject.AddComponent<GIKS>();
+            Instantiate(GIKSManager);
         }
     }
 
