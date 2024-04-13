@@ -91,8 +91,8 @@ public class ActivatorTrigger : MonoBehaviour
     [Button("Add Game Int Key Event")]
     public void AddGIK() {
         GIKS GIKSComp = GIKManagerPrefab.GetComponent<GIKS>();
-        GIKSComp.AddGIKOfName(name, 0, eventDescription);
-        GIKSComp.GetGIKByName(name).whoCalled = this.gameObject;
+        GIKSComp.AddGIKOfName(gameIntKeyName, 0, eventDescription);
+        GIKSComp.GetGIKByName(gameIntKeyName).whoCalled = this.gameObject;
         PrefabUtility.SaveAsPrefabAsset(GIKManagerPrefab, AssetDatabase.GetAssetPath(GIKManagerPrefab));
     }
 
@@ -185,11 +185,12 @@ public class ActivatorTrigger : MonoBehaviour
         if (isInRange == true) {
             delayInProgress = false;
                 if (cost <= MainGameObject.Instance.money || cost == 0) { 
-                    if (requireGameIntKey == true)
+                    if (requireGameIntKey == true || setGameIntKey == true)
                     {
-                        print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
-                        print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
-                        if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true) {
+                        if (setGameIntKey == true)
+                        {
+                            print("Trying to set" + gameIntKeyName + "to " + gameIntValue);
+                            GIKS.Instance.SetGIKByName(gameIntKeyName, gameIntValue);
                             if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                             if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
                             if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
@@ -199,20 +200,23 @@ public class ActivatorTrigger : MonoBehaviour
                             }
                             if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                         }
-
+                        if (requireGameIntKey == true)
+                        { 
+                            print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
+                            print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
+                            if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true) {
+                                if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+                                if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                                if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
+                                if (targetIsGUI == true)
+                                {
+                                    ShowUI();
+                                }
+                                if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                            }
+                        }
                     }
-                if (setGameIntKey == true)
-                {
-                    GIKS.Instance.SetGIKByName(name, gameIntValue);
-                    if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
-                    if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                    if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                    if (targetIsGUI == true)
-                    {
-                        ShowUI();
-                    }
-                    if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
-                }
+                    
                 else
                 {
                     if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }

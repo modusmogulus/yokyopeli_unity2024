@@ -57,7 +57,7 @@ public class GIKS : MonoBehaviour
     {
         string text = "";
         text = "";
-        for (int i = 0; i < GIKClasses.Count; i++)
+        for (int i = 0; i <= GIKClasses.Count; i++)
         {
             if (GIKClasses[i].value == 0)
             {
@@ -91,53 +91,54 @@ public class GIKS : MonoBehaviour
         return GIKClasses[index].value == reqValue;
     }
 
-    public GIK GetGIKByName(string name)
+    public GIK GetGIKByName(string GIKname)
     {
-        for (int i = 0; i < GIKClasses.Count; i++)
+        for (int i = 0; i <= GIKClasses.Count; i++)
         {
-            if (GIKClasses[i].name.ToUpper() == name.ToUpper())
+            if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper())
             {
                 return GIKClasses[i];
             }
         }
-        print("Wdym by GetGIKByName(" + name + ")??" + "-- No GIK with name" + name + " was found??");
+        print("Wdym by GetGIKByName(" + GIKname + ")??" + "-- No GIK with GIKname" + GIKname + " was found??");
         return new GIK();
     }
 
-    public bool GetGIKEqualsByName(string name, byte value)
+    public bool GetGIKEqualsByName(string GIKname, byte value)
     {
-        for (int i = 0; i < GIKClasses.Count; i++)
+        for (int i = 0; i <= GIKClasses.Count; i++)
         {
-            if (GIKClasses[i].name.ToUpper() == name.ToUpper())
+            if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper())
             {
                 return GIKClasses[i].value == value;
             }
         }
 
-        print("No GIK with name  " + name + "  was found!");
+        print("No GIK with GIKname  " + GIKname + "  was found!");
         return false;
     }
 
-    public void SetGIKByName(string name, byte value)
+    public void SetGIKByName(string GIKname, byte value)
     {
-        for (int i = 0; i < GIKClasses.Count; i++)
+        for (int i = 0; i <= GIKClasses.Count; i++)
         {
-            if (GIKClasses[i].name.ToUpper() == name.ToUpper())
+            if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper())
             {
+                print("GIK named  " + GIKname + "  was set to  " + value);
                 GIKClasses[i].value = value;
             }
         }
 
-        print("No GIK with name  " + name + "  was found!");
+        print("No GIK with GIKname  " + GIKname + "  was found!");
     }
 
-    public void AddGIKOfName(string name, byte value, string description)
+    public void AddGIKOfName(string GIKname, byte value, string description)
     {
         GIK createdItem = new GIK();
-        createdItem.name = name;
+        createdItem.name = GIKname;
         createdItem.value = value;
         createdItem.description = description;
         GIKClasses.Add(createdItem);
-        print("Game Int Key" + name + " created at index: " + GIKClasses.Count );
+        print("Game Int Key" + GIKname + " created at index: " + GIKClasses.Count );
     }
 }

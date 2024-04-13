@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GIKClasses:
-  - name: ActivatorTrigger (1)
+  - name: TEST
     description: '-'
     value: 0
     whoCalled: {fileID: 0}

@@ -473,7 +473,6 @@ namespace Q3Movement
             Physics.Raycast(p, d, out hit, distance);
             var wallAngle = Vector3.Angle(Vector3.up, hit.normal);
 
-            print("WALL DOT:    " + Vector3.Dot(hit.normal, m_PlayerVelocity));
             if (Vector3.Dot(hit.normal, m_PlayerVelocity) > -10f &&
                 Vector3.Dot(hit.normal, m_PlayerVelocity) < -1f &&
                 wallAngle > m_Character.slopeLimit)
@@ -621,7 +620,7 @@ namespace Q3Movement
 
                     if (angle > m_Character.slopeLimit)
                     {
-                        print("SLOPE ANGLE:   " + angle);
+
                         isCurrentlyGrounded = false;
                         var normal = hit.normal;
                         var yInverse = 1f - normal.y;
@@ -811,7 +810,7 @@ namespace Q3Movement
             }
             else
             {
-                print("WALL");
+
             }
             // Reset the gravity velocity
             m_PlayerVelocity.y = -m_Gravity * Time.deltaTime;
