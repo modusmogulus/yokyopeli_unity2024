@@ -50,7 +50,7 @@ public class MainGameObject : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            gameObject.AddComponent<GIKS>;
+            gameObject.AddComponent<GIKS>();
         }
     }
 
