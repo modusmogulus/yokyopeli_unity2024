@@ -99,6 +99,7 @@ public class GIKS : MonoBehaviour
             {
                 return GIKClasses[i];
             }
+
         }
         print("Wdym by GetGIKByName(" + GIKname + ")??" + "-- No GIK with GIKname" + GIKname + " was found??");
         return new GIK();
@@ -127,6 +128,12 @@ public class GIKS : MonoBehaviour
                 print("GIK named  " + GIKname + "  was set to  " + value);
                 GIKClasses[i].value = value;
             }
+
+            if (GIKClasses[i].name.ToUpper() == "S_HARDSTRAFE") //s_alwaysHardStrafeInAir -- hard coded!
+            {
+                MainGameObject.Instance.s_alwaysHardStrafeInAir = value > 0;
+            }
+
         }
 
         print("No GIK with GIKname  " + GIKname + "  was found!");

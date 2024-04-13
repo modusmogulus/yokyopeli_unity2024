@@ -49,3 +49,7 @@ MonoBehaviour:
     description: '-'
     value: 0
     whoCalled: {fileID: 0}
+  - name: S_HARDSTRAFE
+    description: "!!!! Muuttaa MGO:n asetuksia! Kovakoodattu GIKS scriptiss\xE4 !!!!"
+    value: 0
+    whoCalled: {fileID: 0}

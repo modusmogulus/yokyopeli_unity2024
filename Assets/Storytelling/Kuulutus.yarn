@@ -39,7 +39,7 @@ position: -194,302
 Sinä: No niin herra huru-ukko, pysytäänpäs nyt jalat-maassa. Kirja-kerho voisi sopia teille mitä parahultaisimmin, ainakin puhutte varsin tuota... kirjallisesti.
 <<Act Kuulutus Porvari left center green>>
 Kuulutus: Nipin napin kaikki syömään! Ruoka-tauko kestää 5 minuuttia!
-<<SetGameInt 501 1>> //Lisää oven ruokailuun
+//<<SetGameInt 501 1>> //Lisää oven ruokailuun
 <<jump EndDia>>
 ===
 
@@ -103,7 +103,7 @@ Minea: Eli toisinsanoen kiihdyttää sinua. Patalassa, haukkojen valtakunnassa l
 Minea: <color=blue> Kalan tie</color> ja <color=yellow>Mateknörtin tie </color> 
 Minea: <color=blue> Kalan tie on ihan vitun perseestä aluksi </color> ja <color=yellow> Mateknörtin tie on vitun perseestä paitsi jos osaat jo laukata aka "B-hopata". </color> Kumpikaan ei taida kuulostaa erityisemmin kutkuttavalta. Damned if you do, damned if you don't xddd
 -> <color=blue> Kalan tie </color>
-    <<SetGameInt 294 1>>
+    <<Hokkus S_HARDSTRAFE 0>>
     <<RawImgAct tut1>> 
     Oukkidoukki, kun liikut sivulle ilmassa, <color=yellow>käännyt AUTOMAATTISESTI</color> myös sivulle. 
     <<RawImgAct tut2>> 
@@ -115,7 +115,7 @@ Minea: <color=blue> Kalan tie on ihan vitun perseestä aluksi </color> ja <color
     <<RawImgHide>>
     Minea: Onnea lol
 -> <color=yellow> Mateknörtin tie </color> 
-    <<SetGameInt 294 0>>
+    <<Hokkus S_HARDSTRAFE 1>>
     <<RawImgAct tut2>> 
     Minea: Ok ok, rouva kaikkitietäväinen. Jos kerta olet niin taitava niin anna sitten palaa, mutta älä tule inisemään minulle.
     Minea: Vielä varmuuden varalta, muista että jarrutat saatanasti jos painat samaan aikaan 'W' ja strafeat ilmassa.
@@ -150,13 +150,12 @@ Teijo: No ei erityisemmin
         Sinä: Anteeksi anteeksi Teijo, voimme sopia että saat kaksi Sinkku Boonusta ja papukaijan merkin ^.^
         <<jump EndDia>>
     -> Kiroile
-        *Sinun täytyy turhautua enemmän jotta voisit kiroilla töissä:(*z
+        *Sinun täytyy turhautua enemmän jotta voisit kiroilla töissä:(  
     <<jump EndDia>>
 -> Mielistele
     Sinä: Selvä juttu Teijo, soitan huomenna uudestaan että jos se mieli muuttuu. Teillä on rentouttava ääni ^.^
 -> Kiroile
-    <<Hokkus Kiroilu 1>>
-    Sinä: *Sinun täytyy turhautua enemmän jotta voisit kiroilla töissä:(*z
+    Sinä: *Sinun täytyy turhautua enemmän jotta voisit kiroilla töissä:(    
     <<jump EndDia>>
 ===
 title: Villiam1
@@ -221,7 +220,7 @@ Pasi: Olet selvästi yrittänyt paljon mutta työn tuotoksesi on ollut... kehnoa
         Sinä: Minua hämmentää sillä ei minulla ei ole mitään josta ammentaa!! Tein työni kyllä ihan hyvin, sinun on ihan turha niuhottaa siinä herra humppaveikko.
 Pasi: Ymmärräthän että sinulla on voimassa karessi ettet pääse täältä ihan tuosta vaan pois jos haluat itseäsi elättää. Palaappa takaisin työn touhuun.
 <<AMPlayAudio M_Poison>>
-<<SetGameInt 502 1>> //Vaihtaa puhelinmyynti A -> puhelinmyynti B
+//<<SetGameInt 502 1>> //Vaihtaa puhelinmyynti A -> puhelinmyynti B
 <<else>>
 Huci Gui VI: Takaisin töihin siitä. Mene tietokoneellesi ja sassiin
 <<endif>>
@@ -294,7 +293,7 @@ position: 405,-450
 ---
 
 Kassa: Nyt ei kyllä rahat riitä. Menisit töihin tai edes palauttaisit pulloja
-<<SetGameInt 301 1>> //Näpistysmoodi
+//<<SetGameInt 301 1>> //Näpistysmoodi
 ===
 
 title: Kaupat
@@ -303,7 +302,7 @@ colorID: 1
 position: 405,-450
 ---
 Kassa: Kiitos kaupoista!
-<<SetGameInt 301 0>> //Näpistysmoodi pois
+//<<SetGameInt 301 0>> //Näpistysmoodi pois
 ===
 
 title: Napistys
@@ -313,7 +312,7 @@ position: 405,-450
 ---
 Paskanmarjat! Jäit näpisyksestä kiinni...
 Myös bussi lähtee pian, koita ehtiä sinne!!
-<<SetGameInt 300 1>>
+//<<SetGameInt 300 1>>
 ===
 
 
@@ -323,7 +322,6 @@ colorID: 1
 position: 405,-450
 ---
 Nyt nipin napin töihin! Bussi lähtee pian
-<<SetGameInt 300 1>>
 ===
 
 title: Tutorial
@@ -346,7 +344,6 @@ Aliisa: Onko sinulla johonkin kenties kiire? Voin opettaa sinulle vikkelää lii
         <<jump EndDia>>
 
 
-<<SetGameInt 300 1>>
 ===
 
 title: BussiTarkistus

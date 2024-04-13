@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\HideOnPlay.cs" />
     <Compile Include="Assets\Scripts\Bottle.cs" />
     <Compile Include="Assets\Scripts\VHS.cs" />
+    <Compile Include="Assets\Scripts\ChangeSceneAuto.cs" />
     <Compile Include="Assets\Scripts\BaseGUI.cs" />
     <Compile Include="Assets\Scripts\SFX_Shockwave.cs" />
     <Compile Include="Assets\Scripts\MainGameObjectAPI.cs" />

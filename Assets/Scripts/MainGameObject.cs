@@ -71,14 +71,12 @@ public class MainGameObject : MonoBehaviour
         characterDisplayerObject.enabled = value;
     }
 
+
+    //DEPRECATED!!!!!!! USE GIKS INSTEAD!!!
     public void setGameIntKey(int keyInQuestion, byte valueInQuestion)
     {
        GameIntKeyDebugText = "";
         gameIntKeys[keyInQuestion] = valueInQuestion;
-        if (keyInQuestion == 294)
-        {
-            s_alwaysHardStrafeInAir = valueInQuestion > 0;
-        }
 
         GameIntKeyDebugText += "\n######### GAME INT KEY WAS CHANGED ########\n";
 

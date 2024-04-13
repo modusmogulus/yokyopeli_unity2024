@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/YOKYOPELI-INTRO.unity
+    guid: dc3413de2d55d0f40845964a0a009d26
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 52ebb16040b0d7f4286dafd51a465c1b
+  - enabled: 1
     path: Assets/Scenes/IhanAlku.unity
     guid: 7703cb21f8a24fe40ace0ff89ac2c4f9
   - enabled: 1

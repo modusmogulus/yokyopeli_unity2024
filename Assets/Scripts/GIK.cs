@@ -9,6 +9,7 @@ using UnityEditor;
 public class GIK
 {
     public string name;
+    [TextArea(3, 20)]
     public string description;
     public byte value;
     [ShowAssetPreview]
