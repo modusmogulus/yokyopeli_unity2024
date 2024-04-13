@@ -1,31 +1,60 @@
 using UnityEngine;
 using Q3Movement;
 using Yarn.Unity;
+using NaughtyAttributes;
+using UnityEditor;
 public class ActivatorTrigger : MonoBehaviour
 {
     private Q3PlayerController playerController;
+
+    [ShowAssetPreview(128, 128)]
     public GameObject gameObject;  // btw this is very dangerous, should be renamed to something else prob
-    public bool activeOnEnter = true;
-    public bool activeOnExit = true;
+
     public bool changeStateOnEnter = true;
     public bool changeStateOnExit = false;
+
+    [ShowIf("changeStateOnEnter")]
+    public bool activeOnEnter = true;
+    [ShowIf("changeStateOnExit")]
+    public bool activeOnExit = true;
+
+
     public bool destroyOnEnter = false;
     public bool interact = false;
     private bool isInRange = false;
+    [ShowIf("interact")]
     public string interactTextString = "'E'";
     public string soundToPlay = "";
     public float delay = 0f; // New variable for delay
     private bool delayInProgress = false;
     private float delayTimer = 0f;
+    [DisableIf("setGameIntKey")]
     public bool requireGameIntKey = false;
-    public int gameIntKey = 0;
+    [DisableIf("requireGameIntKey")]
+    public bool setGameIntKey;
+
+    [HorizontalLine(color: EColor.Green)]
+    [InfoBox("Game Int Keys -- My idea of a keychain manager lol...")]
+    public string gameIntKeyName;
     public byte gameIntValue = 0;
+    [ResizableTextArea]
+    public string eventDescription;
+    [HorizontalLine(color: EColor.Green)]
+
     public bool targetIsGUI = false;
     public bool startDialogue;
+    
     public int cost = 0;
+    [ShowIf("startDialogue")]
     public string yarnDialogueNode = "";
+    
+
+    [ShowIf("startDialogue")]
     public Yarn.Unity.DialogueRunner dialogueRunner;
+
+    [ShowIf("startDialogue")]
     private ADGS_Dialogue diag;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -33,7 +62,7 @@ public class ActivatorTrigger : MonoBehaviour
         {
             playerController = other.GetComponent<Q3PlayerController>();
             if (gameObject != null) {
-                if (targetIsGUI == true && gameObject.GetComponent<ADGS_Dialogue>()) 
+                if (targetIsGUI == true && gameObject.GetComponent<ADGS_Dialogue>())
                 {
                     diag = gameObject.GetComponent<ADGS_Dialogue>();
                 }
@@ -58,7 +87,26 @@ public class ActivatorTrigger : MonoBehaviour
             }
         }
     }
+    public GameObject GIKManagerPrefab;
+    [Button("Add Game Int Key Event")]
+    public void AddGIK() {
+        GIKS GIKSComp = GIKManagerPrefab.GetComponent<GIKS>();
+        GIKSComp.AddGIKOfName(name, gameIntValue, eventDescription);
+        GIKSComp.GetGIKByName(name).whoCalled = this.gameObject;
+        PrefabUtility.SaveAsPrefabAsset(GIKManagerPrefab, AssetDatabase.GetAssetPath(GIKManagerPrefab));
+    }
 
+    [Button("View Game Int Key Events")]
+    public void ViewGIKs() {
+        GIKS GIKSComp = GIKManagerPrefab.GetComponent<GIKS>();
+        AssetDatabase.OpenAsset(GIKManagerPrefab);
+    }
+    [Button("MakeSelfInvisible")]
+    public void MakeSelfInvisible() 
+    {
+        if (!GetComponent<HideOnPlay>()) new HideOnPlay();   
+    }
+    
     private void OnTriggerExit(Collider other)
     {
         MainGameObject.Instance.interactText.SetActive(false);
@@ -130,9 +178,9 @@ public class ActivatorTrigger : MonoBehaviour
                 if (cost <= MainGameObject.Instance.money || cost == 0) { 
                     if (requireGameIntKey == true)
                     {
-                        print("AVAA SAATANA OVI " + gameIntKey.ToString() + " value: " + gameIntValue.ToString());
-                        print("TAHDOTTU ARVO " + MainGameObject.Instance.getGameIntKey(gameIntKey).ToString());
-                        if (MainGameObject.Instance.getGameIntKeyEquals(gameIntKey, gameIntValue) == true) {
+                        print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
+                        print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
+                        if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true) {
                             if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                             if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
                             if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
@@ -142,18 +190,31 @@ public class ActivatorTrigger : MonoBehaviour
                             }
                             if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                         }
-                    }
 
-                    else { 
-                        if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
-                        if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                        if (targetIsGUI == true)
-                        {
-                            ShowUI();
-                        }
-                        if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                        if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                     }
+                if (setGameIntKey == true)
+                {
+                    GIKS.Instance.SetGIKByName(name, gameIntValue);
+                    if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+                    if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                    if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
+                    if (targetIsGUI == true)
+                    {
+                        ShowUI();
+                    }
+                    if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                }
+                else
+                {
+                    if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+                    if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                    if (targetIsGUI == true)
+                    {
+                        ShowUI();
+                    }
+                    if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
+                    if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                }
                 }
                 else
                 {

@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\MainGameObjectAPI.cs" />
     <Compile Include="Assets\Scripts\MainGameObject.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\GIK.cs" />
     <Compile Include="Assets\Scripts\Enemy1.cs" />
     <Compile Include="Assets\Scripts\FootstepPlayer.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\PathObjectEditorData.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="Assets\Scripts\ActivatorTrigger.cs" />
     <Compile Include="Assets\Scripts\SwipePoint.cs" />
     <Compile Include="Assets\Scripts\yk_transition_manager.cs" />
+    <Compile Include="Assets\Scripts\GIKS.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\PathObject.cs" />
     <Compile Include="Assets\Scripts\Grabbling.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\Transition.cs" />

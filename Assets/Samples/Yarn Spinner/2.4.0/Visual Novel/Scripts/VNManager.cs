@@ -58,7 +58,9 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string,string,string,float>("Move", MoveSprite );
 			runner.AddCommandHandler<string,string>("Flip", FlipSprite );
 			runner.AddCommandHandler<string,float>("Shake", ShakeSprite );
-			runner.AddCommandHandler<int, byte>("SetGameInt", SetGameInt);
+			runner.AddCommandHandler<int, byte>("SetGIKByKey", SetGIKByKey);
+			runner.AddCommandHandler<string, byte>("GIKByName", SetGIKByName);
+			runner.AddCommandHandler<string, byte>("Hokkus", SetGIKByName);
 
 			runner.AddCommandHandler<string,float,string>("PlayAudio", PlayAudio );
 			runner.AddCommandHandler<string>("StopAudio", StopAudio );
@@ -320,9 +322,14 @@ namespace Yarn.Unity.Example {
 			MainGameObject.Instance.setShowCharacter(false);
 		}
 
-		public void SetGameInt(int key, byte value) //0-255
+		public void SetGIKByKey(int key, byte value) //0-255
 		{
-			MainGameObject.Instance.setGameIntKey(key, value);
+			GIKS.Instance.SetGIKValue(key, value);
+		}
+		public void SetGIKByName(string name, byte value) //0-255
+		{
+			GIKS.Instance.SetGIKByName(name, value);
+		
 		}
 		/// <summary>stops sound playback based on sound name, whether it's
 		/// looping or not</summary>

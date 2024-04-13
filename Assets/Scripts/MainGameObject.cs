@@ -24,7 +24,7 @@ public class MainGameObject : MonoBehaviour
     public int bottles = 0;
     public float money = 0;
     public float worth = 0;
-
+    
     //Accessibility settings (s_ prefix stands for settings)
     public bool s_reduceNausea = false;
     public bool s_disableHeadTilt = false;
@@ -37,9 +37,8 @@ public class MainGameObject : MonoBehaviour
     public Texture displayedCharacterTexture;
     public RawImage characterDisplayerObject;
     public GameObject mainCanvas;
-    
-
-    public static MainGameObject Instance { get; private set; }
+    public string GameIntKeyDebugText;
+        public static MainGameObject Instance { get; private set; }
 
     private void Awake()
     {
@@ -72,15 +71,32 @@ public class MainGameObject : MonoBehaviour
 
     public void setGameIntKey(int keyInQuestion, byte valueInQuestion)
     {
+       GameIntKeyDebugText = "";
         gameIntKeys[keyInQuestion] = valueInQuestion;
         if (keyInQuestion == 294)
         {
             s_alwaysHardStrafeInAir = valueInQuestion > 0;
         }
+
+        GameIntKeyDebugText += "\n######### GAME INT KEY WAS CHANGED ########\n";
+
+        GameIntKeyDebugText += "I     Key:  " + keyInQuestion + "        I\n";
+        GameIntKeyDebugText += "I     Value was:  " + gameIntKeys[keyInQuestion] + "        I\n";
+        GameIntKeyDebugText += "I     Value set to:  " + valueInQuestion + "        I\n";
+        GameIntKeyDebugText += "--------------------------------------I\n";
+        print(GameIntKeyDebugText);
     }
 
     public int getGameIntKey(int keyInQuestion)
     {
+        GameIntKeyDebugText = "";
+        GameIntKeyDebugText += "\n----- GAME INT KEY GET REQUEST ---------\n";
+
+        GameIntKeyDebugText += "I     Key:  " + keyInQuestion + "              I\n";
+        GameIntKeyDebugText += "I     Value:  " + gameIntKeys[keyInQuestion] + "           I\n";
+
+        GameIntKeyDebugText += "--------------------------------------I\n";
+        print(GameIntKeyDebugText);
         return gameIntKeys[keyInQuestion];
     }
 
@@ -116,6 +132,28 @@ public class MainGameObject : MonoBehaviour
         TransitionManager.Instance().Transition(scene, transition, loadDelay);
     }
 
+    public string debugGetGameIntKeysArray()
+    {
+        string text = "";
+        text = "";
+        for (int i = 0; i < gameIntKeys.Length; i++)
+        {
+            if (gameIntKeys[i] == 0) {
+                text += ". ";
+            }
+            else
+            {
+                text += gameIntKeys[i].ToString();
+            }
+
+            if (i % 42 == 0)
+            {
+                text += "\n";
+            }
+        }
+        
+        return text;
+    }
 
     private void Start()
     {

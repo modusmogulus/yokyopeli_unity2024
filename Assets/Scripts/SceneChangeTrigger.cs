@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using EasyTransition;
+using NaughtyAttributes;
 
 public class SceneChangeTrigger : MonoBehaviour
 {
+    [Scene]
     public string sceneToLoad;
     public bool changeSceneOnlyIfHasJob = true;
     public TransitionSettings transition;

@@ -122,10 +122,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObject: {fileID: 0}
-  activeOnEnter: 1
-  activeOnExit: 1
   changeStateOnEnter: 1
   changeStateOnExit: 0
+  activeOnEnter: 1
+  activeOnExit: 1
   destroyOnEnter: 0
   interact: 0
   interactTextString: '''E'''
@@ -133,12 +133,15 @@ MonoBehaviour:
   delay: 0
   requireGameIntKey: 0
   gameIntKey: 0
+  gameIntKeyName: 
   gameIntValue: 0
+  EventDescription: 
   targetIsGUI: 0
   startDialogue: 0
   cost: 0
   yarnDialogueNode: 
   dialogueRunner: {fileID: 0}
+  GIKManagerPrefab: {fileID: 307039120875319682, guid: 77a65c4a0a23a1e478cd6cf1aab9380e, type: 3}
 --- !u!114 &7755692580323476981
 MonoBehaviour:
   m_ObjectHideFlags: 0

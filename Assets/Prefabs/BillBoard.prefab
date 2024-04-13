@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5022795827102555926}
   - component: {fileID: 8525847236465593696}
   - component: {fileID: 2586145972675233482}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BillBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}

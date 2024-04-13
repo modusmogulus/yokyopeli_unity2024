@@ -17,7 +17,9 @@ public class MainUIScript : MonoBehaviour
     public Sprite[] hpDamagedBorderSprites;
     private int lastHp = 0;
     public TMPro.TMP_Text kmhMeter;
-    
+    public TMPro.TMP_Text debugText;
+    public TMPro.TMP_Text debugText2;
+
     private Q3Movement.Q3PlayerController pl;
 
     void Start()
@@ -33,7 +35,10 @@ public class MainUIScript : MonoBehaviour
 
     private void Update()
     {
+
         pl = MainGameObject.Instance.playerController;
+        debugText.text = MainGameObject.Instance.GameIntKeyDebugText.ToString();
+        if (debugText2) { debugText2.text = MainGameObject.Instance.debugGetGameIntKeysArray(); }
         if (kmhMeter != null && pl != null) { kmhMeter.text = (Mathf.Round(pl.Speed * 320) / 100).ToString(); }
         for (int d = 0; d < dmgTypes.Length; d++) { 
             for (int i = 0; i < hpIndicators.Length; i++) {

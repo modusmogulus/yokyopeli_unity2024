@@ -22339,6 +22339,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 484ed278ec1fa10429ac5bc31817629e, type: 3}
+--- !u!1 &1158548548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7043225961191760247, guid: 484ed278ec1fa10429ac5bc31817629e, type: 3}
+  m_PrefabInstance: {fileID: 1158548547}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1171151199
 GameObject:
   m_ObjectHideFlags: 0
@@ -33039,6 +33044,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: gameObject
+      value: 
+      objectReference: {fileID: 1158548548}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: setGameIntKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
       propertyPath: startDialogue
       value: 1
       objectReference: {fileID: 0}
@@ -33047,8 +33060,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 629924229}
     - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: gameIntKeyName
+      value: Jutellut skidille
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: eventDescription
+      value: "0 = ei\n1 = kyll\xE4"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
       propertyPath: yarnDialogueNode
       value: TuuletinRakas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: requireGameIntKey
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39677,6 +39702,16 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 629924229}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: gameIntKeyName
+      value: Looksmaxxer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
+      propertyPath: eventDescription
+      value: '1 = Jutellut looksmaxxerille
+
+        0 = Ei ole'
+      objectReference: {fileID: 0}
     - target: {fileID: 8070332505826274557, guid: 475b855c9c6cc38438c1ee1e67793f98, type: 3}
       propertyPath: yarnDialogueNode
       value: Pullot
