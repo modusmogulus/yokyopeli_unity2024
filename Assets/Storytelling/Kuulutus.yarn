@@ -105,9 +105,43 @@ position: -52,69
 <<HideAll>>
 <<RawImgHide>>
 ===
+title: PreTutorialHaukka
+---
 
-title: TutorialHaukka
+<<if visited("PreTutorialHaukka")>>
+    Minea: Haluatko vaihtaa tiesi vai kuulla kertauksen?
+        -> Vaihtaa tieni
+            Oukkidoukki
+            -> <color=blue> Kalan tie </color>
+                <<Hokkus S_HARDSTRAFE 1>>
+                <<RawImgAct tut1>> 
+                Oukkidoukki, kun liikut sivulle ilmassa, <color=yellow>käännyt AUTOMAATTISESTI</color> myös sivulle. 
+                <<RawImgAct tut2>> 
+                Tälläinen ilmakäännös kiihdyttää vauhtiasi.
+                <<RawImgAct tut3>> 
+                Minea: Ja <color=blue> smoothit </color> liikkeet pitävät sinut paremmin vauhdissa kuin se että äkkikäännyt kuin päätön kana.
+                <<RawImgAct tut4>> 
+                Minea: Ja hei, varoitan että tahdot vielä tehdä mannertenvälisiä sotarikoksia raivosta, poista vaan tämä peli mieluummin!
+                <<RawImgHide>>
+                Minea: Onnea lol
+            -> <color=yellow> Mateknörtin tie </color> 
+                <<Hokkus S_HARDSTRAFE 0>>
+                <<RawImgAct tut2>> 
+                Minea: Ok ok, rouva kaikkitietäväinen. Jos kerta olet niin taitava niin anna sitten palaa, mutta älä tule inisemään minulle.
+                Minea: Vielä varmuuden varalta, muista että jarrutat saatanasti jos painat samaan aikaan 'W' ja strafeat ilmassa.
+                <<RawImgAct tut3>>
+                Minea: Ja smoothit liikkeet pitävät sinut paremmin vauhdissa kuin se että sinkoilet kuin päätön kana.
+                <<RawImgHide>>
+                Minea: Onnea lol
+        -> Kuulla uudestaan
+            <<jump TutorialHaukka>>
+<<else>>
+    <<jump PreTutorialHaukka>>
+<<endif>>
+===
+
 position: -52,69
+title: TutorialHaukka
 ---
 <<RawImgAct haukka>>
 <<RawImgShow>>
@@ -123,7 +157,7 @@ Minea: Eli toisinsanoen kiihdyttää sinua. Patalassa, haukkojen valtakunnassa l
 Minea: <color=blue> Kalan tie</color> ja <color=yellow>Mateknörtin tie </color> 
 Minea: <color=blue> Kalan tie on ihan vitun perseestä aluksi </color> ja <color=yellow> Mateknörtin tie on vitun perseestä paitsi jos osaat jo laukata aka "B-hopata". </color> Kumpikaan ei taida kuulostaa erityisemmin kutkuttavalta. Damned if you do, damned if you don't xddd
 -> <color=blue> Kalan tie </color>
-    <<Hokkus S_HARDSTRAFE 0>>
+    <<Hokkus S_HARDSTRAFE 1>>
     <<RawImgAct tut1>> 
     Oukkidoukki, kun liikut sivulle ilmassa, <color=yellow>käännyt AUTOMAATTISESTI</color> myös sivulle. 
     <<RawImgAct tut2>> 
@@ -135,7 +169,7 @@ Minea: <color=blue> Kalan tie on ihan vitun perseestä aluksi </color> ja <color
     <<RawImgHide>>
     Minea: Onnea lol
 -> <color=yellow> Mateknörtin tie </color> 
-    <<Hokkus S_HARDSTRAFE 1>>
+    <<Hokkus S_HARDSTRAFE 0>>
     <<RawImgAct tut2>> 
     Minea: Ok ok, rouva kaikkitietäväinen. Jos kerta olet niin taitava niin anna sitten palaa, mutta älä tule inisemään minulle.
     Minea: Vielä varmuuden varalta, muista että jarrutat saatanasti jos painat samaan aikaan 'W' ja strafeat ilmassa.

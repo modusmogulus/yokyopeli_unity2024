@@ -165,7 +165,10 @@ public class MainGameObject : MonoBehaviour
 
     private void Update()
     {
-
+        if (!interactTextComponent)
+        {
+            interactTextComponent = interactText.GetComponent<TMP_Text>();
+        }
         if (scoreText != null)
         {
             scoreText.text = score.ToString();

@@ -57,7 +57,7 @@ public class GIKS : MonoBehaviour
     {
         string text = "";
         text = "";
-        for (int i = 0; i <= GIKClasses.Count; i++)
+        for (int i = 0; i < GIKClasses.Count; i++)
         {
             if (GIKClasses[i].value == 0)
             {
@@ -93,7 +93,7 @@ public class GIKS : MonoBehaviour
 
     public GIK GetGIKByName(string GIKname)
     {
-        for (int i = 0; i <= GIKClasses.Count; i++)
+        for (int i = 0; i < GIKClasses.Count; i++)
         {
             if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper())
             {
@@ -107,7 +107,7 @@ public class GIKS : MonoBehaviour
 
     public bool GetGIKEqualsByName(string GIKname, byte value)
     {
-        for (int i = 0; i <= GIKClasses.Count; i++)
+        for (int i = 0; i < GIKClasses.Count; i++)
         {
             if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper())
             {
@@ -121,7 +121,7 @@ public class GIKS : MonoBehaviour
 
     public void SetGIKByName(string GIKname, byte value)
     {
-        for (int i = 0; i <= GIKClasses.Count; i++)
+        for (int i = 0; i < GIKClasses.Count; i++)
         {
             if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper())
             {
