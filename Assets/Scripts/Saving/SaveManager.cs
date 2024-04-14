@@ -11,7 +11,6 @@ public class PlayerData
     public int score;
     public Vector3 position;
     public List<GIK> GameIntKeys;
-    public AudioManager am;
 }
 
 public class SaveManager : MonoBehaviour
@@ -68,7 +67,6 @@ public class SaveManager : MonoBehaviour
     public void SaveGame()
     {
 
-        playerData.am = AudioManager.Instance;
         playerData.levelname = SceneManager.GetActiveScene().name;
         print(playerData.levelname);
         Debug.Log("Save file created at: " + saveFilePath);

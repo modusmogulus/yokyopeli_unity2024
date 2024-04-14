@@ -1339,13 +1339,13 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 9.230027, y: 8.222086, z: 2.1301427}
+    m_Target: {x: 56.476093, y: 5.559579, z: -4.3980455}
     speed: 2
     m_Value: {x: 9.230027, y: 8.222086, z: 2.1301427}
   m_RenderMode: 0
   m_CameraMode:
-    drawMode: 2
-    name: Shaded Wireframe
+    drawMode: 1
+    name: Wireframe
     section: Shading Mode
   m_ValidateTrueMetals: 0
   m_DoValidateTrueMetals: 0
@@ -1387,11 +1387,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.1663384, y: -0.52568835, z: 0.10297872, w: -0.8284008}
+    m_Target: {x: -0.11616662, y: 0.84008104, z: 0.21495354, w: 0.48556626}
     speed: 2
     m_Value: {x: 0.1663384, y: 0.52568835, z: -0.10297872, w: 0.82840073}
   m_Size:
-    m_Target: 9.027663
+    m_Target: 9.55
     speed: 2
     m_Value: 9.027663
   m_Ortho:
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 706.55145, y: 281.335, z: -6.8327866}
+    m_Target: {x: 892.5923, y: 536.8254, z: 2.9803994}
     speed: 2
     m_Value: {x: 706.55145, y: 281.335, z: -6.8327866}
   m_RenderMode: 0
@@ -1957,7 +1957,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 396.74286
+    m_Target: 553.74994
     speed: 2
     m_Value: 396.74286
   m_Ortho:
@@ -2056,7 +2056,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 127}
     m_SelectedIDs: c0ba0000
     m_LastClickedID: 47808
-    m_ExpandedIDs: 0000000026b3000028b300002ab300002cb300002eb3000030b3000032b3000034b3000036b3000038b30000
+    m_ExpandedIDs: 00000000a2b30000a4b30000a6b30000a8b30000aab30000acb30000aeb30000b0b30000b2b30000b4b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2085,7 +2085,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000026b3000028b300002ab300002cb300002eb3000030b3000032b3000034b3000036b3000038b30000
+    m_ExpandedIDs: 00000000a2b30000a4b30000a6b30000a8b30000aab30000acb30000aeb30000b0b30000b2b30000b4b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
