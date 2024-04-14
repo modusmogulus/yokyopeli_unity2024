@@ -48,8 +48,14 @@ MonoBehaviour:
   - name: TEST
     description: '-'
     value: 0
+    achievement: 0
+    achievementUIElement: {fileID: 0}
+    achievementType: 0
     whoCalled: {fileID: 0}
   - name: S_HARDSTRAFE
     description: "!!!! Muuttaa MGO:n asetuksia! Kovakoodattu GIKS scriptiss\xE4 !!!!"
     value: 0
+    achievement: 0
+    achievementUIElement: {fileID: 0}
+    achievementType: 0
     whoCalled: {fileID: 0}

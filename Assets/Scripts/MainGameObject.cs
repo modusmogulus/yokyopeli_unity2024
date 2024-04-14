@@ -122,7 +122,7 @@ public class MainGameObject : MonoBehaviour
     public void setBottlesText()
     {
         bottlesText.text = bottles.ToString();
-        worthText.text = (bottles * 0.2).ToString();
+        worthText.text = (bottles * 0.2).ToString() + " saa killinkiä";
     }
 
     public void changeScene(string scene)

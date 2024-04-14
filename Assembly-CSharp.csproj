@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\SelectButtonByUhh.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\ControlTips.cs" />
+    <Compile Include="Assets\Scripts\AchievementType.cs" />
     <Compile Include="Assets\Scripts\SimpleContactProvider.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Scripts\Q3PlayerController.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\TransitionSettings.cs" />

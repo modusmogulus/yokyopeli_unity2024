@@ -88,6 +88,12 @@ public class GIKS : MonoBehaviour
         GIKClasses[index].value = value;
         ModifySavedGIKS();
     }
+
+    public void SetGIK(int index, GIK gameIntKey)
+    {
+        GIKClasses[index] = gameIntKey;
+    }
+
     public void SetGIKName(int index, string GIKname)
     {
         GIKClasses[index].name = GIKname;
@@ -109,6 +115,11 @@ public class GIKS : MonoBehaviour
     public List<GIK> GetAllGIKS()
     {
         return GIKClasses;
+    }
+
+    public GIK GetGIK(int index)
+    {
+        return GIKClasses[index];
     }
     public GIK GetGIKByName(string GIKname)
     {

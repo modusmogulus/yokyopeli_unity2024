@@ -3836,7 +3836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2218683343664623989, guid: 3abd2d31a253dc64f95b951adf2cf81e, type: 3}
       propertyPath: playOnStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2218683343664623989, guid: 3abd2d31a253dc64f95b951adf2cf81e, type: 3}
       propertyPath: soundToPlay
@@ -4604,6 +4604,10 @@ PrefabInstance:
     - target: {fileID: 7280530783692641196, guid: 3abd2d31a253dc64f95b951adf2cf81e, type: 3}
       propertyPath: m_Name
       value: AudioTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280530783692641196, guid: 3abd2d31a253dc64f95b951adf2cf81e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

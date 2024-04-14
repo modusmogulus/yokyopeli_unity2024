@@ -11,6 +11,7 @@ public class PlayerData
     public int score;
     public Vector3 position;
     public List<GIK> GameIntKeys;
+    public AudioManager am;
 }
 
 public class SaveManager : MonoBehaviour
@@ -36,10 +37,14 @@ public class SaveManager : MonoBehaviour
             saveFilePath = Application.persistentDataPath + "/" + saveName + ".json";
         }
     }
-
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SaveGame();
+        print("SAVINGSAVINGSAVING");
     }
 
 
@@ -62,16 +67,17 @@ public class SaveManager : MonoBehaviour
     }
     public void SaveGame()
     {
-        string savePlayerData = JsonUtility.ToJson(playerData);
-        File.WriteAllText(saveFilePath, savePlayerData);
+
+        playerData.am = AudioManager.Instance;
         playerData.levelname = SceneManager.GetActiveScene().name;
+        print(playerData.levelname);
         Debug.Log("Save file created at: " + saveFilePath);
 
-        for (int i = 0; i < GIKS.Instance.GetAllGIKS().Count; i++)
-        {
-            playerData.GameIntKeys[i].value = GIKS.Instance.GetGIKValue(i);
-            playerData.GameIntKeys[i].name = GIKS.Instance.GetGIKName(i);
-        }
+
+        playerData.GameIntKeys = GIKS.Instance.GetAllGIKS();
+
+        string savePlayerData = JsonUtility.ToJson(playerData);
+        File.WriteAllText(saveFilePath, savePlayerData);
     }
 
     public void SetSaveName(string savename)
@@ -102,8 +108,7 @@ public class SaveManager : MonoBehaviour
             playerData = JsonUtility.FromJson<PlayerData>(loadPlayerData);
             SceneManager.LoadScene(playerData.levelname);
             for (int i = 0; i < playerData.GameIntKeys.Count; i++) { 
-                GIKS.Instance.SetGIKValue(i, playerData.GameIntKeys[i].value);
-                GIKS.Instance.SetGIKName(i, playerData.GameIntKeys[i].name);
+                GIKS.Instance.SetGIK(i, playerData.GameIntKeys[i]);
             }
             loadPending = false;
         }
