@@ -64,7 +64,7 @@ public class SaveManager : MonoBehaviour
     {
         string savePlayerData = JsonUtility.ToJson(playerData);
         File.WriteAllText(saveFilePath, savePlayerData);
-
+        playerData.levelname = SceneManager.GetActiveScene().name;
         Debug.Log("Save file created at: " + saveFilePath);
 
         for (int i = 0; i < GIKS.Instance.GetAllGIKS().Count; i++)
