@@ -80,10 +80,30 @@ position: 453,334
 <<RawImgHide>>
 ===
 
+title: RaksaKeiju1
+position: -52,69
+---
+<<RawImgAct keiju1>>
+<<RawImgShow>>
+Työmaa Keiju: Kyä täällon satanu lunta nii pärämätsisti
+Työmaa Keiju: Mutta tiekkö mitä...
+Työmää Keiju: Mää joudun kuitenki töihin vaa koska mullon siivet nääs!?!
+Työmaa Keiju: Just joo...
+<<RawImgAct keiju1f2>>
+Työmaa Keiju: Ja perhana putket paukkuu jäästä
+<<RawImgAct keiju1>>
+Työmaa Keiju: Maistuu nii saatanan Turkulaiselta toi vesi, tai sitte ne pistää siihen jotai paskaa.
+Työmaa Keiju: Ollu jotenki nii kumma olo ton viime "vesivahingon" jälkeen??
+<<RawImgAct keiju1f2>>
+Työmaa Keiju: Hm- Jänskä toi kaupan edusta kun on nii paskasti kolattu. Onneks nää kolas lähiön paremmin
+<<RawImgHide>>
+===
+
 title: EndDia
 position: -52,69
 ---
 <<HideAll>>
+<<RawImgHide>>
 ===
 
 title: TutorialHaukka
