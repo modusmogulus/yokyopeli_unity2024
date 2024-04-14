@@ -10,7 +10,6 @@ public class MainGameObjectAPI : MonoBehaviour
     {
         
     }
-
     public void setReduceNausea()
     {
         MGO.Instance.s_reduceNausea = !MGO.Instance.s_reduceNausea;

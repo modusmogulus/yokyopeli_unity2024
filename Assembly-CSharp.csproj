@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\score.cs" />
     <Compile Include="Assets\Scripts\StoryTextBox.cs" />
+    <Compile Include="Assets\Scripts\Saving\SaveManager.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\TransitionManager.cs" />
     <Compile Include="Assets\PSXShaderKit\Demo\SpookyOrbFloat.cs" />
     <Compile Include="Assets\Kuwahara Filter\AnisotropicKuwahara.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Assets\Scripts\FORCE_MouseLock.cs" />
     <Compile Include="Assets\Scripts\GUITextMGOSetter.cs" />
     <Compile Include="Assets\Scripts\PickupTrigger.cs" />
+    <Compile Include="Assets\Scripts\Saving\GameData.cs" />
     <Compile Include="Assets\Scripts\ActivatorTrigger.cs" />
     <Compile Include="Assets\Scripts\SwipePoint.cs" />
     <Compile Include="Assets\Scripts\yk_transition_manager.cs" />

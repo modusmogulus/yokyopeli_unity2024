@@ -9,7 +9,7 @@ using static GIK;
 public class GIKS : MonoBehaviour
 {
     [SerializeField]
-    List<GIK> GIKClasses;
+    List<GIK> GIKClasses; //damnit this should be called GIKObjects. GIKClasses makes no sense
 
     private static GIKS _instance;
     public static GIKS Instance
@@ -77,20 +77,39 @@ public class GIKS : MonoBehaviour
 
         return text;
     }
-
+    public void ModifySavedGIKS()
+    {
+        PlayerData pld = SaveManager.Instance.GetPlayerdata();
+        pld.GameIntKeys = GIKClasses;
+        SaveManager.Instance.SetPlayerdata(pld);
+    }
     public void SetGIKValue(int index, byte value) 
     {
         GIKClasses[index].value = value;
+        ModifySavedGIKS();
+    }
+    public void SetGIKName(int index, string GIKname)
+    {
+        GIKClasses[index].name = GIKname;
+        ModifySavedGIKS();
     }
     public byte GetGIKValue(int index)
     {
         return GIKClasses[index].value;
     }
+
+    public string GetGIKName(int index)
+    {
+        return GIKClasses[index].name;
+    }
     public bool GetGIKEquals(int index, byte reqValue)
     {
         return GIKClasses[index].value == reqValue;
     }
-
+    public List<GIK> GetAllGIKS()
+    {
+        return GIKClasses;
+    }
     public GIK GetGIKByName(string GIKname)
     {
         for (int i = 0; i < GIKClasses.Count; i++)

@@ -143,6 +143,7 @@ title: PreTutorialHaukka
 position: -52,69
 title: TutorialHaukka
 ---
+<<AMPlayAudio M_Minea>>
 <<RawImgAct haukka>>
 <<RawImgShow>>
 <<RawImgAct haukka>>
@@ -178,6 +179,8 @@ Minea: <color=blue> Kalan tie on ihan vitun perseestä aluksi </color> ja <color
     <<RawImgHide>>
     Minea: Onnea lol
 voit nyt jatkaa.
+
+<<AMPlayAudio M_Alkubiisi>>
 ===
 
 title: Teijo1
@@ -383,7 +386,9 @@ tags:
 colorID: 1
 position: 405,-450
 ---
-???: Terve! Instagramini on Leipäläpi Jumppatäti- eikun anteeksi kernaasti, nimeni on Aliisa
+<<RawImgAct jumppa>>
+<<RawImgShow>>
+???: Terve! Instagramini on-... eikun anteeksi kernaasti, nimeni on Aliisa
 Aliisa: Onko sinulla johonkin kenties kiire? Voin opettaa sinulle vikkelää liikkumista Verhannan betoniviidakossa
     -> On kiire, kaupan kautta töihin ja täytyy ehtiä bussiin
         Aliisa: Okei, ensimmäinen liike on parkour roll. Paina shiftiä pohjassa kun putoat korkealta.
@@ -396,7 +401,7 @@ Aliisa: Onko sinulla johonkin kenties kiire? Voin opettaa sinulle vikkelää lii
         Aliisa: Kun osaat sen, kerron hieman kiipeämisestä.
         Aliisa: Rämpytä välilyöntiä kun juokset noin päänkorkuista seinää päin.
         <<jump EndDia>>
-
+<<RawImgHide>>
 
 ===
 
@@ -450,16 +455,30 @@ position: 84,306
 ---
 <<RawImgAct justiina>>
 <<RawImgShow>>
-(tuntematon naapuri): Kuka saatana varastaa pyörän talvella!?! Naapurini Itko myöntää varastaneensa pyöräni, mutta hän väittää että varasti sen vain jotta voisi kunnostaa sen???
-(tuntematon naapuri): Pyh sanon minä, klassinen Verhannan tush case*... (*slangitermi ryöstölle)
-
+(tuntematon naapuri): -32C pakkasta vaikka illaksi on luvattu +4C on se kyllä kumma.
+(tuntematon naapuri): Ja hei - kuka saatana varastaa pyörän talvella!?! Ei ole varastossa enää.
+    -> Verhanta moment
+        (tuntematon naapuri) Mikä?
+        -> Verhanta moment
+            (tuntematon naapuri) Just.
+            <<RawImgHide>>
+        -> Ei mikään
+            (tuntematon naapuri) Ok?
+    -> *Valita*
+        Sinä: Damn, ikävä juttu
 (tuntematon naapuri): Hei sinua ei kovin usein näekkään! 
 (tuntematon naapuri): Taidat asua siinä asunnossa jonka verhot ovat aina kiinni. Oletko <color=pink>asunut</color> Verhannassa pitkäänkin?
--> En. nimeni on kataja
+-> En. Nimeni on kataja btw
 -> En ole
 -> (Hiljaisuuspommi)
+    <<wait 3>>
     Aijotko vastata saatana?
+    <<RawImgHide>>
     -> (Hiljaisuuspommi)
+    <<wait 3>>
+    *et sano mitään*
+    <<RawImgHide>>
+    *et sano mitään*
     -> En
 
 <<RawImgHide>>

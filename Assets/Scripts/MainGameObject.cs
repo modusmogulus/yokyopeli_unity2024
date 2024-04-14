@@ -54,7 +54,6 @@ public class MainGameObject : MonoBehaviour
             Instantiate(GIKSManager);
         }
     }
-
     public void setJob(bool value)
     {
         hasJob = value;
@@ -165,7 +164,7 @@ public class MainGameObject : MonoBehaviour
 
     private void Update()
     {
-        if (!interactTextComponent)
+        if (!interactTextComponent && interactText)
         {
             interactTextComponent = interactText.GetComponent<TMP_Text>();
         }

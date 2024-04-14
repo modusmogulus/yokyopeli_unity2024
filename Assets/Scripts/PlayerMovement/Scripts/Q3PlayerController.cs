@@ -98,7 +98,7 @@ namespace Q3Movement
         private bool hasKickJumped = false;
         private bool isOnSlope = false;
 
-
+        public bool saveGame = true;
         //IMPORTANT ABOUT snowInBoots:
         //----------- * snowInBoots is mostly handled in FootstepPlayer script * -----------
         //FootstepPlayer can be found in the object called Head (or whatever Body idk)
