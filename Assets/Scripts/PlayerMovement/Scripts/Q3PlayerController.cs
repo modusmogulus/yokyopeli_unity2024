@@ -296,6 +296,14 @@ namespace Q3Movement
                 isCurrentlyGrounded = m_Character.isGrounded;
             }
             m_MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            
+            if (MainGameObject.Instance.wiimote != null) { 
+                if (MainGameObject.Instance.wiimote.Button.d_right) m_MoveInput.x = 1f;
+                if (MainGameObject.Instance.wiimote.Button.d_left) m_MoveInput.x = -1f;
+                if (MainGameObject.Instance.wiimote.Button.d_up) m_MoveInput.y = 1f;
+                if (MainGameObject.Instance.wiimote.Button.d_down) m_MoveInput.y = -1;
+            }
+
             if (!m_WasGrounded && MainGameObject.Instance.s_alwaysHardStrafeInAir && !isWallRunning) {
                 m_MouseLook.SetRotastrafe(true);
                 if (m_MoveInput.x != 0 && m_MoveInput.z != 0)

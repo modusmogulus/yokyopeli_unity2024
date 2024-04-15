@@ -24,6 +24,8 @@ namespace Q3Movement
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
         private bool m_cursorIsLocked = true;
+        private float xRot;
+        private float yRot;
         private Wiimote wiimote;
         public void Init(Transform character, Transform camera)
         {
@@ -40,27 +42,27 @@ namespace Q3Movement
 
     public void LookRotation(Transform character, Transform camera)
         {
+            wiimote = MainGameObject.Instance.wiimote;
             m_Smooth = MainGameObject.Instance.s_alwaysHardStrafeInAir;
+
             if (m_LockCursor == true) {
-                float yRot = Input.GetAxis("Mouse X") * m_XSensitivity;
-                float xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;
-                wiimote = MainGameObject.Instance.wiimote;
 
-                if (wiimote != null && wiimote.current_ext != ExtensionController.NONE) {
-                    
-                    NunchuckData nuncData = wiimote.Nunchuck;
+                if (wiimote == null) { 
+                    yRot = Input.GetAxis("Mouse X") * m_XSensitivity;
+                    xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;
+                
 
-                    yRot += nuncData.stick[0];
-                    xRot += nuncData.stick[1];
+
+
+                    if (m_Smooth) { 
+                        yRot = Mathf.Clamp(Input.GetAxis("Mouse X") * m_XSensitivity, -m_tiltSmoothness*Time.deltaTime*200f, m_tiltSmoothness * Time.deltaTime * 200f); //hell yeah no more jitter :D
+                        xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness * Time.deltaTime * 200f, m_tiltSmoothness * Time.deltaTime * 200f);
+                    }
+
+                    if (m_rotastrafe && Input.GetAxisRaw("Vertical") <= 0f) { yRot += Input.GetAxisRaw("Horizontal"); }
                 }
+                else { HandleWiiInput();  }
 
-
-                if (m_Smooth) { 
-                    yRot = Mathf.Clamp(Input.GetAxis("Mouse X") * m_XSensitivity, -m_tiltSmoothness*Time.deltaTime*200f, m_tiltSmoothness * Time.deltaTime * 200f); //hell yeah no more jitter :D
-                    xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness * Time.deltaTime * 200f, m_tiltSmoothness * Time.deltaTime * 200f);
-                }
-
-                if (m_rotastrafe && Input.GetAxisRaw("Vertical") <= 0f) { yRot += Input.GetAxisRaw("Horizontal"); }
                 m_CharacterTargetRot *= Quaternion.Euler(0f, yRot, 0f);
                 m_CameraTargetRot *= Quaternion.Euler(-xRot, 0f, 0f);
 
@@ -87,6 +89,23 @@ namespace Q3Movement
             UpdateCursorLock();
         }
 
+        public void HandleWiiInput()
+        {
+            if (wiimote != null && wiimote.current_ext == ExtensionController.NUNCHUCK)
+            {
+
+                NunchuckData nuncData = wiimote.Nunchuck;
+
+                //Debug.Log(nuncData.stick[0].ToString());
+                //Debug.Log(nuncData.stick[1].ToString());
+                yRot = ((float)nuncData.stick[0] - 128) / 128;
+                xRot = ((float)nuncData.stick[1] - 128) / 255;
+                xRot *= m_XSensitivity;
+                yRot *= m_YSensitivity;
+                Debug.Log(xRot);
+                Debug.Log(yRot);
+            }
+        }
         public void SetCursorLock(bool value)
         {
             m_LockCursor = value;

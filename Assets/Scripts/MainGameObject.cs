@@ -176,7 +176,7 @@ public class MainGameObject : MonoBehaviour
         if (wiimote != null && wiimote.current_ext != ExtensionController.NONE)
         {
             print("wii mote and nunchuck found");
-            wiimote.SendDataReportMode(InputDataType.REPORT_BUTTONS_EXT8);
+            wiimote.SendDataReportMode(InputDataType.REPORT_EXT21);
         }
     }
 
