@@ -349,18 +349,24 @@ colorID: 1
 position: 405,-450
 ---
 
-Kassa: Nyt ei kyllä rahat riitä. Menisit töihin tai edes palauttaisit pulloja
-//<<SetGameInt 301 1>> //Näpistysmoodi
+Kassa: Nyt ei kyllä rahat riitä. Menisit töihin
+<<Hokkus OstiES 0>>
 ===
 
-title: Kaupat
+title: PalautusTutorial
+---
+Voit palauttaa pullot raahamalla 'E' näppäimellä kassin koneeseen.
+===
+
+title: Lahikauppa1
 tags: 
 colorID: 1
 position: 405,-450
 ---
 Kassa: Kiitos kaupoista!
-//<<SetGameInt 301 0>> //Näpistysmoodi pois
+<<Hokkus OstiES 1>>
 ===
+
 
 title: Napistys
 tags: 
@@ -369,7 +375,6 @@ position: 405,-450
 ---
 Paskanmarjat! Jäit näpisyksestä kiinni...
 Myös bussi lähtee pian, koita ehtiä sinne!!
-//<<SetGameInt 300 1>>
 ===
 
 

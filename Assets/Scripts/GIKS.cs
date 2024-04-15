@@ -159,7 +159,7 @@ public class GIKS : MonoBehaviour
                 GIKClasses[i].value = value;
             }
 
-            if (GIKClasses[i].name.ToUpper() == "S_HARDSTRAFE") //s_alwaysHardStrafeInAir -- hard coded!
+            if (GIKClasses[i].name.ToUpper() == GIKname.ToUpper() && GIKname.ToUpper() == "S_HARDSTRAFE") //s_alwaysHardStrafeInAir -- hard coded!
             {
                 MainGameObject.Instance.s_alwaysHardStrafeInAir = value > 0;
             }

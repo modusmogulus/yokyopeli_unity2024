@@ -65,10 +65,12 @@ namespace Yarn.Unity.Example {
 			runner.AddCommandHandler<string,float,string>("PlayAudio", PlayAudio );
 			runner.AddCommandHandler<string>("StopAudio", StopAudio );
 			runner.AddCommandHandler("StopAudioAll", StopAudioAll );
-			runner.AddCommandHandler<string>("AMPlayAudio", AMPlayAudio); // t. aino
-			runner.AddCommandHandler<string>("RawImgAct", RawImgAct); // t. aino
-			runner.AddCommandHandler("RawImgShow", RawImgShow); // t. aino
-			runner.AddCommandHandler("RawImgHide", RawImgHide); // t. aino
+
+
+			runner.AddCommandHandler<string>("AMPlayAudio", AMPlayAudio); // added by modusmogulus
+			runner.AddCommandHandler<string>("RawImgAct", RawImgAct); // added by modusmogulus
+			runner.AddCommandHandler("RawImgShow", RawImgShow); // added by modusmogulus
+			runner.AddCommandHandler("RawImgHide", RawImgHide); // added by modusmogulus
 
 			runner.AddCommandHandler<string,float,float,float>("Fade", SetFade );
 			runner.AddCommandHandler<float>("FadeIn", SetFadeIn );
@@ -298,11 +300,10 @@ namespace Yarn.Unity.Example {
 				StartCoroutine( SetDestroyTime( newAudioSource, audioClip.length ) );
 			}
 		}
-
 		public void AMPlayAudio(string soundName)
-        {
+		{
 			AudioManager.Instance.PlayAudio(soundName);
-        }
+		}
 		public void RawImgAct(string character)
 		{
 			/*

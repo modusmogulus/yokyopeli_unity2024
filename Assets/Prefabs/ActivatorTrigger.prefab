@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8950121471166745123}
   - component: {fileID: 1478469222313356864}
   - component: {fileID: 8283606172714198787}
-  - component: {fileID: 5185633183262621879}
   - component: {fileID: 7755692580323476981}
+  - component: {fileID: 5185633183262621879}
   m_Layer: 2
   m_Name: ActivatorTrigger
   m_TagString: Untagged
@@ -109,6 +109,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7755692580323476981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243975863380420699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400d73e847099b4692fc44ceb724bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideOnPlay: 1
+  alsoDisableOnStart: 0
 --- !u!114 &5185633183262621879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,20 +152,10 @@ MonoBehaviour:
   eventDescription: 
   targetIsGUI: 0
   startDialogue: 0
+  costsMoney: 0
   cost: 0
   yarnDialogueNode: 
+  yarnDialogueNodeTooPoor: 
   dialogueRunner: {fileID: 0}
   GIKManagerPrefab: {fileID: 307039120875319682, guid: 77a65c4a0a23a1e478cd6cf1aab9380e, type: 3}
   editorYarnFile: {fileID: -8253061345870894857, guid: 9f0920a0b9f42b14598dcc415e2a0161, type: 3}
---- !u!114 &7755692580323476981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4243975863380420699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e400d73e847099b4692fc44ceb724bf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

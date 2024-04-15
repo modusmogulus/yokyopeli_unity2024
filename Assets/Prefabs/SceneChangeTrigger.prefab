@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3315237679561048835}
   - component: {fileID: 5397841355207731909}
   - component: {fileID: 3284695855288527312}
+  - component: {fileID: 8456644915929517751}
   m_Layer: 0
   m_Name: SceneChangeTrigger
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 28b0cec382b8bcd4491480214de627c3, type: 2}
+  - {fileID: 2100000, guid: 16e88518c4b51d4469c8fc6c3ff14440, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,3 +125,17 @@ MonoBehaviour:
   changeSceneOnlyIfHasJob: 0
   transition: {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
   loadDelay: 0
+--- !u!114 &8456644915929517751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498593663534581702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e400d73e847099b4692fc44ceb724bf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideOnPlay: 1
+  alsoDisableOnStart: 0

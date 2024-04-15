@@ -19,6 +19,7 @@ public class ActivatorTrigger : MonoBehaviour
     public bool activeOnExit = true;
 
 
+
     public bool destroyOnEnter = false;
     public bool interact = false;
     private bool isInRange = false;
@@ -40,14 +41,18 @@ public class ActivatorTrigger : MonoBehaviour
     [ResizableTextArea]
     public string eventDescription;
     [HorizontalLine(color: EColor.Green)]
-
+    [EnableIf("startDialogue")]
     public bool targetIsGUI = false;
     public bool startDialogue;
-    
+
+    public bool costsMoney = false;
     public int cost = 0;
+    
     [ShowIf("startDialogue")]
     public string yarnDialogueNode = "";
-    
+    [ShowIf("costsMoney")]
+    public string yarnDialogueNodeTooPoor = "";
+
 
     [ShowIf("startDialogue")]
     public Yarn.Unity.DialogueRunner dialogueRunner;
@@ -184,7 +189,7 @@ public class ActivatorTrigger : MonoBehaviour
     {
         if (isInRange == true) {
             delayInProgress = false;
-                if (cost <= MainGameObject.Instance.money || cost == 0) { 
+                if (cost <= MainGameObject.Instance.money || cost == 0 || !costsMoney) { 
                     if (requireGameIntKey == true || setGameIntKey == true)
                     {
                         if (setGameIntKey == true)
@@ -231,7 +236,7 @@ public class ActivatorTrigger : MonoBehaviour
                 }
                 else
                 {
-                    dialogueRunner.StartDialogue("NoMoney");
+                    dialogueRunner.StartDialogue(yarnDialogueNodeTooPoor);
                 }
             }
     }

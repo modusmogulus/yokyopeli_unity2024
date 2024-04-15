@@ -59,3 +59,12 @@ MonoBehaviour:
     achievementUIElement: {fileID: 0}
     achievementType: 0
     whoCalled: {fileID: 0}
+  - name: OstiES
+    description: '0=EiOstanut
+
+      1=Osti'
+    value: 0
+    achievement: 0
+    achievementUIElement: {fileID: 0}
+    achievementType: 0
+    whoCalled: {fileID: 0}
