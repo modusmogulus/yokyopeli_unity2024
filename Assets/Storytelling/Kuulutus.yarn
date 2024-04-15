@@ -18,7 +18,7 @@ Pasi: Terve, taidat olla se meidän uusi puhelinmyyjä. Pääset tuota pikaa ty�
 title: Dodek1
 position: -400,-197
 ---
-<<declare $nice = 0>>
+
 
 Sinä: Moi, haluaisitteko puhua kirjakerhoon liittymisestä?
 <<jump Dodek2>>
@@ -292,8 +292,9 @@ position: 405,-450
 ---
 
 Sinä: Moi, kiinnostaisiko teitä kirjakerhoon liittyminen?
-Kari: Öö mikä helvetin krijakerho??
+Mari: Öö mikä helvetin kirjakerho??
 Sinä: Joo elikkäs meillä on tälläinen kirjakerho <br> Kari: Hei odotas hetkinen, olen kuullut äänesi ennenkin. Olet 
+<<wait 4.0>>
 <<wait 0.5>> SE SAATANAN NÄPISTÄJÄNUORI!!! RYÖSTIT KAUPASTANI ENERGIAJUOMAA, SOITAN POLIISIT SAATANA
     -> Pyydä anteeksi
         Sinä: Anteeksi olen todella pahoillani... Minulla oli todella kova kiire ja olin ajatuksissani. Se oli vahinko, vannon... Olen pahoillani
@@ -303,7 +304,7 @@ Sinä: Joo elikkäs meillä on tälläinen kirjakerho <br> Kari: Hei odotas hetk
     -> Tiuskaise
         <<set $nice -= 2>>
         Sinä: Haista sinä hemuli
-        Kari: *Kari sulki puhelimen*
+        Mari: *Mari sulki puhelimen*
         <<jump EndDia>>
 ===
 
@@ -338,8 +339,52 @@ position: 405,-450
 ---
 <<RawImgShow>>
 <<RawImgAct rage>> //in the character display object under Canvas
+<<declare $nice = 0>>
+<<declare $kierrot = 1>>
+<<declare $kirosanat = 1>>
 Ulosotto: Ulosotosta päivää, oletko hereillä? 
-Ulosotto: Tulimme viemään kahvinkeittimesi. Haeppa niitä töitä koska seuraavan kerran me myydään sinun OLED televisio.
+Ulosotto: Tulimme viemään kahvinkeittimesi. Haeppa niitä töitä koska seuraavan kerran me myydään sinun televisio.
+    -> Haistata pitkät
+        -> Kiroile (level {$kirosanat} kirosanat)
+            -> Paska
+                Sinä: Haista paska...
+                Ulosotto: Voidaan me se töölö vaikka hetikin napata matkaan, kaksi lintua yhdellä iskulla
+            -> Perse
+                Sinä: Haista perse...
+                <<wait 1>>
+                Ulosotto: !?
+                Ulosotto: Anteeksi mitä *hekottaa*
+                Ulosotto: Haista perse?!
+                Ulosotto: Heh, enpä ole ennen moista kuullut
+            -> Saatana
+                Sinä: Haista saatana!
+                Ulosotto: ...
+                <<wait 1>>
+                Ulosotto: Saatana?
+                Ulosotto: Omintakeinen sanavalina mutta mikäs siinä.
+            -> Vittu (ei unlockattu vielä)
+                Sinä: *Et vielä uskalla sanoa vittua* Haista vattu!!
+                Ulosotto: Jos aijot pistää hanttiin niin kiroilisit edes kunnolla.
+        -> Kiertoilmaus (level {$kierrot} kiertoilmaukset)
+            -> Kakka (huoh)
+                Sinä: Haista kakka!
+                    <<wait 2>>
+                    Ulosotto: ?
+                    <<wait 2>>
+                    Ulosotto: ok?
+            -> Peppu
+                    <<wait 2>>
+                    Ulosotto: wait what?
+                    <<wait 2>>
+                    Ulosotto: okkkei?
+            -> Himpskatti
+                Sinä: No himpskatti vie!
+                Ulosotto: Ai vie? Ilomielin! 
+                Ulosotto: Pakko kyllä antaa kymmenen pistettä ja papukaijamerkki sanavalinnasta lol.
+    -> Tottele
+        Sinä: Rauha maahan, haen kyllä töitä nyt ei tarvi viedä yhtään mitään.
+        Ulosotto: Hä? No mene koneelle sitten ja sassiin!
+
 <<RawImgHide>>
 ===
 

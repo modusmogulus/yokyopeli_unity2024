@@ -41,6 +41,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToidenJalkeen1.unity
     guid: c3074aef0253bc043a7864c1e293b939
+  - enabled: 1
+    path: Assets/Wiimote/WiimoteDemo/Scene.unity
+    guid: 0f5ff05b622631a4d89d5958185188d1
+  - enabled: 1
+    path: Assets/Scenes/WiiMoteConfig.unity
+    guid: bfdd85986a45f3148ace38d7c7c4eae0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 5fec4d9d89ef4294fbc00930a66f09d3, type: 2}
   m_UseUCBPForAssetBundles: 0

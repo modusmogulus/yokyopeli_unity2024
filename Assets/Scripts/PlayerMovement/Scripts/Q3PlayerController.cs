@@ -4,6 +4,7 @@ using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 using EasyTransition;
 using static DamageTypes;
+using WiimoteApi;
 
 namespace Q3Movement
 {
@@ -72,6 +73,7 @@ namespace Q3Movement
         private float m_PlayerFriction = 0;
         public bool m_inRollZone = false;
         private Vector3 m_MoveInput;
+        private Wiimote wiimote;
         private Transform m_Tran;
         private Transform m_CamTran;
         public bool m_IsRolling = false;
@@ -259,7 +261,7 @@ namespace Q3Movement
             {
                 Die();
             }
-
+            
             Climb();
             wallrunningStamina += 1;
             // Control Tip Text for parkour roll
@@ -293,9 +295,7 @@ namespace Q3Movement
             if (isOnSlope == false) { 
                 isCurrentlyGrounded = m_Character.isGrounded;
             }
-            
             m_MoveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
             if (!m_WasGrounded && MainGameObject.Instance.s_alwaysHardStrafeInAir && !isWallRunning) {
                 m_MouseLook.SetRotastrafe(true);
                 if (m_MoveInput.x != 0 && m_MoveInput.z != 0)

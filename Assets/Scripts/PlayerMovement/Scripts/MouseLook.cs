@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using WiimoteApi;
+
 namespace Q3Movement
 {
     /// <summary>
@@ -22,7 +24,7 @@ namespace Q3Movement
         private Quaternion m_CharacterTargetRot;
         private Quaternion m_CameraTargetRot;
         private bool m_cursorIsLocked = true;
-
+        private Wiimote wiimote;
         public void Init(Transform character, Transform camera)
         {
             m_CharacterTargetRot = character.localRotation;
@@ -42,7 +44,17 @@ namespace Q3Movement
             if (m_LockCursor == true) {
                 float yRot = Input.GetAxis("Mouse X") * m_XSensitivity;
                 float xRot = Input.GetAxis("Mouse Y") * m_YSensitivity;
-                
+                wiimote = MainGameObject.Instance.wiimote;
+
+                if (wiimote != null && wiimote.current_ext != ExtensionController.NONE) {
+                    
+                    NunchuckData nuncData = wiimote.Nunchuck;
+
+                    yRot += nuncData.stick[0];
+                    xRot += nuncData.stick[1];
+                }
+
+
                 if (m_Smooth) { 
                     yRot = Mathf.Clamp(Input.GetAxis("Mouse X") * m_XSensitivity, -m_tiltSmoothness*Time.deltaTime*200f, m_tiltSmoothness * Time.deltaTime * 200f); //hell yeah no more jitter :D
                     xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness * Time.deltaTime * 200f, m_tiltSmoothness * Time.deltaTime * 200f);

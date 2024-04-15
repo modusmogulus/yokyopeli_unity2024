@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using EasyTransition;
 using Q3Movement;
 using UnityEngine.UI;
-
+using WiimoteApi;
 public class MainGameObject : MonoBehaviour
 {
 
@@ -38,8 +38,12 @@ public class MainGameObject : MonoBehaviour
     public RawImage characterDisplayerObject;
     public GameObject mainCanvas;
     public GameObject GIKSManager;
+    
+    public Wiimote wiimote;
+    public bool nunchuckAttached;
+    
     public string GameIntKeyDebugText;
-        public static MainGameObject Instance { get; private set; }
+    public static MainGameObject Instance { get; private set; }
 
     private void Awake()
     {
@@ -161,9 +165,31 @@ public class MainGameObject : MonoBehaviour
         }
 
     }
+    private void UpdateWiiMote()
+    {
+        if (!WiimoteManager.HasWiimote()) { return; }
+        wiimote = WiimoteManager.Wiimotes[0];
+        wiimote.ReadWiimoteData();
+        print("only wii mote found");
+        print(wiimote.ToString());
+        print(wiimote.current_ext.ToString());
+        if (wiimote != null && wiimote.current_ext != ExtensionController.NONE)
+        {
+            print("wii mote and nunchuck found");
+            wiimote.SendDataReportMode(InputDataType.REPORT_BUTTONS_EXT8);
+        }
+    }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            WiimoteManager.Cleanup(wiimote);
+            
+            print("finding wiimote...");
+            WiimoteManager.FindWiimotes();
+        }
+        UpdateWiiMote();
         if (!interactTextComponent && interactText)
         {
             interactTextComponent = interactText.GetComponent<TMP_Text>();
@@ -172,6 +198,14 @@ public class MainGameObject : MonoBehaviour
         {
             scoreText.text = score.ToString();
         }
+        
     }
-
+    void OnApplicationQuit()
+    {
+        if (wiimote != null)
+        {
+            WiimoteManager.Cleanup(wiimote);
+            wiimote = null;
+        }
+    }
 }

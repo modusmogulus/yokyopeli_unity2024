@@ -63,25 +63,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SelectButtonByUhh.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\GuitarData.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\Bezier.cs" />
     <Compile Include="Assets\Scripts\ControlTips.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\NunchuckData.cs" />
     <Compile Include="Assets\Scripts\AchievementType.cs" />
     <Compile Include="Assets\Scripts\SimpleContactProvider.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\MotionPlusData.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Scripts\Q3PlayerController.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\TransitionSettings.cs" />
     <Compile Include="Assets\Zololgo\Post Effects\Sharpen\Scripts\Sharpen.cs" />
     <Compile Include="Assets\Scripts\GUITrigger.cs" />
     <Compile Include="Assets\Scripts\RollArea.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\ButtonData.cs" />
     <Compile Include="Assets\Scripts\PlayerGetter.cs" />
     <Compile Include="Assets\Scripts\BottleReceiver.cs" />
     <Compile Include="Assets\PSXShaderKit\Scripts\PSXShaderManager.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\score.cs" />
     <Compile Include="Assets\Scripts\StoryTextBox.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\ClassicControllerData.cs" />
     <Compile Include="Assets\Scripts\Saving\SaveManager.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\WiimoteData.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\TransitionManager.cs" />
     <Compile Include="Assets\PSXShaderKit\Demo\SpookyOrbFloat.cs" />
     <Compile Include="Assets\Kuwahara Filter\AnisotropicKuwahara.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\StatusData.cs" />
     <Compile Include="Assets\Scripts\AGDS_Dialogue.cs" />
     <Compile Include="Assets\Scripts\DamageTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Scripts\Q3PlayerDebug.cs" />
@@ -95,15 +102,18 @@
     <Compile Include="Assets\Scripts\TextTrigger.cs" />
     <Compile Include="Assets\Scripts\MusicTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement\Scripts\MouseLook.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\Wiimote.cs" />
     <Compile Include="Assets\Scripts\UI_Timer.cs" />
     <Compile Include="Assets\Kuwahara Filter\Kuwahara.cs" />
     <Compile Include="Assets\Scripts\FunctionCaller.cs" />
     <Compile Include="Assets\Samples\Yarn Spinner\2.4.0\Visual Novel\Scripts\VNManager.cs" />
     <Compile Include="Assets\EasyTransitions\Demo\DemoLoadScene.cs" />
     <Compile Include="Assets\Scripts\NewMGO.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\Enums.cs" />
     <Compile Include="Assets\Scripts\HideOnPlay.cs" />
     <Compile Include="Assets\Scripts\Bottle.cs" />
     <Compile Include="Assets\Scripts\VHS.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\HIDapi.cs" />
     <Compile Include="Assets\Scripts\ChangeSceneAuto.cs" />
     <Compile Include="Assets\Scripts\BaseGUI.cs" />
     <Compile Include="Assets\Scripts\SFX_Shockwave.cs" />
@@ -112,6 +122,7 @@
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\GIK.cs" />
     <Compile Include="Assets\Scripts\Enemy1.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\Internal\ReadOnlyArray.cs" />
     <Compile Include="Assets\Scripts\FootstepPlayer.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\PathObjectEditorData.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
@@ -120,6 +131,8 @@
     <Compile Include="Assets\Scripts\GUITriggerButton.cs" />
     <Compile Include="Assets\Scripts\CharacterDisplay.cs" />
     <Compile Include="Assets\Scripts\FORCE_MouseLock.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\Internal\RegisterReadData.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteManager.cs" />
     <Compile Include="Assets\Scripts\GUITextMGOSetter.cs" />
     <Compile Include="Assets\Scripts\PickupTrigger.cs" />
     <Compile Include="Assets\Scripts\Saving\GameData.cs" />
@@ -127,12 +140,17 @@
     <Compile Include="Assets\Scripts\SwipePoint.cs" />
     <Compile Include="Assets\Scripts\yk_transition_manager.cs" />
     <Compile Include="Assets\Scripts\GIKS.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\WiiUProData.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\PathObject.cs" />
     <Compile Include="Assets\Scripts\Grabbling.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\Transition.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\AccelData.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Scripts\WiimoteDemo.cs" />
     <Compile Include="Assets\Kuwahara Filter\GeneralizedKuwahara.cs" />
     <Compile Include="Assets\Scripts\DamageTypes.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Scripts\ExtDataDemo.cs" />
     <Compile Include="Assets\EasyTransitions\Scripts\CutoutMaskUI.cs" />
+    <Compile Include="Assets\Wiimote\WiimoteDemo\Wiimote\Scripts\WiimoteData\IRData.cs" />
     <Compile Include="Assets\Scripts\SwipeCard.cs" />
     <Compile Include="Assets\Scripts\MainUIScript.cs" />
   </ItemGroup>
@@ -163,6 +181,8 @@
     <None Include="Assets\FMODBanks\abc\Metadata\Asset\{9d82a51b-74d6-4c62-91f5-41a26ac7795b}.xml" />
     <None Include="Assets\FMODBanks\abc\Metadata\SnapshotGroup\{4541a122-1fd3-4c39-9b3c-f8ae02549b54}.xml" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-VertexLit.shader" />
+    <None Include="Assets\Wiimote\WiimoteDemo\Wiimote\Plugins\win64\hidapi.dll" />
+    <None Include="Assets\Wiimote\WiimoteDemo\Wiimote\Plugins\win32\hidapi.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\PSXShaderKit\Shaders\ImageEffects\PSX-Dithering.shader" />
     <None Include="Assets\FMODBanks\abc\Metadata\EventFolder\{68e15d30-3feb-4d1f-8857-8ff722a83c1b}.xml" />
