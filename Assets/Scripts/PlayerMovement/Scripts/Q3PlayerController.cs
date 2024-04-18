@@ -37,6 +37,7 @@ namespace Q3Movement
         [Header("Movement")]
         [SerializeField] private float m_Friction = 6;
         [SerializeField] private float m_Gravity = 20;
+        [SerializeField] public float m_MaxFallSpeed = 320f;
         [SerializeField] private float m_JumpForce = 8;
         [SerializeField] public int m_maxWallrunningStamina = 30;
         private float defaultFOV;
@@ -53,6 +54,7 @@ namespace Q3Movement
         [SerializeField] public float m_TiltAmount = 1.0f;
         [SerializeField] public AudioSource m_SpeedWindSound;
         [SerializeField] public AudioSource m_SlideSound;
+        
         [SerializeField] public PostProcessVolume speedEffect;
         private DamageTypes lastDamageType;
         private int wallrunningStamina = 0;
@@ -193,8 +195,8 @@ namespace Q3Movement
 
         public int SetSnowInBoots(int value)
         {
-            snowInBoots = value;
-            return value;
+            snowInBoots = Mathf.Max(value, 9);
+            return Mathf.Max(value, 9);
         }
 
         public bool GetSnowBootMechanics(bool value) { return snowBootMechanics; }
@@ -636,13 +638,6 @@ namespace Q3Movement
             }
         }
 
-        /*
-        Vector3 ClipVelocity(Vector3 vectorIn, Vector3 normal, float overbounce)
-        {
-
-            return; 
-        }
-        */
 
 
         
@@ -693,7 +688,7 @@ namespace Q3Movement
                     Vector3 vec = Vector3.zero;
                     var normal = hit.normal;
                     var yInverse = 1f - normal.y;
-                    ClipVelocity(m_PlayerVelocity, normal, ref m_PlayerVelocity, 1f);
+                    ClipVelocity(m_PlayerVelocity, normal, ref m_PlayerVelocity, 1.2f);
 
                     //m_PlayerVelocity.z = Mathf.Clamp(m_PlayerVelocity.z, -m_PlayerVelocity.y, m_PlayerVelocity.y);
                     m_SlideSound.volume += 0.01f;
@@ -784,7 +779,7 @@ namespace Q3Movement
 
             // Apply gravity
             m_PlayerVelocity.y -= m_Gravity * Time.deltaTime;
-
+            m_PlayerVelocity.y = Mathf.Clamp(m_PlayerVelocity.y, -m_MaxFallSpeed, m_MaxFallSpeed*10f);
         }
 
         // Air control occurs when the player is in the air, it allows players to move side 

@@ -5725,6 +5725,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8217992288333163751, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
+      propertyPath: startNode
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217992288333163751, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
+      propertyPath: startAutomatically
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6785864063258868065, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
     m_RemovedGameObjects: []
@@ -9550,8 +9558,10 @@ MonoBehaviour:
   eventDescription: 
   targetIsGUI: 0
   startDialogue: 0
+  costsMoney: 0
   cost: 0
   yarnDialogueNode: 
+  yarnDialogueNodeTooPoor: 
   dialogueRunner: {fileID: 0}
   GIKManagerPrefab: {fileID: 0}
   editorYarnFile: {fileID: 0}
@@ -9567,6 +9577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e400d73e847099b4692fc44ceb724bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideOnPlay: 1
+  alsoDisableOnStart: 0
 --- !u!1 &767375463
 GameObject:
   m_ObjectHideFlags: 0
@@ -9884,11 +9896,19 @@ PrefabInstance:
       value: SFX_Drinksu
       objectReference: {fileID: 0}
     - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
+      propertyPath: targetIsGUI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
       propertyPath: activeOnExit
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
       propertyPath: activeOnEnter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
+      propertyPath: startDialogue
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
@@ -10220,7 +10240,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.26611328, y: -13.776901}
+  m_AnchoredPosition: {x: -0.26611328, y: -13.7769165}
   m_SizeDelta: {x: -13.4688, y: -39.7188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &831545848
@@ -10682,6 +10702,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
+      propertyPath: setGameIntKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
       propertyPath: startDialogue
       value: 1
       objectReference: {fileID: 0}
@@ -10693,6 +10717,10 @@ PrefabInstance:
       propertyPath: dialogueRunner
       value: 
       objectReference: {fileID: 488465440}
+    - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
+      propertyPath: gameIntKeyName
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
       propertyPath: yarnDialogueNode
       value: Ulosotto1

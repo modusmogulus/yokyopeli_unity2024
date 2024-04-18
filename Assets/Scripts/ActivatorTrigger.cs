@@ -41,7 +41,7 @@ public class ActivatorTrigger : MonoBehaviour
     [ResizableTextArea]
     public string eventDescription;
     [HorizontalLine(color: EColor.Green)]
-    [EnableIf("startDialogue")]
+    //[EnableIf("startDialogue")]
     public bool targetIsGUI = false;
     public bool startDialogue;
 
@@ -187,15 +187,32 @@ public class ActivatorTrigger : MonoBehaviour
 
     private void ActivateObject()
     {
-        if (isInRange == true) {
+        if (isInRange == true)
+        {
             delayInProgress = false;
-                if (cost <= MainGameObject.Instance.money || cost == 0 || !costsMoney) { 
-                    if (requireGameIntKey == true || setGameIntKey == true)
+            if (cost <= MainGameObject.Instance.money || cost == 0 || !costsMoney)
+            {
+                if (requireGameIntKey == true || setGameIntKey == true)
+                {
+                    if (setGameIntKey == true)
                     {
-                        if (setGameIntKey == true)
+                        print("Trying to set" + gameIntKeyName + "to " + gameIntValue);
+                        GIKS.Instance.SetGIKByName(gameIntKeyName, gameIntValue);
+                        if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+                        if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                        if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
+                        if (targetIsGUI == true)
                         {
-                            print("Trying to set" + gameIntKeyName + "to " + gameIntValue);
-                            GIKS.Instance.SetGIKByName(gameIntKeyName, gameIntValue);
+                            ShowUI();
+                        }
+                        if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                    }
+                    if (requireGameIntKey == true)
+                    {
+                        print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
+                        print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
+                        if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true)
+                        {
                             if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                             if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
                             if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
@@ -205,37 +222,25 @@ public class ActivatorTrigger : MonoBehaviour
                             }
                             if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                         }
-                        if (requireGameIntKey == true)
-                        { 
-                            print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
-                            print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
-                            if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true) {
-                                if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
-                                if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                                if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                                if (targetIsGUI == true)
-                                {
-                                    ShowUI();
-                                }
-                                if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
-                            }
-                        }
                     }
-                    //wait what?? unnecessary code lol
-                    /*
+                }
+
                 else
                 {
                     if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                     if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-
+                    if (targetIsGUI == true)
+                    {
+                        ShowUI();
+                    }
                     if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                }
-                    */ 
-                }
-                else
-                {
-                    dialogueRunner.StartDialogue(yarnDialogueNodeTooPoor);
+                    if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                 }
             }
+            else
+            {
+                dialogueRunner.StartDialogue(yarnDialogueNodeTooPoor);
+            }
+        }
     }
 }
