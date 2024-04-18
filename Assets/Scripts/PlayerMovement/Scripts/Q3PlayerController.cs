@@ -52,6 +52,7 @@ namespace Q3Movement
         [SerializeField] private Animator headAnimator;
         [SerializeField] public float m_TiltAmount = 1.0f;
         [SerializeField] public AudioSource m_SpeedWindSound;
+        [SerializeField] public AudioSource m_SlideSound;
         [SerializeField] public PostProcessVolume speedEffect;
         private DamageTypes lastDamageType;
         private int wallrunningStamina = 0;
@@ -116,6 +117,7 @@ namespace Q3Movement
             health = maxhp;
             m_Tran = transform;
             m_Character = GetComponent<CharacterController>();
+            m_OriginalHeight = m_Character.height;
 
             if (!m_Camera)
                 m_Camera = Camera.main;
@@ -128,23 +130,29 @@ namespace Q3Movement
         }
 
 
-        public IEnumerator CrouchCoroutine()
+        public void CheckAndUpdateCrouch()
         {
-            m_OriginalHeight = m_Character.height;
-            if (m_IsCrouching = true) { m_Character.height = m_CrouchHeight; }
-
-
-
-
-            // Play crouch animation or do any other necessary actions
-            // Example: triggering an animation in the animator controller
-
-            yield return null; // Or yield return new WaitForSeconds(animationLength);
-
-            // Reset the character controller height to original height
-            m_Character.height = m_OriginalHeight;
-
-            m_IsCrouching = false;
+            
+            if (Input.GetKey(KeyCode.C)) {
+                m_IsCrouching = true;
+                if (m_Character.height > m_CrouchHeight) {
+                    m_Character.height -= 0.3f;
+                    m_Character.transform.Translate(0f, -0.25f, 0f);
+                }
+            }
+            else
+            {
+                if (m_Character.height < m_OriginalHeight)
+                {
+                    m_IsCrouching = false;
+                    m_Character.height += 0.3f;
+                    m_Character.transform.Translate(0f, 0.3f, 0f);
+                }
+                else
+                {
+                    m_Character.height = m_OriginalHeight;
+                }
+            }
         }
 
 
@@ -398,7 +406,7 @@ namespace Q3Movement
                         {
                             if (m_currentfallSpeed >= 10.0)
                             {
-                                if (!m_IsRolling && isCurrentlyGrounded)
+                                if (!m_IsRolling && isCurrentlyGrounded && !isOnSlope)
                                 {
                                     hasRolled = true;
                                     StartCoroutine(RollCoroutine());
@@ -441,13 +449,7 @@ namespace Q3Movement
             m_Character.Move(m_PlayerVelocity * Time.deltaTime);
 
 
-            if (Input.GetKeyDown(KeyCode.Numlock))
-            {
-                m_OriginalHeight = m_Character.height;
-                m_Character.height = m_CrouchHeight;
-                m_IsCrouching = true;
-                //StartCoroutine(CrouchCoroutine());
-            }
+            CheckAndUpdateCrouch();
             if (Input.GetKeyUp(KeyCode.Numlock))
             {
                 Vector3 pos = transform.position;
@@ -648,13 +650,11 @@ namespace Q3Movement
         //https://github.com/Maugun/SurfUnity/blob/master/Assets/Scripts/SurfPhysics.cs
         {
             var angle = normal[1];
-            var blocked = 0x00;         // Assume unblocked.
-            if (angle > 0)          // If the plane that is blocking us has a positive z component, then assume it's a floor.
-                blocked |= 0x01;    // 
-            if (angle == 0)             // If the plane has no Z, it is vertical (wall/step)
-                blocked |= 0x02;    // 
-
-            // Determine how far along plane to slide based on incoming direction.
+            var blocked = 0x00;
+            if (angle > 0)
+                blocked |= 0x01;
+            if (angle == 0)
+                blocked |= 0x02;
             var backoff = Vector3.Dot(input, normal) * overbounce;
 
             for (int i = 0; i < 3; i++)
@@ -662,16 +662,11 @@ namespace Q3Movement
                 var change = normal[i] * backoff;
                 output[i] = input[i] - change;
             }
-
-            // iterate once to make sure we aren't still moving through the plane
             float adjust = Vector3.Dot(output, normal);
             if (adjust < 0.0f)
             {
                 output -= (normal * adjust);
-                //		Msg( "Adjustment = %lf\n", adjust );
             }
-
-            // Return blocking flags.
             return blocked;
         }
 
@@ -687,8 +682,10 @@ namespace Q3Movement
                 var collider = hit.collider;
                 var angle = Vector3.Angle(Vector3.up, hit.normal);
 
-                if (angle > m_Character.slopeLimit && angle < 80f)
+                if (angle > m_Character.slopeLimit)
                 {
+
+                    m_MouseLook.SetRotastrafe(false);
                     //https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/pm_shared/pm_shared.c#L1575
                     //line 732
                     isOnSlope = true;
@@ -697,12 +694,17 @@ namespace Q3Movement
                     var normal = hit.normal;
                     var yInverse = 1f - normal.y;
                     ClipVelocity(m_PlayerVelocity, normal, ref m_PlayerVelocity, 1f);
-                    //m_PlayerVelocity.z = Mathf.Clamp(m_PlayerVelocity.z, -m_PlayerVelocity.y, m_PlayerVelocity.y);
 
+                    //m_PlayerVelocity.z = Mathf.Clamp(m_PlayerVelocity.z, -m_PlayerVelocity.y, m_PlayerVelocity.y);
+                    m_SlideSound.volume += 0.01f;
+                    m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.3f);
+                    return;
                 }
-                else { isOnSlope = false; }
+                return;
             }
-            else { isOnSlope = false; }
+            m_SlideSound.volume -= 0.03f;
+            m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.3f);
+            isOnSlope = false;
         }
 
         void TryBackflip()
@@ -951,7 +953,7 @@ namespace Q3Movement
             //m_HeadAnchor.transform.Rotate(0, 0, Vector3.Dot(transform.right, targetDir) * accel);
             m_PlayerVelocity.x += accelspeed * targetDir.x;
             m_PlayerVelocity.z += accelspeed * targetDir.z;
-
+            m_PlayerVelocity.y += accelspeed * targetDir.y;
         }
 
         public void Teleport(Vector3 pos)
