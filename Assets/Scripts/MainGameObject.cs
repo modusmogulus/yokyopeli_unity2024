@@ -25,6 +25,7 @@ public class MainGameObject : MonoBehaviour
     public float money = 0;
     public float worth = 0;
     
+    
     //Accessibility settings (s_ prefix stands for settings)
     public bool s_reduceNausea = false;
     public bool s_disableHeadTilt = false;
@@ -38,10 +39,10 @@ public class MainGameObject : MonoBehaviour
     public RawImage characterDisplayerObject;
     public GameObject mainCanvas;
     public GameObject GIKSManager;
-    
+    public bool wiimoteJumpPressed = false;
     public Wiimote wiimote;
     public bool nunchuckAttached;
-    
+
     public string GameIntKeyDebugText;
     public static MainGameObject Instance { get; private set; }
 
@@ -144,7 +145,7 @@ public class MainGameObject : MonoBehaviour
             if (gameIntKeys[i] == 0) {
                 text += ". ";
             }
-            else
+        else
             {
                 text += gameIntKeys[i].ToString();
             }
@@ -169,26 +170,42 @@ public class MainGameObject : MonoBehaviour
     {
         if (!WiimoteManager.HasWiimote()) { return; }
         wiimote = WiimoteManager.Wiimotes[0];
-        wiimote.ReadWiimoteData();
-        print("only wii mote found");
+        int ret = wiimote.ReadWiimoteData();
+        wiimote.SendDataReportMode(InputDataType.REPORT_BUTTONS_IR10_EXT9);
         print(wiimote.ToString());
         print(wiimote.current_ext.ToString());
-        if (wiimote != null && wiimote.current_ext != ExtensionController.NONE)
+        if (wiimote.Button.a)
         {
-            print("wii mote and nunchuck found");
-            wiimote.SendDataReportMode(InputDataType.REPORT_EXT21);
+            wiimoteJumpPressed = true;
+        }
+        
+    }
+    public void CleanupWiimote() { WiimoteManager.Cleanup(wiimote); }
+    public void SetupWiimote() { WiimoteManager.FindWiimotes(); }
+    public void SetupWiimoteDatareportMode()
+    {
+            if (wiimote != null) {
+                wiimote.SendPlayerLED(true, false, false, true);
+                wiimote.SetupIRCamera(IRDataType.BASIC);
+                
         }
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            CleanupWiimote();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            SetupWiimote();
+        }
         if (Input.GetKeyDown(KeyCode.Alpha9))
         {
-            WiimoteManager.Cleanup(wiimote);
-            
-            print("finding wiimote...");
-            WiimoteManager.FindWiimotes();
+            SetupWiimoteDatareportMode();
         }
+
         UpdateWiiMote();
         if (!interactTextComponent && interactText)
         {

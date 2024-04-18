@@ -39,7 +39,7 @@ public class SelectButtonByUhh : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown(key))
+		if (Input.GetKeyDown(key) || (MainGameObject.Instance.wiimote != null && MainGameObject.Instance.wiimote.Button.a))
 		{
 			Down();
 		}

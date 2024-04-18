@@ -8928,14 +8928,30 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 383932776}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 383932776}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 383932776}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
@@ -8943,19 +8959,51 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: changeScene
+      value: CleanupWiimote
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetupWiimote
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetupWiimoteDatareportMode
       objectReference: {fileID: 0}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MainGameObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: MainGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MainGameObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Scenes/WiiMoteConfig
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 558978241580386610, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3345638896693784400, guid: 5cd590bd93fe87b498c9f5b1e1348155, type: 3}

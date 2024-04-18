@@ -68,3 +68,19 @@ MonoBehaviour:
     achievementUIElement: {fileID: 0}
     achievementType: 0
     whoCalled: {fileID: 0}
+  - name: Ruokaovi
+    description: "Ruokaovi avautuu puhedialogin kautta (avattavissa dodekahedran
+      keskustelun j\xE4lkeen)\r\n0=Kiinni\r\n1=Auki"
+    value: 0
+    achievement: 0
+    achievementUIElement: {fileID: 0}
+    achievementType: 0
+    whoCalled: {fileID: 0}
+  - name: CurrentPuhelinmyynti
+    description: "Kertoo montako puhelinmyynti osiota on jo l\xE4p\xE4isty.\nL\xE4htee
+      nollasta."
+    value: 0
+    achievement: 0
+    achievementUIElement: {fileID: 0}
+    achievementType: 0
+    whoCalled: {fileID: 0}

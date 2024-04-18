@@ -4114,6 +4114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -Standard Dialogue System Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7320199620599030938, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7930952848753995099, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
@@ -4193,7 +4197,7 @@ PrefabInstance:
     - target: {fileID: 8217992288333163751, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
       propertyPath: onCommand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1559020051}
+      objectReference: {fileID: 0}
     - target: {fileID: 8217992288333163751, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
       propertyPath: onCommand.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9204,11 +9208,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2eaac1657d0cf548a0b7007696532e5, type: 3}
---- !u!65 &1559020051 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8525847236465593696, guid: 2c1538b8996bfcb44a13a071d9c4c84a, type: 3}
-  m_PrefabInstance: {fileID: 1088736878}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1561935404 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7029948723529949830, guid: f176b0ffe1f93f242b14899c5f298f23, type: 3}

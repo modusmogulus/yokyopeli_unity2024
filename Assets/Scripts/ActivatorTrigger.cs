@@ -221,18 +221,16 @@ public class ActivatorTrigger : MonoBehaviour
                             }
                         }
                     }
-                    
+                    //wait what?? unnecessary code lol
+                    /*
                 else
                 {
                     if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                     if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                    if (targetIsGUI == true)
-                    {
-                        ShowUI();
-                    }
+
                     if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                    if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                 }
+                    */ 
                 }
                 else
                 {

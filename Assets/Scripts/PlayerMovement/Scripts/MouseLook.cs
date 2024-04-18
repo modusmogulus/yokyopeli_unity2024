@@ -91,15 +91,15 @@ namespace Q3Movement
 
         public void HandleWiiInput()
         {
-            if (wiimote != null && wiimote.current_ext == ExtensionController.NUNCHUCK)
+            if (wiimote != null && wiimote.current_ext != ExtensionController.NONE)
             {
 
                 NunchuckData nuncData = wiimote.Nunchuck;
-
+                
                 //Debug.Log(nuncData.stick[0].ToString());
                 //Debug.Log(nuncData.stick[1].ToString());
-                yRot = ((float)nuncData.stick[0] - 128) / 128;
-                xRot = ((float)nuncData.stick[1] - 128) / 255;
+                yRot = nuncData.GetStick01()[0]*2f-1f;
+                xRot = nuncData.GetStick01()[1]*2f-1f;
                 xRot *= m_XSensitivity;
                 yRot *= m_YSensitivity;
                 Debug.Log(xRot);
