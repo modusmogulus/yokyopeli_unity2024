@@ -192,55 +192,41 @@ public class ActivatorTrigger : MonoBehaviour
             delayInProgress = false;
             if (cost <= MainGameObject.Instance.money || cost == 0 || !costsMoney)
             {
-                if (requireGameIntKey == true || setGameIntKey == true)
+                if (setGameIntKey == true)
                 {
-                    if (setGameIntKey == true)
-                    {
-                        print("Trying to set" + gameIntKeyName + "to " + gameIntValue);
-                        GIKS.Instance.SetGIKByName(gameIntKeyName, gameIntValue);
-                        if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
-                        if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                        if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                        if (targetIsGUI == true)
-                        {
-                            ShowUI();
-                        }
-                        if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
-                    }
-                    if (requireGameIntKey == true)
-                    {
-                        print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
-                        print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
-                        if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true)
-                        {
-                            if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
-                            if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
-                            if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
-                            if (targetIsGUI == true)
-                            {
-                                ShowUI();
-                            }
-                            if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
-                        }
-                    }
+                    print("Trying to set" + gameIntKeyName + "to " + gameIntValue);
+                    GIKS.Instance.SetGIKByName(gameIntKeyName, gameIntValue);
                 }
 
-                else
+                if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+                if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
+                if (targetIsGUI == true)
+                {
+                    ShowUI();
+                }
+                if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+            }
+            if (requireGameIntKey == true)
+            {
+                print("GIK Required: " + gameIntKeyName + " value: " + gameIntValue.ToString());
+                print("Which is currently: " + GIKS.Instance.GetGIKByName(gameIntKeyName).value.ToString());
+                if (GIKS.Instance.GetGIKEqualsByName(gameIntKeyName, gameIntValue) == true)
                 {
                     if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
                     if (gameObject != null) { gameObject.SetActive(activeOnEnter); }
+                    if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
                     if (targetIsGUI == true)
                     {
                         ShowUI();
                     }
-                    if (destroyOnEnter) { MainGameObject.Instance.interactText.SetActive(false); Destroy(this); }
                     if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
                 }
-            }
-            else
-            {
-                dialogueRunner.StartDialogue(yarnDialogueNodeTooPoor);
-            }
+            }   
+        }
+        else
+        {
+            dialogueRunner.StartDialogue(yarnDialogueNodeTooPoor);
         }
     }
 }
