@@ -539,3 +539,18 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ec3801519adc4a648bb00e63724ee715, type: 3}
     minPitch: 0.8
     maxPitch: 1.2
+  - AudioChan: 0
+    audioName: SFX_Keypress
+    minVolume: 0.35
+    maxVolume: 0.35
+    audioClips:
+    - {fileID: 8300000, guid: 46db954dcb7faa24d90016cef1dd5cd0, type: 3}
+    - {fileID: 8300000, guid: 790723e22eb6827428f94f78731e9768, type: 3}
+    - {fileID: 8300000, guid: 6652d3a993538574cb240dab47f64e7c, type: 3}
+    - {fileID: 8300000, guid: de4624771dc6ac4439033116044fc11b, type: 3}
+    - {fileID: 8300000, guid: ac57127619214e643b6a2ea588865254, type: 3}
+    - {fileID: 8300000, guid: 3eb5f663e78670c418dc48f1da055ba5, type: 3}
+    - {fileID: 8300000, guid: de0b56431c89b5f4088f3b5b87cc20cf, type: 3}
+    - {fileID: 8300000, guid: 0354b85fe4a8a164a8e0f6429abaa55f, type: 3}
+    minPitch: 1
+    maxPitch: 1

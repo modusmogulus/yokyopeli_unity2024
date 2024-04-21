@@ -52,7 +52,7 @@ public class FootstepPlayer : MonoBehaviour
                     print(physSound);
                     physSound = soundToPlay[index];
 
-                    AudioManager.Instance.PlayAudio(physSound, transform.position);
+                    AudioManager.Instance.PlayAudio(physSound);
                 }
 
                 // ----------------------------------------------------- Snow in boots mechanics stuff -----------------------------------------------------

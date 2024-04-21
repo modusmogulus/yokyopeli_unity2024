@@ -13,6 +13,7 @@ public class SelectButtonByUhh : MonoBehaviour
 	Graphic targetGraphic;
 	Color normalColor;
 	public bool changeCursorLock = true;
+	public string audioToPlay;
 
 	void Awake()
 	{
@@ -59,6 +60,7 @@ public class SelectButtonByUhh : MonoBehaviour
 		if (player != null && changeCursorLock == true) { print("HEI!");  player.m_MouseLook.SetCursorLock(true); }
 		StartColorTween(button.colors.pressedColor, false);
 		button.onClick.Invoke();
+		AudioManager.Instance.PlayAudio(audioToPlay);
 	}
 
 	void StartColorTween(Color targetColor, bool instant)

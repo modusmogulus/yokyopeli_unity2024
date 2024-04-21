@@ -149,7 +149,7 @@ namespace Q3Movement
                 {
                     m_IsCrouching = false;
                     m_Character.height += 0.3f;
-                    m_Character.transform.Translate(0f, 0.3f, 0f);
+                    m_Character.transform.Translate(0f, 0.25f, 0f);
                 }
                 else
                 {
@@ -214,12 +214,17 @@ namespace Q3Movement
 
             if (m_currentfallSpeed > 3)
             {
-                //AudioManager.Instance.PlayAudio("FT_Landing");
+                AudioManager.Instance.PlayAudio("SFX_JumpUp");
+                ft_player.PlayOtherMaterialSound(FootstepPlayer.MATERIAL_SOUND_TYPE.FOOTSTEP);
+            }
+            if (m_currentfallSpeed > 10)
+            {
+                AudioManager.Instance.PlayAudio("SFX_JumpUp");
                 ft_player.PlayOtherMaterialSound(FootstepPlayer.MATERIAL_SOUND_TYPE.LANDING);
             }
-            if (m_currentfallSpeed > 1.5f && m_PlayerVelocity.magnitude > 10)
+            if (m_currentfallSpeed > 100.5f && m_PlayerVelocity.magnitude > 10)
             {
-
+                ft_player.PlayOtherMaterialSound(FootstepPlayer.MATERIAL_SOUND_TYPE.SLIP);
                 ft_player.PlayOtherMaterialSound(FootstepPlayer.MATERIAL_SOUND_TYPE.LANDING);
             }
             if (m_PlayerVelocity.magnitude < m_currentfallSpeed && m_currentfallSpeed > threshold)
