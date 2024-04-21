@@ -107,8 +107,8 @@ MonoBehaviour:
     Acceleration: 5.6
     Deceleration: 2
   m_AirSettings:
-    MaxSpeed: 300
-    Acceleration: 0.05
+    MaxSpeed: 1
+    Acceleration: 1600
     Deceleration: 0.5
   m_StrafeSettings:
     MaxSpeed: 1

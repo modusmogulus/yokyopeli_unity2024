@@ -28961,6 +28961,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: m_AirSettings.MaxSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: m_AirSettings.Acceleration
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6308484816837701661, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_Enabled
       value: 1
