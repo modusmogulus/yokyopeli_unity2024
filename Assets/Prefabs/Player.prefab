@@ -107,8 +107,8 @@ MonoBehaviour:
     Acceleration: 5.6
     Deceleration: 2
   m_AirSettings:
-    MaxSpeed: 7
-    Acceleration: 0.5
+    MaxSpeed: 300
+    Acceleration: 0.05
     Deceleration: 0.5
   m_StrafeSettings:
     MaxSpeed: 1
@@ -6799,6 +6799,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1714822385253533202, guid: 2c1538b8996bfcb44a13a071d9c4c84a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3183573981167404752, guid: 2c1538b8996bfcb44a13a071d9c4c84a, type: 3}
       propertyPath: m_Name
       value: BillBoard
@@ -6806,6 +6810,10 @@ PrefabInstance:
     - target: {fileID: 3183573981167404752, guid: 2c1538b8996bfcb44a13a071d9c4c84a, type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3183573981167404752, guid: 2c1538b8996bfcb44a13a071d9c4c84a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5022795827102555926, guid: 2c1538b8996bfcb44a13a071d9c4c84a, type: 3}
       propertyPath: m_Enabled
