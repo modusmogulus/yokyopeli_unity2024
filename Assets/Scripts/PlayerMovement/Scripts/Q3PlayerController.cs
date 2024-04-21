@@ -320,7 +320,7 @@ namespace Q3Movement
                 if (MainGameObject.Instance.wiimote.Button.d_down) m_MoveInput.y = -1;
             }
 
-            if (!m_WasGrounded && MainGameObject.Instance.s_alwaysHardStrafeInAir && !isWallRunning)
+            if (!isCurrentlyGrounded && !isOnSlope && MainGameObject.Instance.s_alwaysHardStrafeInAir && !isWallRunning)
             {
                 m_MouseLook.SetRotastrafe(true);
                 if (m_MoveInput.x != 0 && m_MoveInput.z != 0)
@@ -667,11 +667,22 @@ namespace Q3Movement
                 return;
             } //omfg spent like 6 damn hours to realize i should do this
 
+            
             var castVerticalOffset = m_Character.height / 2 + m_Character.radius;
-            var castOrigin = transform.position;
+            
             var castLength = castVerticalOffset * 5f;
+
+            /* //Same as raycast - it works but is slightly weird still very usable though
+            var castOrigin = transform.position;
             Debug.DrawRay(castOrigin, Vector3.down*castLength, Color.red, 30f);
             if (Physics.Raycast(transform.position, Vector3.down, out var hit, castLength, ~LayerMask.GetMask("Player"), QueryTriggerInteraction.Ignore))
+            */
+            var p = m_Character.height / 2 - m_Character.radius;
+            var castOrigin = transform.position - new Vector3(0, p, 0);
+
+
+            if (Physics.SphereCast(castOrigin, m_Character.radius - 0.1f, Vector3.down,
+                out var hit, 5.5f, ~LayerMask.GetMask("Player"), QueryTriggerInteraction.Ignore))
             {
                 slopeNormal = hit.normal;
                 Debug.DrawRay(castOrigin, Vector3.down * castLength, Color.green, 30f);
@@ -706,18 +717,17 @@ namespace Q3Movement
         {
             if (isOnSlope == true)
             {
-                m_MouseLook.SetRotastrafe(false);
                 //https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/pm_shared/pm_shared.c#L1575
                 //line 732
                 ClipVelocity(m_PlayerVelocity, slopeNormal, ref m_PlayerVelocity, 1f);
 
-                m_SlideSound.volume += 0.01f;
+                m_SlideSound.volume += 0.1f;
                 m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.3f);
 
             }
             else
             {
-                m_SlideSound.volume -= 0.03f;
+                m_SlideSound.volume -= 0.1f;
                 m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.3f);
 
             }
@@ -875,7 +885,7 @@ namespace Q3Movement
             }
 
             m_PlayerVelocity.x *= speed;
-            if (!isOnSlope) m_PlayerVelocity.y = zSpeed; // Note this line
+            m_PlayerVelocity.y = zSpeed; // Note this line
             m_PlayerVelocity.z *= speed;
         }
         private void GroundMove()
@@ -886,7 +896,6 @@ namespace Q3Movement
             tilt = Mathf.Lerp(tiltLerped, tilt, 0.1f);
             if (indoorWalking) { tiltLerped *= 0.25f; }
             m_MouseLook.SetTilt(tiltLerped);
-            m_MouseLook.SetRotastrafe(false);
 
             if (m_MouseLook.GetCursorLock() == false) { ApplyFriction(0.5f); headAnimator.SetBool("Running", false); return; }
             // Do not apply friction if the player is queueing up the next jump
@@ -949,6 +958,7 @@ namespace Q3Movement
             {
                 
                 m_PlayerVelocity.y = m_JumpForce;
+                AudioManager.Instance.PlayAudio("SFX_JumpUp");
                 //Accelerate(LookRotation, 50, 20.0f);
                 m_JumpQueued = false;
             }
@@ -980,13 +990,12 @@ namespace Q3Movement
             if (speed > 0)
             {
                 newSpeed /= speed;
-                m_PlayerVelocity *= newSpeed; //corrected to be more like source engine than q3
+                //m_PlayerVelocity *= newSpeed; //corrected to be more like source engine than q3
             }
 
 
-            //m_PlayerVelocity.x *= newSpeed;
-
-            //m_PlayerVelocity.z *= newSpeed;
+            m_PlayerVelocity.x *= newSpeed;
+            m_PlayerVelocity.z *= newSpeed;
 
         }
 
@@ -1009,7 +1018,7 @@ namespace Q3Movement
             //m_HeadAnchor.transform.Rotate(0, 0, Vector3.Dot(transform.right, targetDir) * accel);
             m_PlayerVelocity.x += accelspeed * targetDir.x;
             m_PlayerVelocity.z += accelspeed * targetDir.z;
-            m_PlayerVelocity.y += accelspeed * targetDir.y;
+
         }
 
         public void Teleport(Vector3 pos)

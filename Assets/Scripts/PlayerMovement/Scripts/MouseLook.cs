@@ -59,7 +59,7 @@ namespace Q3Movement
                         xRot = Mathf.Clamp(Input.GetAxis("Mouse Y") * m_XSensitivity, -m_tiltSmoothness * Time.deltaTime * 200f, m_tiltSmoothness * Time.deltaTime * 200f);
                     }
 
-                    if (m_rotastrafe && Input.GetAxisRaw("Vertical") <= 0f) { yRot += Input.GetAxisRaw("Horizontal"); }
+                    if (m_rotastrafe && Input.GetAxisRaw("Vertical") <= 0f) { yRot += Input.GetAxisRaw("Horizontal")*0.2f; }
                 }
                 else { HandleWiiInput();  }
 
