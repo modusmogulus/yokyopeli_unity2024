@@ -54,6 +54,8 @@ public class AudioManager : MonoBehaviour
             return _instance;
         }
     }
+    public GameObject positionalAudioSourcePrefab;
+
     [SerializeField]
     private SpAudioClass[] audioClasses;
 
@@ -93,11 +95,13 @@ public class AudioManager : MonoBehaviour
             for (int i = 0; i < maxSimultaneousSounds; i++)
             {
                 AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+                if (positionalAudioSourcePrefab == null) { print("DANGER DANGER DANGER!!! MAKE OR ADD POSITIONAL SOURCE PREFAB!! ");  }
                 audioSources.Add(audioSource);
-
+                
                 // Check if it's the MUSIC channel and set the loop to true
                 if (AudioChan == AudioChan.MUSIC)
                 {
+
                     audioSource.loop = true;
                 }
             }
@@ -203,6 +207,7 @@ public class AudioManager : MonoBehaviour
                 if (!audioSource.isPlaying)
                 {
                     availableSource = audioSource;
+                    availableSource.spatialize = true;
                     break;
                 }
             }
@@ -212,18 +217,25 @@ public class AudioManager : MonoBehaviour
                 availableSource = audioSources[audioSources.Count - 1];
             }
 
+            int randomIndex = UnityEngine.Random.Range(0, AudioChan.audioClips.Length);
+            //availableSource.clip = AudioChan.audioClips[randomIndex];
+            GameObject audioPoint = Instantiate<GameObject>(positionalAudioSourcePrefab);
+            AudioSource uAud = audioPoint.GetComponent<AudioSource>();
+            SteamAudio.SteamAudioSource sAud = audioPoint.GetComponent<SteamAudio.SteamAudioSource>();
             //------------------ Hilavitkutin  features --------------
             float randomVolume = UnityEngine.Random.Range(AudioChan.minVolume, AudioChan.maxVolume);
-            availableSource.volume = randomVolume;
+            uAud.volume = randomVolume;
 
             // Random pitch
             float randomPitch = UnityEngine.Random.Range(AudioChan.minPitch, AudioChan.maxPitch);
-            availableSource.pitch = randomPitch;
+            uAud.pitch = randomPitch;
             if (AudioChan.audioClips.Length > 0)
             {
-                int randomIndex = UnityEngine.Random.Range(0, AudioChan.audioClips.Length);
-                availableSource.clip = AudioChan.audioClips[randomIndex];
-                AudioSource.PlayClipAtPoint(availableSource.clip, pos, randomVolume);
+
+                uAud.clip = AudioChan.audioClips[randomIndex];
+                //The script on the prefab PosSound(something) which is called UsedSoundDestroyer handles the destroying of the 
+                //used sound! Also its worth noting that the AudioSource itself has play audio on awake - so no playing here needed.
+                //AudioSource.PlayClipAtPoint(availableSource.clip, pos, randomVolume);
             }
             else
             {

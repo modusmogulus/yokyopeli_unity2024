@@ -101,7 +101,7 @@ public class FootstepPlayer : MonoBehaviour
                     switch (sndType) {
 
                         case MATERIAL_SOUND_TYPE.FOOTSTEP:
-                            AudioManager.Instance.PlayAudio(defaultSound);
+                            AudioManager.Instance.PlayAudio(defaultSound, transform.position);
                             break;
 
                         case MATERIAL_SOUND_TYPE.LANDING:
@@ -121,7 +121,7 @@ public class FootstepPlayer : MonoBehaviour
                             print(physSound);
                             physSound = soundToPlay[index];
 
-                            AudioManager.Instance.PlayAudio(physSound);
+                            AudioManager.Instance.PlayAudio(physSound, transform.position);
 
                         }
                         break;

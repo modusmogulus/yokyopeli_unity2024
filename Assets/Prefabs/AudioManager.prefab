@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a46ad320579d49449445724a1c6a6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionalAudioSourcePrefab: {fileID: 6294077809574070598, guid: 2c5b125df2e47d44eb35b2028c096801, type: 3}
   audioClasses:
   - AudioChan: 2
     audioName: UI_FunSound

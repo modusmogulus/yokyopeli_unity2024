@@ -127,6 +127,7 @@
     <Compile Include="Assets\Scripts\FootstepPlayer.cs" />
     <Compile Include="Assets\ExtrudeMeshAlongBezierTool\Scripts\PathObjectEditorData.cs" />
     <Compile Include="Assets\Scripts\BillBoard.cs" />
+    <Compile Include="Assets\Scripts\UsedSoundDestroyer.cs" />
     <Compile Include="Assets\levynkansimotion.cs" />
     <Compile Include="Assets\PSXShaderKit\Scripts\PSXPostProcessEffect.cs" />
     <Compile Include="Assets\Scripts\GUITriggerButton.cs" />

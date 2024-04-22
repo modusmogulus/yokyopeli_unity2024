@@ -61,6 +61,8 @@ namespace Q3Movement
         private int wallrunningStamina = 0;
         private bool isGoingTowardsWall = false;
         public TransitionSettings deathTransition;
+        public Vector3 savePos;
+        public Vector3 saveVelo;
         /// <summary>
         /// Returns player's current speed.
         /// </summary>
@@ -275,6 +277,20 @@ namespace Q3Movement
 
         private void Update()
         {
+            //DEBUG SAVE POS FEATURE
+            if (Input.GetKey(KeyCode.Alpha3))
+            {
+                saveVelo = m_PlayerVelocity;
+                savePos = transform.position;
+            }
+            if (Input.GetKey(KeyCode.Alpha4))
+            {
+                transform.position = savePos;
+                m_PlayerVelocity = saveVelo;
+            }
+
+
+
             RunGroundCheck();
             if (Input.GetKeyDown(KeyCode.O))
             {
