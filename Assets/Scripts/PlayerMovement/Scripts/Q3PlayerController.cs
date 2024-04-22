@@ -234,7 +234,7 @@ namespace Q3Movement
                 if (Physics.SphereCast(castOrigin, m_Character.radius - .01f, Vector3.down,
                 out var hit, .11f, LayerMask.GetMask("NoFalldamage"), QueryTriggerInteraction.Ignore))
                 {
-                    AudioManager.Instance.PlayAudio("SFX_SoftImpact");
+                    AudioManager.Instance.PlayAudio("SFX_SoftImpact", transform.position);
                     return;
                 }
                 AudioManager.Instance.PlayAudio("SFX_Damage");
@@ -575,7 +575,7 @@ namespace Q3Movement
 
                     wallrunningStamina = 0;
                     m_PlayerVelocity.y += 5f; //little jump after wallrunning
-                    AudioManager.Instance.PlayAudio("SFX_WallrunEnd");
+                    AudioManager.Instance.PlayAudio("SFX_WallrunEnd", transform.position);
                     wasWallrunning = false;
 
                 }
@@ -979,7 +979,7 @@ namespace Q3Movement
             {
                 
                 m_PlayerVelocity.y = m_JumpForce;
-                AudioManager.Instance.PlayAudio("SFX_JumpUp");
+                AudioManager.Instance.PlayAudio("SFX_JumpUp", transform.position);
                 //Accelerate(LookRotation, 50, 20.0f);
                 m_JumpQueued = false;
             }
