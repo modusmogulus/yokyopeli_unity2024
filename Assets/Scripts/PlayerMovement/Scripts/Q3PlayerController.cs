@@ -136,11 +136,11 @@ namespace Q3Movement
         public void CheckAndUpdateCrouch()
         {
             
-            if (Input.GetKey(KeyCode.C)) {
+            if (Input.GetKey(KeyCode.LeftShift)) {
                 m_IsCrouching = true;
                 if (m_Character.height > m_CrouchHeight) {
                     m_Character.height -= 0.3f;
-                    m_Character.transform.Translate(0f, -0.25f, 0f);
+                    m_Character.transform.Translate(0f, -0.0515f, 0f);
                 }
             }
             else
@@ -149,7 +149,7 @@ namespace Q3Movement
                 {
                     m_IsCrouching = false;
                     m_Character.height += 0.3f;
-                    m_Character.transform.Translate(0f, 0.25f, 0f);
+                    m_Character.transform.Translate(0f, 0.0555f, 0f);
                 }
                 else
                 {
