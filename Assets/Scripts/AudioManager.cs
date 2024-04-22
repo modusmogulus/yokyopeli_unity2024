@@ -220,11 +220,13 @@ public class AudioManager : MonoBehaviour
             int randomIndex = UnityEngine.Random.Range(0, AudioChan.audioClips.Length);
             //availableSource.clip = AudioChan.audioClips[randomIndex];
             GameObject audioPoint = Instantiate<GameObject>(positionalAudioSourcePrefab);
+            audioPoint.transform.position = pos;
+            
             AudioSource uAud = audioPoint.GetComponent<AudioSource>();
             SteamAudio.SteamAudioSource sAud = audioPoint.GetComponent<SteamAudio.SteamAudioSource>();
             //------------------ Hilavitkutin  features --------------
             float randomVolume = UnityEngine.Random.Range(AudioChan.minVolume, AudioChan.maxVolume);
-            uAud.volume = randomVolume;
+            uAud.volume = randomVolume * 1.5f; //add some extra for good measure lol
 
             // Random pitch
             float randomPitch = UnityEngine.Random.Range(AudioChan.minPitch, AudioChan.maxPitch);
@@ -233,8 +235,8 @@ public class AudioManager : MonoBehaviour
             {
 
                 uAud.clip = AudioChan.audioClips[randomIndex];
+                uAud.Play();
                 //The script on the prefab PosSound(something) which is called UsedSoundDestroyer handles the destroying of the 
-                //used sound! Also its worth noting that the AudioSource itself has play audio on awake - so no playing here needed.
                 //AudioSource.PlayClipAtPoint(availableSource.clip, pos, randomVolume);
             }
             else

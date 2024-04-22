@@ -501,7 +501,7 @@ namespace Q3Movement
                     {
                         headAnimator.SetTrigger("Vault");
                         MainGameObject.Instance.score += 5;
-                        AudioManager.Instance.PlayAudio("SFX_Climb");
+                        AudioManager.Instance.PlayAudio("SFX_Climb", transform.position);
 
                     }
                 }

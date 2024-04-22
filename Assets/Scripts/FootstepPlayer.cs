@@ -40,7 +40,7 @@ public class FootstepPlayer : MonoBehaviour
             {
                 PhysicMaterial hitPhysMaterial = collider.sharedMaterial;
                 if (hitPhysMaterial == null) {
-                    AudioManager.Instance.PlayAudio(defaultSound);
+                    AudioManager.Instance.PlayAudio(defaultSound, transform.position);
                 }
 
 
@@ -52,7 +52,7 @@ public class FootstepPlayer : MonoBehaviour
                     print(physSound);
                     physSound = soundToPlay[index];
 
-                    AudioManager.Instance.PlayAudio(physSound);
+                    AudioManager.Instance.PlayAudio(physSound, transform.position);
                 }
 
                 // ----------------------------------------------------- Snow in boots mechanics stuff -----------------------------------------------------
