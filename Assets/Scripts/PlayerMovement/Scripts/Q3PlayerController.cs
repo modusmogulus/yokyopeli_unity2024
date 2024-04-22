@@ -54,6 +54,7 @@ namespace Q3Movement
         [SerializeField] public float m_TiltAmount = 1.0f;
         [SerializeField] public AudioSource m_SpeedWindSound;
         [SerializeField] public AudioSource m_SlideSound;
+        [SerializeField] public AudioSource MouthAudioSource;
         private Vector3 slopeNormal;
         
         [SerializeField] public PostProcessVolume speedEffect;
@@ -237,8 +238,8 @@ namespace Q3Movement
                     AudioManager.Instance.PlayAudio("SFX_SoftImpact", transform.position);
                     return;
                 }
-                AudioManager.Instance.PlayAudio("SFX_Damage");
-
+                //AudioManager.Instance.PlayAudio("SFX_Damage", m_Head.transform.position);
+                MouthAudioSource.Play();
                 health = Mathf.Clamp(health - (2 + m_currentfallSpeed * multiplier), -10.0f, maxhp);
 
             }

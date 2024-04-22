@@ -555,3 +555,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 0354b85fe4a8a164a8e0f6429abaa55f, type: 3}
     minPitch: 1
     maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Climb2
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: b018104d12c6e314eb35586bb40774c9, type: 3}
+    minPitch: 1
+    maxPitch: 1
