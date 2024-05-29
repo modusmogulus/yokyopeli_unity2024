@@ -42,7 +42,8 @@ public class MainGameObject : MonoBehaviour
     public bool wiimoteJumpPressed = false;
     public Wiimote wiimote;
     public bool nunchuckAttached;
-
+    private Vector3 savedPos;
+    private Vector3 savedVelo;
     public string GameIntKeyDebugText;
     public static MainGameObject Instance { get; private set; }
 
@@ -64,6 +65,28 @@ public class MainGameObject : MonoBehaviour
         hasJob = value;
     }
 
+    public void SavePos(Vector3 pos, Vector3 velo) //for checkpoint
+    {
+        savedPos = pos;
+        savedVelo = velo;
+    }
+
+    public Vector3 GetSavedVelo()
+    {
+        return savedVelo;
+    }
+    public Vector3 GetSavedPos()
+    {
+        return savedPos;
+    }
+    public void CallLoadCheckpointOnPlayer()
+    {
+        playerController.CheckpointLoad();
+    }
+    public void CallSaveCheckpointOnPlayer()
+    {
+        playerController.CheckpointSave();
+    }
     public void setCharacterTexture(string name)
     {
         //var charTex = Resources.Load<Texture>("Textures/ba_anoppi") as Texture;
@@ -161,7 +184,7 @@ public class MainGameObject : MonoBehaviour
 
     private void Start()
     {
-        if (interactText.GetComponent<TMP_Text>()) {
+        if (interactText != null && interactText.GetComponent<TMP_Text>()) {
             interactTextComponent = interactText.GetComponent<TMP_Text>();
         }
 
@@ -169,7 +192,8 @@ public class MainGameObject : MonoBehaviour
     private void UpdateWiiMote()
     {
         if (!WiimoteManager.HasWiimote()) { return; }
-        wiimote = WiimoteManager.Wiimotes[0];
+        //wiimote = WiimoteManager.Wiimotes[0];
+        wiimote = null;
         int ret = wiimote.ReadWiimoteData();
         wiimote.SendDataReportMode(InputDataType.REPORT_BUTTONS_IR10_EXT9);
         print(wiimote.ToString());

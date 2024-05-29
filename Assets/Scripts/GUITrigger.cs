@@ -27,7 +27,8 @@ public class UIOnPlayerEnter : MonoBehaviour
             {
                 indicator.SetActive(true);
             }
-            if (requireGameIntKey == true) {
+            if (requireGameIntKey == true)
+            {
                 MainGameObject.Instance.getGameIntKeyEquals(gameIntKey, gameIntValue);
             }
             isInRange = true;
@@ -41,7 +42,8 @@ public class UIOnPlayerEnter : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             MainGameObject.Instance.interactText.SetActive(false);
-            if (indicator != null) {
+            if (indicator != null)
+            {
                 MainGameObject.Instance.setInteractText(interactTextString);
                 indicator.SetActive(false);
             }
@@ -67,7 +69,7 @@ public class UIOnPlayerEnter : MonoBehaviour
 
     private void ShowUI()
     {
-        
+
         uiPanel.SetActive(true);
         isUIVisible = true;
 

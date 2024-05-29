@@ -227,7 +227,10 @@ namespace SteamAudio
 
         ~SteamAudioSource()
         {
-            mThis.Free();
+            if (mThis != null && mThis.IsAllocated == true) //aino edit
+            {  //aino edit
+                mThis.Free();
+            } //aino edit
         }
 
         private void OnEnable()

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SteamAudioSettings
   m_EditorClassIdentifier: 
   audioEngine: 0
-  perspectiveCorrection: 0
+  perspectiveCorrection: 1
   perspectiveCorrectionFactor: 1
   hrtfVolumeGainDB: 0
   hrtfNormalizationType: 0
@@ -25,10 +25,10 @@ MonoBehaviour:
     m_Bits: 0
   maxOcclusionSamples: 16
   realTimeRays: 16384
-  realTimeBounces: 4
+  realTimeBounces: 25
   realTimeDuration: 5
   realTimeAmbisonicOrder: 1
-  realTimeMaxSources: 32
+  realTimeMaxSources: 8
   realTimeCPUCoresPercentage: 5
   realTimeIrradianceMinDistance: 1
   bakeConvolution: 1

@@ -126,6 +126,7 @@ MonoBehaviour:
   saveVelo: {x: 0, y: 0, z: 0}
   m_inRollZone: 0
   m_IsRolling: 0
+  m_CrouchHeight: 0.5
   showControlTips: 0
   indoorWalking: 0
   maxhp: 100
@@ -5402,7 +5403,7 @@ GameObject:
   - component: {fileID: 2311845799377635849}
   - component: {fileID: 8362440747007538569}
   m_Layer: 3
-  m_Name: Head
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5874,7 +5875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &73538284574316790
 Transform:
   m_ObjectHideFlags: 0
@@ -6039,11 +6040,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1ecbebe2f81fc954cb0ffa246e049835, type: 3}
-  m_Resource: {fileID: 8300000, guid: 1ecbebe2f81fc954cb0ffa246e049835, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4029433a0104221418f37a297ebf9ea3, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4029433a0104221418f37a297ebf9ea3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
-  m_Pitch: 1.98
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 1
@@ -6660,7 +6661,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5978713449912804590}
   m_Layer: 3
-  m_Name: HeadAnchor
+  m_Name: BodyAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6970,10 +6971,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e5c04d6320ee6fa4bbd4549822b3b80e, type: 3}
-  m_Resource: {fileID: 8300000, guid: e5c04d6320ee6fa4bbd4549822b3b80e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a7f8a03ba801c684f91e5034c2f8278a, type: 3}
+  m_Resource: {fileID: 8300000, guid: a7f8a03ba801c684f91e5034c2f8278a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.299
+  m_Volume: 0.936
   m_Pitch: 1
   Loop: 0
   Mute: 0

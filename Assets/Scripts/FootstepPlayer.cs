@@ -13,6 +13,7 @@ public class FootstepPlayer : MonoBehaviour
     public string defaultSound;
     private string physSound;
     public PhysicMaterial snowMaterial;
+    Vector3 pos;
 
     public string[] soundToPlayOnLanding;
     public string defaultSoundOnLanding;
@@ -28,8 +29,8 @@ public class FootstepPlayer : MonoBehaviour
     public void PlayFootstepSound()
     {
         print("Castatty");
+        pos = transform.position + new Vector3(0f, 0.5f, 0f);
 
-        
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, 2.0f))
         {
@@ -40,7 +41,7 @@ public class FootstepPlayer : MonoBehaviour
             {
                 PhysicMaterial hitPhysMaterial = collider.sharedMaterial;
                 if (hitPhysMaterial == null) {
-                    AudioManager.Instance.PlayAudio(defaultSound, transform.position);
+                    AudioManager.Instance.PlayAudio(defaultSound, pos);
                 }
 
 
@@ -52,7 +53,7 @@ public class FootstepPlayer : MonoBehaviour
                     print(physSound);
                     physSound = soundToPlay[index];
 
-                    AudioManager.Instance.PlayAudio(physSound, transform.position);
+                    AudioManager.Instance.PlayAudio(physSound, pos);
                 }
 
                 // ----------------------------------------------------- Snow in boots mechanics stuff -----------------------------------------------------
@@ -101,11 +102,11 @@ public class FootstepPlayer : MonoBehaviour
                     switch (sndType) {
 
                         case MATERIAL_SOUND_TYPE.FOOTSTEP:
-                            AudioManager.Instance.PlayAudio(defaultSound, transform.position);
+                            AudioManager.Instance.PlayAudio(defaultSound, pos);
                             break;
 
                         case MATERIAL_SOUND_TYPE.LANDING:
-                            AudioManager.Instance.PlayAudio(defaultSoundOnLanding);
+                            AudioManager.Instance.PlayAudio(defaultSoundOnLanding, pos);
                             break;
                     }; 
                     
@@ -118,10 +119,9 @@ public class FootstepPlayer : MonoBehaviour
                         if (index != -1 && index < soundToPlay.Length)
                         {
 
-                            print(physSound);
                             physSound = soundToPlay[index];
 
-                            AudioManager.Instance.PlayAudio(physSound, transform.position);
+                            AudioManager.Instance.PlayAudio(physSound, pos);
 
                         }
                         break;
@@ -132,7 +132,7 @@ public class FootstepPlayer : MonoBehaviour
                             print(physSound);
                             physSoundOnLanding = soundToPlayOnLanding[index];
 
-                            AudioManager.Instance.PlayAudio(physSoundOnLanding);
+                            AudioManager.Instance.PlayAudio(physSoundOnLanding, pos);
 
                         }
                         break;

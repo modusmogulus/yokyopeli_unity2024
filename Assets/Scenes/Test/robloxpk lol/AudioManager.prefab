@@ -1,0 +1,565 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7075822061290082724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3632717280972536774}
+  - component: {fileID: 5619812755939946887}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3632717280972536774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075822061290082724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -63.2731, y: -6.4166546, z: 152.97017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5619812755939946887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7075822061290082724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a46ad320579d49449445724a1c6a6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionalAudioSourcePrefab: {fileID: 6294077809574070598, guid: 1af02052c3343b44c94e33bfe0fad776, type: 3}
+  audioClasses:
+  - AudioChan: 2
+    audioName: UI_FunSound
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: 4305248c674ab254195e89cabd28d09d, type: 3}
+    minPitch: 2
+    maxPitch: 2
+  - AudioChan: 1
+    audioName: SFX_Drinksu
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: 069877145f0a58643855f429aa791663, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Damage
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: 570e0b12e1e561f4cac57e8fe168056d, type: 3}
+    - {fileID: 8300000, guid: e5c04d6320ee6fa4bbd4549822b3b80e, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Coin
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 41c5f85c7bc532e498c2117d364b0622, type: 3}
+    - {fileID: 8300000, guid: 4399e421cd4204941b53aa554c66be12, type: 3}
+    - {fileID: 8300000, guid: 8234f706777bee348be3ad0fbb01a64a, type: 3}
+    minPitch: 0.8
+    maxPitch: 1.2
+  - AudioChan: 1
+    audioName: SFX_Roskis
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: e9f42bee3a849fb45a44d8403d67b83d, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: SFX_Pasi
+    minVolume: 0.8
+    maxVolume: 0.8
+    audioClips:
+    - {fileID: 8300000, guid: db40a9508ab1bd345a10494563ca648e, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Kauppa
+    minVolume: 0.2
+    maxVolume: 0.2
+    audioClips:
+    - {fileID: 8300000, guid: 8cb7d202d0acdb44b8ea310222e10d58, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Anger
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: 437d4f37afb2bc04ab71bb3e74829bb3, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Good
+    minVolume: 0.8
+    maxVolume: 0.8
+    audioClips:
+    - {fileID: 8300000, guid: 5190c64db017ff84d9d44e42950f9fba, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Pako
+    minVolume: 0.8
+    maxVolume: 0.8
+    audioClips:
+    - {fileID: 8300000, guid: bbdd1ee3a3f8c10449a1f9aae245fc34, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: SFX_Juma
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: e31af7806f00265438da46809c3f0f0b, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 4
+    audioName: SFX_Typewriter
+    minVolume: 0.3
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 1a6d4a9b3fc2e6347995fddfef07f9a3, type: 3}
+    - {fileID: 8300000, guid: 7c31dc16f2effca4d8f03cdf01c02a15, type: 3}
+    minPitch: 0.7
+    maxPitch: 1.3
+  - AudioChan: 3
+    audioName: M_Bussi
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: cc7231d71f5bd7249b8b19fb7692a319, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Lumipallo
+    minVolume: 0.5
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: ca22d3a93eab00147b9c03c2fd5d49fa, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 2
+    audioName: T_PaskinImuri
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: e93944e47fbc89b44bb09165b0d8ee69, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Cage
+    minVolume: 0.1
+    maxVolume: 0.1
+    audioClips:
+    - {fileID: 8300000, guid: efaac626b82d3214aa3c2e6ba166db99, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Kahvimorso
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: 5c9761aef05808a4bb2772d11e058e1f, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Tyo
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: b0c24026e672cff4b805a83c32cb5e0e, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_SerendipAlku
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: 1611389d3170e934fb1ef2b048507b2b, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Dissociation
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 91a36128fbb0918489f64e88c60e9dad, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Amogus
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 67b5cb5390d032a40817e17e084f6574, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Loppu
+    minVolume: 0.5
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: 03f458639c707a04baddc524d001ecaf, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Katastrofi
+    minVolume: 0.5
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: 8c5561f9486a59f4dba5b77c949039a1, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Etana
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: 2d4f3265cd7ab724ebb22dda341baa60, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Puhelin
+    minVolume: 0.5
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: 570128c785e0c6140b622f59450c5738, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_HucciGuiVI
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 2258feec5598d7746aa14f55fba5ad93, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Aether
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 98999428eaaf46e46a01aa5d153965b3, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Poison
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 5a0226ec915438345ba456ff340f7804, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Nothing
+    minVolume: 0
+    maxVolume: 0
+    audioClips:
+    - {fileID: 8300000, guid: 5a0226ec915438345ba456ff340f7804, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 2
+    audioName: FT_NarrowCityWalk
+    minVolume: 0.5
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: 94412d257d14dfa4ea3085aa175f1a1a, type: 3}
+    - {fileID: 8300000, guid: e8362028c1ab87a45b6e0ec9476a19a6, type: 3}
+    - {fileID: 8300000, guid: cfa80ff6ba29e0d408ea13219852e7a3, type: 3}
+    - {fileID: 8300000, guid: 07cf117557b922f4088affdbdaf52780, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: FT_Landing
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 2a1359ec4f7dcac44aceb5cd1dc28ab1, type: 3}
+    minPitch: 0.7
+    maxPitch: 1.05
+  - AudioChan: 1
+    audioName: FT_LandingSlip
+    minVolume: 0.7
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: c5671e4f1342a72408cc0e982e846ce3, type: 3}
+    - {fileID: 8300000, guid: f850a862b0590334aa130a2c078e734a, type: 3}
+    - {fileID: 8300000, guid: abee95b7c5046c64b9c8d87bf37107de, type: 3}
+    - {fileID: 8300000, guid: 904e036963f271a4c9e6b5505f82c4cd, type: 3}
+    - {fileID: 8300000, guid: 2a1359ec4f7dcac44aceb5cd1dc28ab1, type: 3}
+    minPitch: 1.1
+    maxPitch: 1.2
+  - AudioChan: 0
+    audioName: FT_Roll
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: 5e5feae61fe7c644c80dd2171bda6d07, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: FT_Plate
+    minVolume: 0.3
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 76a0c4b237057ec43b78e1dfd66b2fb4, type: 3}
+    - {fileID: 8300000, guid: e767d6cf1348b69419cab8e626f31346, type: 3}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - AudioChan: 3
+    audioName: M_Letka
+    minVolume: 0.6
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: d49e80c137a872643827689efd022588, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Alkubiisi
+    minVolume: 0.6
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 91a36128fbb0918489f64e88c60e9dad, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Epic
+    minVolume: 0.6
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 2b6ed29bb47866c43a0a7bf27fd4799c, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_BussiTarkastaja
+    minVolume: 0.6
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: df6a3cc66f85e7c4b814dd6254c3760b, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Climb
+    minVolume: 0.6
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: d6b4cfd0e3667ba4a95145a2f13e5eb5, type: 3}
+    - {fileID: 8300000, guid: ca26b6336a8fcdb4598ef2d15fe4a32c, type: 3}
+    - {fileID: 8300000, guid: 13fa088a2ef568944a8977531ac050d8, type: 3}
+    - {fileID: 8300000, guid: ce67965792de6ab4a9f8b24b85aff7e9, type: 3}
+    minPitch: 0.7
+    maxPitch: 1.3
+  - AudioChan: 0
+    audioName: FT_CreakyMetal
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: a09d9fbd3e80c8548999c04cabf67e14, type: 3}
+    - {fileID: 8300000, guid: e9f7e105f4961f64ba0235ec7d19c78a, type: 3}
+    - {fileID: 8300000, guid: b7e2d71f1dd707f4b90092c81de7aac0, type: 3}
+    - {fileID: 8300000, guid: 230518b6b3b287e4e81f30f99df3ff18, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: FT_Default
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: cc19b6df2c047624f8b3835c4ea90af9, type: 3}
+    - {fileID: 8300000, guid: 956445988238d1748a0523177b991382, type: 3}
+    minPitch: 1
+    maxPitch: 1.5
+  - AudioChan: 2
+    audioName: FT_Wood1
+    minVolume: 1
+    maxVolume: 1
+    audioClips:
+    - {fileID: 8300000, guid: 8d62993fbca1497448ab058f746e456a, type: 3}
+    - {fileID: 8300000, guid: ae2387acc4638e94f96fa50c462f5b53, type: 3}
+    minPitch: 0.8
+    maxPitch: 1.5
+  - AudioChan: 2
+    audioName: FT_Gravel2
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 7ae73896cd60b584ab6cf3cca66866c7, type: 3}
+    - {fileID: 8300000, guid: c110d6da1db75ec41b54d70e99ae3771, type: 3}
+    - {fileID: 8300000, guid: 1ba12b73d05bf5246917722046e83c07, type: 3}
+    - {fileID: 8300000, guid: 6a82b455da359e540ad6b90aa61a130c, type: 3}
+    minPitch: 0.8
+    maxPitch: 1
+  - AudioChan: 2
+    audioName: FT_Gravel2
+    minVolume: 0.1
+    maxVolume: 0.2
+    audioClips:
+    - {fileID: 8300000, guid: 6b09f4a8a49b73c43aa9b5abc2e79001, type: 3}
+    - {fileID: 8300000, guid: ab5f724bcd0fbea40b98d2eba98066fc, type: 3}
+    minPitch: 0.4
+    maxPitch: 0.8
+  - AudioChan: 2
+    audioName: FT_Shiny
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 6cc6f9dabd4348640bca3c8d29e36b24, type: 3}
+    - {fileID: 8300000, guid: 46def456d93df4d458048ec60c82c7ff, type: 3}
+    - {fileID: 8300000, guid: f1bfa781d6ce6444f9c1964a0e024688, type: 3}
+    - {fileID: 8300000, guid: aedf4b573d16fa444ae2058b507c4f83, type: 3}
+    - {fileID: 8300000, guid: 77362af38297ea6468cb44ec031271c4, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 2
+    audioName: SFX_SoftImpact
+    minVolume: 0.5
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: 7b7f1ccbf9fcb8f45b07571b049902c8, type: 3}
+    - {fileID: 8300000, guid: 778e5788683a45d409a3e56a04bfbef3, type: 3}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - AudioChan: 3
+    audioName: M_Gipusnipu1
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 61c21e841c40ba94387bf9ec968f9b5b, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 2
+    audioName: FT_Snow1
+    minVolume: 0.5
+    maxVolume: 0.7
+    audioClips:
+    - {fileID: 8300000, guid: 5c6a4894867f6554c844b75da5e2baeb, type: 3}
+    - {fileID: 8300000, guid: 9f78f1b1266980245866afd4b52f1ffb, type: 3}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - AudioChan: 0
+    audioName: FT_Roof
+    minVolume: 0.4
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: 2ad620e9fc4086841b8d43e6f98ecdca, type: 3}
+    - {fileID: 8300000, guid: 9fe84741e86d9c147a40d7938e007906, type: 3}
+    - {fileID: 8300000, guid: 388db35874ed97f4ab22be41505d045d, type: 3}
+    - {fileID: 8300000, guid: 1a4174ed873b31d4799287c60bae27c3, type: 3}
+    - {fileID: 8300000, guid: 4c982a3537a6ddf4fa30ddb5b3b90d09, type: 3}
+    - {fileID: 8300000, guid: 733351d79c3687844abad28370473494, type: 3}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - AudioChan: 0
+    audioName: SFX_Ulosotto2
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 77cb485ee52d3b449a295d6db9ddba0d, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: SFX_WallrunEnd
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: cf0369cb3571bf94bb1442312d41648c, type: 3}
+    - {fileID: 8300000, guid: 28e8266a3ddbb78499bb8c735ca4815c, type: 3}
+    minPitch: 0.6
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_None
+    minVolume: 0
+    maxVolume: 0
+    audioClips:
+    - {fileID: 8300000, guid: cf0369cb3571bf94bb1442312d41648c, type: 3}
+    - {fileID: 8300000, guid: 28e8266a3ddbb78499bb8c735ca4815c, type: 3}
+    minPitch: 0
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: UI_DamageTing
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: a839ab607a33af9499767b2186d4f8fb, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 0
+    audioName: UI_RegenTing
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 1941601e86b88fd40afe3a823859dec2, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Rappuset
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 31ac2e4ea7177dc4ea06df13e201862d, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Minea
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 2602d5eecdb6d35468f5af0152c26495, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 2
+    audioName: SFX_JumpUp
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 60e1c5b68dcc8d74eac3fd12dc40ed5d, type: 3}
+    - {fileID: 8300000, guid: ec3801519adc4a648bb00e63724ee715, type: 3}
+    minPitch: 0.8
+    maxPitch: 1.2
+  - AudioChan: 0
+    audioName: SFX_Keypress
+    minVolume: 0.1
+    maxVolume: 0.1
+    audioClips:
+    - {fileID: 8300000, guid: 46db954dcb7faa24d90016cef1dd5cd0, type: 3}
+    - {fileID: 8300000, guid: 790723e22eb6827428f94f78731e9768, type: 3}
+    - {fileID: 8300000, guid: 6652d3a993538574cb240dab47f64e7c, type: 3}
+    - {fileID: 8300000, guid: de4624771dc6ac4439033116044fc11b, type: 3}
+    - {fileID: 8300000, guid: ac57127619214e643b6a2ea588865254, type: 3}
+    - {fileID: 8300000, guid: 3eb5f663e78670c418dc48f1da055ba5, type: 3}
+    - {fileID: 8300000, guid: de0b56431c89b5f4088f3b5b87cc20cf, type: 3}
+    - {fileID: 8300000, guid: 0354b85fe4a8a164a8e0f6429abaa55f, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 1
+    audioName: SFX_Climb2
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: b018104d12c6e314eb35586bb40774c9, type: 3}
+    minPitch: 1
+    maxPitch: 1

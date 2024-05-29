@@ -1,0 +1,1046 @@
+newmtl Part3072Mtl
+Material Color
+Ka 0.91575 0.618686 0.0253713
+Kd 0.91575 0.618686 0.0253713
+Ks 0.3663 0.247474 0.0101485 
+
+d 0.823529
+
+Ns 9
+
+newmtl 4wayIntersection2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka 4wayIntersection2Tex.png
+map_Kd 4wayIntersection2Tex.png
+map_d 4wayIntersection2Tex.png
+
+newmtl Part1589Mtl
+Material Color
+Ka 0.560499 0.0169881 0.00775103
+Kd 0.560499 0.0169881 0.00775103
+Ks 0.2242 0.00679522 0.00310041 
+
+d 1
+
+Ns 9
+
+newmtl Part1753Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part1753Tex.png
+map_Kd Part1753Tex.png
+map_d Part1753Tex.png
+
+newmtl Part1540Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part510Tex.png
+map_Kd Part510Tex.png
+map_d Part510Tex.png
+
+newmtl Part2204Mtl
+Material Color
+Ka 0.891262 0.899384 0.899384
+Kd 0.891262 0.899384 0.899384
+Ks 0.356505 0.359754 0.359754 
+
+d 1
+
+Ns 9
+
+newmtl Part902Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part36Tex.png
+map_Kd Part36Tex.png
+map_d Part36Tex.png
+
+newmtl Part639Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part639Tex.png
+map_Kd Part639Tex.png
+map_d Part639Tex.png
+
+newmtl Part590Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part590Tex.png
+map_Kd Part590Tex.png
+map_d Part590Tex.png
+
+newmtl Part3073Mtl
+Material Color
+Ka 0.91575 0.618686 0.0253713
+Kd 0.91575 0.618686 0.0253713
+Ks 0.3663 0.247474 0.0101485 
+
+d 0.803922
+
+Ns 9
+
+newmtl Part550Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part31Tex.png
+map_Kd Part31Tex.png
+map_d Part31Tex.png
+
+newmtl Part2257Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.0934334 0.085329 0.0913697 
+
+d 1
+
+Ns 81
+
+newmtl Part394Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part394Tex.png
+map_Kd Part394Tex.png
+map_d Part394Tex.png
+
+newmtl Part379Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part379Tex.png
+map_Kd Part379Tex.png
+map_d Part379Tex.png
+
+newmtl Part281Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part281Tex.png
+map_Kd Part281Tex.png
+map_d Part281Tex.png
+
+newmtl Part290Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part13Tex.png
+map_Kd Part13Tex.png
+map_d Part13Tex.png
+
+newmtl Part269Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part269Tex.png
+map_Kd Part269Tex.png
+map_d Part269Tex.png
+
+newmtl SmoothBlockModel673Mtl
+Material Color
+Ka 0.00258583 0.00258583 0.00258583
+Kd 0.00258583 0.00258583 0.00258583
+Ks 0.00103433 0.00103433 0.00103433 
+
+d 1
+
+Ns 9
+
+newmtl Part357Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part357Tex.png
+map_Kd Part357Tex.png
+map_d Part357Tex.png
+
+newmtl Part222Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part222Tex.png
+map_Kd Part222Tex.png
+map_d Part222Tex.png
+
+newmtl Part220Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part220Tex.png
+map_Kd Part220Tex.png
+map_d Part220Tex.png
+
+newmtl Part202Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part202Tex.png
+map_Kd Part202Tex.png
+map_d Part202Tex.png
+
+newmtl Part197Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part197Tex.png
+map_Kd Part197Tex.png
+map_d Part197Tex.png
+
+newmtl Part187Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part187Tex.png
+map_Kd Part187Tex.png
+map_d Part187Tex.png
+
+newmtl Spawnlocation2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Spawnlocation2Tex.png
+map_Kd Spawnlocation2Tex.png
+map_d Spawnlocation2Tex.png
+
+newmtl Part328Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part328Tex.png
+map_Kd Part328Tex.png
+map_d Part328Tex.png
+
+newmtl Part155Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part155Tex.png
+map_Kd Part155Tex.png
+map_d Part155Tex.png
+
+newmtl Part132Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part132Tex.png
+map_Kd Part132Tex.png
+map_d Part132Tex.png
+
+newmtl Part616Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part616Tex.png
+map_Kd Part616Tex.png
+map_d Part616Tex.png
+
+newmtl Part112Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part112Tex.png
+map_Kd Part112Tex.png
+map_d Part112Tex.png
+
+newmtl SmoothBlockModel1Mtl
+Material Color
+Ka 0.940601 0.940601 0.940601
+Kd 0.940601 0.940601 0.940601
+Ks 0.37624 0.37624 0.37624 
+
+d 1
+
+Ns 9
+
+newmtl Part925Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part925Tex.png
+map_Kd Part925Tex.png
+map_d Part925Tex.png
+
+newmtl Part97Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part97Tex.png
+map_Kd Part97Tex.png
+map_d Part97Tex.png
+
+newmtl Part864Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part202Tex.png
+map_Kd Part202Tex.png
+map_d Part202Tex.png
+
+newmtl Part134Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part134Tex.png
+map_Kd Part134Tex.png
+map_d Part134Tex.png
+
+newmtl Part415Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part415Tex.png
+map_Kd Part415Tex.png
+map_d Part415Tex.png
+
+newmtl Part84Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part84Tex.png
+map_Kd Part84Tex.png
+map_d Part84Tex.png
+
+newmtl Part75Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part75Tex.png
+map_Kd Part75Tex.png
+map_d Part75Tex.png
+
+newmtl Part662Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part662Tex.png
+map_Kd Part662Tex.png
+map_d Part662Tex.png
+
+newmtl Part43Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part43Tex.png
+map_Kd Part43Tex.png
+map_d Part43Tex.png
+
+newmtl Part122Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part70Tex.png
+map_Kd Part70Tex.png
+map_d Part70Tex.png
+
+newmtl Part41Mtl
+Material Color
+Ka 0.618686 0.618686 0.618686
+Kd 0.618686 0.618686 0.618686
+Ks 0.247474 0.247474 0.247474 
+
+d 1
+
+Ns 9
+
+newmtl Part145Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part145Tex.png
+map_Kd Part145Tex.png
+map_d Part145Tex.png
+
+newmtl Part36Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part36Tex.png
+map_Kd Part36Tex.png
+map_d Part36Tex.png
+
+newmtl Part510Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part510Tex.png
+map_Kd Part510Tex.png
+map_d Part510Tex.png
+
+newmtl Part29Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part29Tex.png
+map_Kd Part29Tex.png
+map_d Part29Tex.png
+
+newmtl 4wayIntersection12Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka 4wayIntersection12Tex.png
+map_Kd 4wayIntersection12Tex.png
+map_d 4wayIntersection12Tex.png
+
+newmtl Part263Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part263Tex.png
+map_Kd Part263Tex.png
+map_d Part263Tex.png
+
+newmtl Part140Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part140Tex.png
+map_Kd Part140Tex.png
+map_d Part140Tex.png
+
+newmtl Part24Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part24Tex.png
+map_Kd Part24Tex.png
+map_d Part24Tex.png
+
+newmtl Part107Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part107Tex.png
+map_Kd Part107Tex.png
+map_d Part107Tex.png
+
+newmtl Part342Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part342Tex.png
+map_Kd Part342Tex.png
+map_d Part342Tex.png
+
+newmtl Part19Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part19Tex.png
+map_Kd Part19Tex.png
+map_d Part19Tex.png
+
+newmtl Part419Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part419Tex.png
+map_Kd Part419Tex.png
+map_d Part419Tex.png
+
+newmtl Part13Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part13Tex.png
+map_Kd Part13Tex.png
+map_d Part13Tex.png
+
+newmtl Part406Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part406Tex.png
+map_Kd Part406Tex.png
+map_d Part406Tex.png
+
+newmtl Part31Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part31Tex.png
+map_Kd Part31Tex.png
+map_d Part31Tex.png
+
+newmtl Part585Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part585Tex.png
+map_Kd Part585Tex.png
+map_d Part585Tex.png
+
+newmtl Part70Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part70Tex.png
+map_Kd Part70Tex.png
+map_d Part70Tex.png
+
+newmtl Part65Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part65Tex.png
+map_Kd Part65Tex.png
+map_d Part65Tex.png
+
+newmtl Part3Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.0498964 0.0455684 0.0487943 
+
+d 1
+
+Ns 9
+
+newmtl Part362Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part362Tex.png
+map_Kd Part362Tex.png
+map_d Part362Tex.png
+
+newmtl Part102Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part102Tex.png
+map_Kd Part102Tex.png
+map_d Part102Tex.png
+
+newmtl Part1Mtl
+Material Color
+Ka 0.766744 0.334458 0.0477758
+Kd 0.766744 0.334458 0.0477758
+Ks 0.192438 0.0839424 0.0119908 
+
+d 1
+
+Ns 32
+
+newmtl Part4Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part4Tex.png
+map_Kd Part4Tex.png
+map_d Part4Tex.png
+
+newmtl RobloxHq1Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka RobloxHq1Tex.png
+map_Kd RobloxHq1Tex.png
+map_d RobloxHq1Tex.png
+
+newmtl Part8Mtl
+Material Color
+Ka 0.358654 0.113921 0.0315514
+Kd 0.358654 0.113921 0.0315514
+Ks 0.0900151 0.0285919 0.00791878 
+
+d 1
+
+Ns 32
+
+newmtl Part318Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part318Tex.png
+map_Kd Part318Tex.png
+map_d Part318Tex.png
+
+newmtl Part815Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part815Tex.png
+map_Kd Part815Tex.png
+map_d Part815Tex.png
+
+newmtl Spire1Mtl
+Material Color
+Ka 0.708298 0.238828 0.0494335
+Kd 0.708298 0.238828 0.0494335
+Ks 0.283319 0.0955312 0.0197734 
+
+d 1
+
+Ns 9
+
+newmtl Part12Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.0176105 0.016083 0.0172215 
+
+d 1
+
+Ns 20
+
+newmtl Part127Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part10Tex.png
+map_Kd Part10Tex.png
+map_d Part10Tex.png
+
+newmtl Part28Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.149446 0.147436 0.15351 
+
+d 1
+
+Ns 9
+
+newmtl Straight2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Straight2Tex.png
+map_Kd Straight2Tex.png
+map_d Straight2Tex.png
+
+newmtl Part10Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part10Tex.png
+map_Kd Part10Tex.png
+map_d Part10Tex.png
+
+newmtl Part286Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.4 0.4 0.4 
+
+d 1
+
+Ns 9
+
+map_Ka Part286Tex.png
+map_Kd Part286Tex.png
+map_d Part286Tex.png
+
+newmtl Part854Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part84Tex.png
+map_Kd Part84Tex.png
+map_d Part84Tex.png
+
+newmtl Part1515Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.141176 0.141176 0.141176 
+
+d 1
+
+Ns 20
+
+map_Ka Part1515Tex.png
+map_Kd Part1515Tex.png
+map_d Part1515Tex.png
+
+newmtl Straight1Mtl
+Material Color
+Ka 0.00715504 0.018913 0.0315514
+Kd 0.00715504 0.018913 0.0315514
+Ks 0.00286201 0.00756519 0.0126206 
+
+d 1
+
+Ns 9
+

@@ -62,7 +62,9 @@ namespace Q3Movement
         private int wallrunningStamina = 0;
         private bool isGoingTowardsWall = false;
         public TransitionSettings deathTransition;
+        [HideInInspector]
         public Vector3 savePos;
+        [HideInInspector]
         public Vector3 saveVelo;
         /// <summary>
         /// Returns player's current speed.
@@ -85,8 +87,9 @@ namespace Q3Movement
         private Transform m_CamTran;
         public bool m_IsRolling = false;
         private bool m_IsCrouching = false;
+        private bool m_slidePose = false; //should reset on isCurrentlyGrounded and be set to true on slide
         private bool m_WasGrounded = false;
-        private float m_CrouchHeight = 0.5f;
+        [SerializeField] public float m_CrouchHeight = 0.5f;
         private float m_OriginalHeight;
         private float m_LandingTimer = 0.0f;
         private float m_currentfallSpeed = 0.0f;
@@ -133,17 +136,22 @@ namespace Q3Movement
             headAnimator = m_Head.GetComponent<Animator>();
             MainGameObject.Instance.playerController = this;
             defaultFOV = m_Camera.fieldOfView;
+
+            if (!m_wallrunningAllowed)
+            {
+                m_wallrunningSoundLoop.volume = 0.0f;
+            }
         }
 
 
         public void CheckAndUpdateCrouch()
         {
             
-            if (Input.GetKey(KeyCode.LeftShift)) {
+            if (Input.GetKey(KeyCode.LeftShift) || m_slidePose) {
                 m_IsCrouching = true;
                 if (m_Character.height > m_CrouchHeight) {
                     m_Character.height -= 0.3f;
-                    m_Character.transform.Translate(0f, -0.0515f, 0f);
+                    m_Character.transform.Translate(0f, -0.0555f, 0f);
                 }
             }
             else
@@ -276,20 +284,26 @@ namespace Q3Movement
             return (value > 0.5);
         }
 
+        public void CheckpointSave() {
+            MainGameObject.Instance.SavePos(transform.position, m_PlayerVelocity);
+        }
+
+        public void CheckpointLoad()
+        {
+            transform.position = MainGameObject.Instance.GetSavedPos();
+            m_PlayerVelocity = MainGameObject.Instance.GetSavedVelo();
+        }
         private void Update()
         {
             //DEBUG SAVE POS FEATURE
             if (Input.GetKey(KeyCode.Alpha3))
             {
-                saveVelo = m_PlayerVelocity;
-                savePos = transform.position;
+                CheckpointSave();
             }
             if (Input.GetKey(KeyCode.Alpha4))
             {
-                transform.position = savePos;
-                m_PlayerVelocity = saveVelo;
+                CheckpointLoad();
             }
-
 
 
             RunGroundCheck();
@@ -490,7 +504,7 @@ namespace Q3Movement
 
             if (hit1 && !hit2 && m_JumpQueued && m_parkourEnabled)
             {
-                Debug.Log(Mathf.Abs(Vector3.Dot(h1.normal, m_Head.transform.forward)));
+                //Debug.Log(Mathf.Abs(Vector3.Dot(h1.normal, m_Head.transform.forward)));
                 if (Mathf.Abs(Vector3.Dot(h1.normal, m_Head.transform.forward)) > 0.9f && isCurrentlyGrounded == false)
                 {
 
@@ -502,7 +516,7 @@ namespace Q3Movement
                     {
                         headAnimator.SetTrigger("Vault");
                         MainGameObject.Instance.score += 5;
-                        AudioManager.Instance.PlayAudio("SFX_Climb", transform.position);
+                        AudioManager.Instance.PlayAudio("SFX_Climb");
 
                     }
                 }
@@ -596,7 +610,7 @@ namespace Q3Movement
 
             {
                 AudioManager.Instance.PlayAudio("SFX_Epic");
-                wallrunningStamina += 10;
+                wallrunningStamina += 4;
                 float angleOfAttack;
                 angleOfAttack = Mathf.Abs(Vector3.Dot(hit.normal, m_Head.transform.right));
 
@@ -703,7 +717,7 @@ namespace Q3Movement
             var castOrigin = transform.position - new Vector3(0, p, 0);
 
 
-            if (Physics.SphereCast(castOrigin, m_Character.radius - 0.1f, Vector3.down,
+            if (Physics.SphereCast(castOrigin, m_Character.radius - 0.5f, Vector3.down,
                 out var hit, 5.5f, ~LayerMask.GetMask("Player"), QueryTriggerInteraction.Ignore))
             {
                 slopeNormal = hit.normal;
@@ -711,12 +725,13 @@ namespace Q3Movement
                 Debug.DrawRay(hit.point, hit.normal * 0.2f, Color.cyan, 30f);
                 var collider = hit.collider;
                 var angle = Vector3.Angle(Vector3.up, hit.normal);
-                print("floor/slope angle:  " + angle);
+                //print("floor/slope angle:  " + angle);
                 if (angle > m_Character.slopeLimit)
                 {
 
                     m_WasGrounded = isCurrentlyGrounded;
                     isOnSlope = true;
+                    m_slidePose = true;
                     isCurrentlyGrounded = false;
                 }
                 else
@@ -742,15 +757,16 @@ namespace Q3Movement
                 //https://github.com/ValveSoftware/halflife/blob/c7240b965743a53a29491dd49320c88eecf6257b/pm_shared/pm_shared.c#L1575
                 //line 732
                 ClipVelocity(m_PlayerVelocity, slopeNormal, ref m_PlayerVelocity, 1f);
-
-                m_SlideSound.volume += 0.1f;
-                m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.3f);
+                float targetSpeedSound = Mathf.Clamp((m_PlayerVelocity.magnitude - 0.1f) / 80, 0.2f, 1f);
+                m_SlideSound.volume += 0.05f;
+                m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.23f);
+                m_SlideSound.pitch = Mathf.Lerp(((m_PlayerVelocity.magnitude - 0.1f)/80)+0.4f, 0.4f + (targetSpeedSound * 0.6f), Time.deltaTime * 8f);
 
             }
             else
             {
-                m_SlideSound.volume -= 0.1f;
-                m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.3f);
+                m_SlideSound.volume -= 0.005f;
+                m_SlideSound.volume = Mathf.Clamp(m_SlideSound.volume, 0.0f, 0.23f);
 
             }
         }
@@ -913,6 +929,7 @@ namespace Q3Movement
         private void GroundMove()
         {
             if (isOnSlope) { return; } //only use air movement on slopes
+            m_slidePose = false;
             float tilt = -Vector3.Dot(transform.right, m_PlayerVelocity);
             float tiltLerped = tilt;
             tilt = Mathf.Lerp(tiltLerped, tilt, 0.1f);

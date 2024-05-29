@@ -205,7 +205,7 @@ public class ActivatorTrigger : MonoBehaviour
                 {
                     ShowUI();
                 }
-                if (startDialogue == true) { dialogueRunner.StartDialogue(yarnDialogueNode); }
+                if (startDialogue == true && dialogueRunner) { dialogueRunner.StartDialogue(yarnDialogueNode); }
             }
             if (requireGameIntKey == true)
             {

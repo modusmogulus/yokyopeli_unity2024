@@ -90,13 +90,13 @@ MonoBehaviour:
     value: 0
   toneCurveToeStrength:
     overrideState: 0
-    value: 0
+    value: 1
   toneCurveToeLength:
     overrideState: 0
-    value: 0.5
+    value: 0
   toneCurveShoulderStrength:
     overrideState: 0
-    value: 0
+    value: 1
   toneCurveShoulderLength:
     overrideState: 0
     value: 0.5
@@ -105,7 +105,7 @@ MonoBehaviour:
     value: 0
   toneCurveGamma:
     overrideState: 0
-    value: 1
+    value: 0.001
   ldrLut:
     overrideState: 0
     value: {fileID: 0}
@@ -123,41 +123,41 @@ MonoBehaviour:
     overrideState: 0
     value: {r: 0.4503882, g: 1, b: 0, a: 1}
   hueShift:
-    overrideState: 1
+    overrideState: 0
     value: 118
   saturation:
     overrideState: 0
-    value: 100
+    value: -100
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 0
-    value: 0
+    value: 107.34
   contrast:
     overrideState: 0
-    value: -50.9
+    value: -100
   mixerRedOutRedIn:
     overrideState: 0
-    value: 100
+    value: -200
   mixerRedOutGreenIn:
     overrideState: 0
-    value: 0
+    value: -200
   mixerRedOutBlueIn:
     overrideState: 0
-    value: 0
+    value: 200
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
   mixerGreenOutGreenIn:
     overrideState: 0
-    value: 100
+    value: -200
   mixerGreenOutBlueIn:
     overrideState: 0
     value: 0
   mixerBlueOutRedIn:
     overrideState: 0
-    value: 0
+    value: -200
   mixerBlueOutGreenIn:
     overrideState: 0
     value: 0
