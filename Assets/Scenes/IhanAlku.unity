@@ -5013,6 +5013,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3082383134894919933, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
+      propertyPath: _TextureWarpingFactor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082383134894919933, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: _UseRetroVertexLighting
       value: 0
       objectReference: {fileID: 0}
@@ -19004,7 +19008,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3284695855288527312, guid: 6209b5974e19b2c4aabb09d7bb0f7908, type: 3}
       propertyPath: sceneToLoad
-      value: Scenes/TyonHaku
+      value: kauppa
       objectReference: {fileID: 0}
     - target: {fileID: 5776320925079329554, guid: 6209b5974e19b2c4aabb09d7bb0f7908, type: 3}
       propertyPath: m_LocalScale.x
@@ -21130,7 +21134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dd7a39d2f51d8042a79841f193e9d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharpness: 16.8
+  sharpness: 8.8
 --- !u!114 &1892664612
 MonoBehaviour:
   m_ObjectHideFlags: 0

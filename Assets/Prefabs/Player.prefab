@@ -5293,11 +5293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a4c69f7a9d3ea43907b5765229dc85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TextureWarpingFactor: 1
+  _TextureWarpingFactor: 0
   _TextureWarpingMode: 0
   _VertexGridResolution: 100
   _VertexWobbleMode: 0
-  _UseRetroVertexLighting: 1
+  _UseRetroVertexLighting: 0
   _RetroLightingNormalFactor: 0
   _RetroLightFalloffStart: 0
   _FlatShadingMode: 0

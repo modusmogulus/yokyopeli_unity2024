@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Q3Movement;
+using WiimoteApi;
 
 [RequireComponent(typeof(Button))]
 public class SelectButtonByUhh : MonoBehaviour
@@ -34,7 +35,10 @@ public class SelectButtonByUhh : MonoBehaviour
 	{
 		button.targetGraphic = null;
 		Up();
-		player = MainGameObject.Instance.playerController;
+		if (MainGameObject.Instance.playerController) { 
+			player = MainGameObject.Instance.playerController;
+		}
+
 	}
 
 	// Update is called once per frame
