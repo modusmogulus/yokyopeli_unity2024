@@ -64,7 +64,9 @@ public class SelectButtonByUhh : MonoBehaviour
 		if (player != null && changeCursorLock == true) { print("HEI!");  player.m_MouseLook.SetCursorLock(true); }
 		StartColorTween(button.colors.pressedColor, false);
 		button.onClick.Invoke();
-		AudioManager.Instance.PlayAudio(audioToPlay);
+		if (audioToPlay != "") { 
+			AudioManager.Instance.PlayAudio(audioToPlay);
+		}
 	}
 
 	void StartColorTween(Color targetColor, bool instant)

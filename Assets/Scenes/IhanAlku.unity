@@ -6285,7 +6285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8217992288333163751, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
       propertyPath: startAutomatically
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6785864063258868065, guid: 37a1d503bbda3eb45a816a62666fb8f0, type: 3}
@@ -19008,7 +19008,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3284695855288527312, guid: 6209b5974e19b2c4aabb09d7bb0f7908, type: 3}
       propertyPath: sceneToLoad
-      value: kauppa
+      value: TyonHaku
       objectReference: {fileID: 0}
     - target: {fileID: 5776320925079329554, guid: 6209b5974e19b2c4aabb09d7bb0f7908, type: 3}
       propertyPath: m_LocalScale.x

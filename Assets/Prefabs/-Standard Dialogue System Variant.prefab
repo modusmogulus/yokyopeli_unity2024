@@ -581,6 +581,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7545569452688597077, guid: b8bb533aa1f1ad243a01bd06ea1355fc, type: 3}
     - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+      propertyPath: startAutomatically
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
       propertyPath: onNodeStart.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1236,6 +1240,7 @@ MonoBehaviour:
   key: 113
   parentDialogue: {fileID: 0}
   changeCursorLock: 0
+  audioToPlay: 
 --- !u!114 &2730406811460791657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,6 +1256,7 @@ MonoBehaviour:
   key: 32
   parentDialogue: {fileID: 0}
   changeCursorLock: 0
+  audioToPlay: 
 --- !u!1 &7320199620599030938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2753718018764665327, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}

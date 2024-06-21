@@ -528,6 +528,7 @@ namespace Q3Movement
         }
         private bool TowardsWallCheck(float distance)
         {
+            if (indoorWalking == true) { return false; }
             var p = transform.position;
             var d = transform.forward;
             RaycastHit hit;
