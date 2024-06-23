@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 54546379}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.707107, z: -0, w: 0.70710665}
-  m_LocalPosition: {x: 22.865, y: 1.258, z: -11.609}
+  m_LocalPosition: {x: 22.558, y: 1.258, z: -11.609}
   m_LocalScale: {x: 1.8031508, y: 2.9576287, z: 0.16095716}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1343,58 +1343,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.size
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[34].maxPitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[34].minPitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[33].AudioChan
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[33].audioName
-      value: SFX_Money
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[34].audioName
-      value: FT_Plate
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[34].maxVolume
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[34].minVolume
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[33].audioClips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: audioClasses.Array.data[34].audioClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: 'audioClasses.Array.data[33].audioClips.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: deab505024001864d88e9ad378ed24fa, type: 3}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: 'audioClasses.Array.data[34].audioClips.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 76a0c4b237057ec43b78e1dfd66b2fb4, type: 3}
-    - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
-      propertyPath: 'audioClasses.Array.data[34].audioClips.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: e767d6cf1348b69419cab8e626f31346, type: 3}
     - target: {fileID: 7075822061290082724, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -4811,14 +4759,6 @@ PrefabInstance:
       propertyPath: _DitheringMatrixSize
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 307776557656485045, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 307776557656485045, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_Radius
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 638435537370743628, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_HDR
       value: 1
@@ -4849,11 +4789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452608278945356500, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.523001
+      value: 13.24
       objectReference: {fileID: 0}
     - target: {fileID: 1452608278945356500, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6600001
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1452608278945356500, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4948,10 +4888,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1506767278}
     - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_Friction
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_JumpForce
       value: 0
       objectReference: {fileID: 0}
@@ -4970,10 +4906,6 @@ PrefabInstance:
     - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_MouseLook.m_LockCursor
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
-      propertyPath: m_GroundSettings.MaxSpeed
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6065200154667616716, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: m_MouseLook.m_YSensitivity
@@ -5541,7 +5473,7 @@ PrefabInstance:
     - target: {fileID: 463964897365853835, guid: d90bdf1ecb2500545a6441a3333eeeec, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1506767275}
+      objectReference: {fileID: 0}
     - target: {fileID: 463964897365853835, guid: d90bdf1ecb2500545a6441a3333eeeec, type: 3}
       propertyPath: interactText
       value: 

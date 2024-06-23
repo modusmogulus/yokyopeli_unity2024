@@ -12,7 +12,7 @@ public class PlayerData
     public Vector3 position;
     public List<GIK> GameIntKeys;
 }
-
+//I crave human touch... Fuck this project
 public class SaveManager : MonoBehaviour
 {
     PlayerData playerData;
@@ -60,6 +60,7 @@ public class SaveManager : MonoBehaviour
     {
         playerData = data;
     }
+    
     public PlayerData GetPlayerdata()
     {
         return playerData;

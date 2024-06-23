@@ -11,6 +11,7 @@ namespace Q3Movement
     /// <summary>
     /// This script handles Quake III CPM(A) mod style player movement logic.
     /// </summary>
+    //I crave human touch... Fuck this game
     [RequireComponent(typeof(CharacterController))]
     public class Q3PlayerController : MonoBehaviour
     {
