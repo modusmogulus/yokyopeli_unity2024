@@ -563,3 +563,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: b018104d12c6e314eb35586bb40774c9, type: 3}
     minPitch: 1
     maxPitch: 1
+  - AudioChan: 3
+    audioName: M_EsMusa
+    minVolume: 0.4
+    maxVolume: 0.4
+    audioClips:
+    - {fileID: 8300000, guid: 8168e3a4aaa953148a1f26135f955ab6, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Ulosottomarssi
+    minVolume: 0.35
+    maxVolume: 0.35
+    audioClips:
+    - {fileID: 8300000, guid: 306d89df19002894a9b428e3671a4238, type: 3}
+    minPitch: 1
+    maxPitch: 1

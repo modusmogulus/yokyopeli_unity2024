@@ -5098,7 +5098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3284695855288527312, guid: 6209b5974e19b2c4aabb09d7bb0f7908, type: 3}
       propertyPath: sceneToLoad
-      value: Scenes/Pesti
+      value: YOKYOPELI-INTRO
       objectReference: {fileID: 0}
     - target: {fileID: 3284695855288527312, guid: 6209b5974e19b2c4aabb09d7bb0f7908, type: 3}
       propertyPath: changeSceneOnlyIfHasJob

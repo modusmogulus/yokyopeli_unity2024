@@ -6515,8 +6515,8 @@ Transform:
   m_GameObject: {fileID: 531357431}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.775999, y: 4.605, z: 5.8707}
-  m_LocalScale: {x: 1.397968, y: 1.8319762, z: 0.54895127}
+  m_LocalPosition: {x: -6.5968, y: 4.605, z: 5.8707}
+  m_LocalScale: {x: 1.397968, y: 1.9975867, z: 0.54895127}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1753257001}
@@ -9934,7 +9934,7 @@ Transform:
   m_GameObject: {fileID: 767375463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.946999, y: 1.575, z: 5.865}
+  m_LocalPosition: {x: -5.552, y: 1.575, z: 5.865}
   m_LocalScale: {x: 0.2336596, y: 6.0463257, z: 0.42890945}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11093,6 +11093,10 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 2029051310}
+    - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
+      propertyPath: soundToPlay
+      value: M_Ulosottomarssi
+      objectReference: {fileID: 0}
     - target: {fileID: 5185633183262621879, guid: 694edfbb148ab7540bb6af318977b7b3, type: 3}
       propertyPath: targetIsGUI
       value: 1
@@ -14265,7 +14269,7 @@ PrefabInstance:
     - target: {fileID: 5619812755939946887, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
       propertyPath: 'audioClasses.Array.data[19].audioClips.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 97e3925429010034d9db3660cf1b9172, type: 3}
+      objectReference: {fileID: 8300000, guid: f0f32eb7f320f424dbf08f03f93df5ad, type: 3}
     - target: {fileID: 7075822061290082724, guid: ea26acb09b12b944fb52caf753feac7f, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -21033,7 +21037,7 @@ Transform:
   m_GameObject: {fileID: 1877507412}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.427, y: 1.575, z: 5.865}
+  m_LocalPosition: {x: -5.011, y: 1.575, z: 5.865}
   m_LocalScale: {x: 1.1650268, y: 6.0463257, z: 0.3658048}
   m_ConstrainProportionsScale: 0
   m_Children: []
