@@ -44,6 +44,8 @@ namespace Q3Movement
         private float defaultFOV;
         [Tooltip("Automatically jump when holding jump button")]
         [SerializeField] private bool m_AutoBunnyHop = false;
+
+        [SerializeField] public bool  m_autoCrouchSlide //nice for slides obv lol
         [SerializeField] public AudioSource m_wallrunningSoundLoop;
         [Tooltip("How precise air control is")]
         [SerializeField] private float m_AirControl = 0.7f;
@@ -733,7 +735,8 @@ namespace Q3Movement
 
                     m_WasGrounded = isCurrentlyGrounded;
                     isOnSlope = true;
-                    m_slidePose = true;
+                    m_slidePose = m_autoCrouchSlide; //if m_autoCrouchSlide is true, crouch will be set to true. 
+                    //looks funky but avoids unnecessary if statement
                     isCurrentlyGrounded = false;
                 }
                 else
