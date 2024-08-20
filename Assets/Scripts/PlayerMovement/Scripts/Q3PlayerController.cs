@@ -45,7 +45,7 @@ namespace Q3Movement
         [Tooltip("Automatically jump when holding jump button")]
         [SerializeField] private bool m_AutoBunnyHop = false;
 
-        [SerializeField] public bool  m_autoCrouchSlide //nice for slides obv lol
+        [SerializeField] public bool m_autoCrouchSlide = false; //nice for slides obv lol
         [SerializeField] public AudioSource m_wallrunningSoundLoop;
         [Tooltip("How precise air control is")]
         [SerializeField] private float m_AirControl = 0.7f;
