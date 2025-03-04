@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{5E7B1E91-8A35-6FE0-9E84-F5C5DA9221C5}</ProjectGuid>
+    <ProjectGuid>{15E7A705-8FA8-5115-5982-698CA38FFABB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>FMODUnityResonanceEditor</AssemblyName>
@@ -55,8 +55,7 @@
     <UnityVersion>2023.2.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\Tiedostot\UnityProjects\UusiYokyopleiRepo\yokyopeli_unity\Library\PackageCache\dev.yarnspinner.unity@2.4.0\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
+    <Analyzer Include="C:\Users\Miranda\Desktop\Ohjelmointi\yokyopeli_unity2024\Library\PackageCache\dev.yarnspinner.unity@2.4.0\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -1151,7 +1150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{23AD24BC-7F1C-470F-19CE-66869CEDC168}</Project>
+      <Project>{1FB941F6-41B4-2472-7E4B-1902A3C36B80}</Project>
       <Name>FMODUnityResonance</Name>
     </ProjectReference>
   </ItemGroup>

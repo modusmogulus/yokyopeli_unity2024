@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6861A3B7-A327-0087-7640-256122737D6F}</ProjectGuid>
+    <ProjectGuid>{445362F3-5269-F91C-8C88-FA8F1E551261}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>NaughtyAttributes.Editor</AssemblyName>
@@ -55,8 +55,7 @@
     <UnityVersion>2023.2.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\Tiedostot\UnityProjects\UusiYokyopleiRepo\yokyopeli_unity\Library\PackageCache\dev.yarnspinner.unity@2.4.0\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
+    <Analyzer Include="C:\Users\Miranda\Desktop\Ohjelmointi\yokyopeli_unity2024\Library\PackageCache\dev.yarnspinner.unity@2.4.0\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -1181,7 +1180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
-      <Project>{47F4B1D3-9602-C638-E6F2-26385B0A237F}</Project>
+      <Project>{4C0FCB9B-C468-6666-BF08-1EB8864B5F49}</Project>
       <Name>NaughtyAttributes.Core</Name>
     </ProjectReference>
   </ItemGroup>

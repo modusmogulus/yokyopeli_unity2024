@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8BB2CFB5-8884-2E22-5F1D-F650F970FB3B}</ProjectGuid>
+    <ProjectGuid>{3FE3F7F4-25AA-C76E-E04F-3CC4E17A0B71}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -55,8 +55,7 @@
     <UnityVersion>2023.2.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="D:\Tiedostot\UnityProjects\UusiYokyopleiRepo\yokyopeli_unity\Library\PackageCache\dev.yarnspinner.unity@2.4.0\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
+    <Analyzer Include="C:\Users\Miranda\Desktop\Ohjelmointi\yokyopeli_unity2024\Library\PackageCache\dev.yarnspinner.unity@2.4.0\SourceGenerator\YarnSpinner.Unity.SourceCodeGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2023.2.2f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -212,6 +211,7 @@
     <None Include="Assets\FMODBanks\abc\Metadata\AudioFile\{01ad7d74-94f2-418d-a85c-e85898f2b2de}.xml" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\PSXShaderKit\Shaders\PSX-Unlit Transparent.shader" />
+    <None Include="Assets\EditorThemes\ReadmeThemesPlugin.txt" />
     <None Include="Assets\Zololgo\Post Effects\Sharpen\Resources\Shaders\Sharpen.shader" />
     <None Include="Assets\FMODBanks\abc\Metadata\Platform\{11e171b7-2fc6-4034-b8c0-7160034bd70d}.xml" />
     <None Include="Assets\Kuwahara Filter\AnisotropicKuwahara.shader" />
@@ -1246,12 +1246,36 @@
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PsdPlugin">
+      <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="YarnSpinnerTests.CommandsInAnAssemblyDefinition">
       <HintPath>Library\ScriptAssemblies\YarnSpinnerTests.CommandsInAnAssemblyDefinition.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Path.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="YarnSpinner.Unity.Editor">
       <HintPath>Library\ScriptAssemblies\YarnSpinner.Unity.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime.Shared">
@@ -1302,6 +1326,14 @@
       <HintPath>Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections">
       <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
       <Private>False</Private>
@@ -1310,20 +1342,36 @@
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.PixelPerfect.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rendering.LightTransport.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Collections.Editor">
@@ -1366,6 +1414,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1386,12 +1438,24 @@
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Toolchain.Linux-x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Toolchain.Linux-x86_64.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.ProBuilder">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
@@ -1402,12 +1466,24 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.Sysroot.Linux_x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Burst">
@@ -1430,42 +1506,46 @@
       <HintPath>Library\ScriptAssemblies\Unity.Rendering.LightTransport.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.SysrootPackage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{23AD24BC-7F1C-470F-19CE-66869CEDC168}</Project>
+      <Project>{1FB941F6-41B4-2472-7E4B-1902A3C36B80}</Project>
       <Name>FMODUnityResonance</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Test.csproj">
-      <Project>{3019932B-3C66-162B-AA34-D50499C306F4}</Project>
+      <Project>{5D6C53A0-2E15-853F-2397-094F2B7635DE}</Project>
       <Name>NaughtyAttributes.Test</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnityEditor.csproj">
-      <Project>{D0E77A0E-F3D2-1AC3-A275-04F9D79E401C}</Project>
+      <Project>{B9D51AD1-CA96-B44F-5F29-DD2C8457D91F}</Project>
       <Name>FMODUnityEditor</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
-      <Project>{5E7B1E91-8A35-6FE0-9E84-F5C5DA9221C5}</Project>
+      <Project>{15E7A705-8FA8-5115-5982-698CA38FFABB}</Project>
       <Name>FMODUnityResonanceEditor</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnity.csproj">
-      <Project>{530DB25A-6F19-56C6-CC5B-C63B8982AEA5}</Project>
+      <Project>{C81EFAEF-F9CD-8ED6-A8FC-F0028184714A}</Project>
       <Name>FMODUnity</Name>
     </ProjectReference>
     <ProjectReference Include="SteamAudioUnityEditor.csproj">
-      <Project>{1F37B045-2E6E-11C1-C452-B71B1E7452E8}</Project>
+      <Project>{88B212A5-BD48-3634-4BF8-9704D78E39D0}</Project>
       <Name>SteamAudioUnityEditor</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Core.csproj">
-      <Project>{47F4B1D3-9602-C638-E6F2-26385B0A237F}</Project>
+      <Project>{4C0FCB9B-C468-6666-BF08-1EB8864B5F49}</Project>
       <Name>NaughtyAttributes.Core</Name>
     </ProjectReference>
     <ProjectReference Include="NaughtyAttributes.Editor.csproj">
-      <Project>{6861A3B7-A327-0087-7640-256122737D6F}</Project>
+      <Project>{445362F3-5269-F91C-8C88-FA8F1E551261}</Project>
       <Name>NaughtyAttributes.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="SteamAudioUnity.csproj">
-      <Project>{8A55E707-C9D7-FE55-F75C-4ACA3EA353FA}</Project>
+      <Project>{0FF136B6-6702-5DC1-FF6C-14BF437C4A78}</Project>
       <Name>SteamAudioUnity</Name>
     </ProjectReference>
   </ItemGroup>
